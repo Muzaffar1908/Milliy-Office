@@ -44,7 +44,7 @@ class NewsCategoryController extends Controller
     {
         $data = $request->except(array('_token'));
         $rule = array(
-         'title_uz' => 'required',
+         'title_uz' => 'required|string|max:255',
         );
 
         $validator = Validator::make($data, $rule);
@@ -90,7 +90,7 @@ class NewsCategoryController extends Controller
     {
         $data = $request->except(array('_token'));
         $rule = array(
-         'title_uz' => 'required',
+         'title_uz' => 'required|string|max:255',
         );
 
         $validator = Validator::make($data, $rule);

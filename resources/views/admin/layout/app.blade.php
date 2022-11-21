@@ -184,6 +184,15 @@
 							<li><a href="{{route('n-index')}}">News</a></li>
 						</ul>
 				    </li>
+					<li class="has-menu">
+						<a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-381-networking"></i>
+							<span class="nav-text">Main Page</span>
+				        </a>
+						<ul aria-expanded="false">
+							<li><a href="{{route('m-index')}}">Main Page</a></li>
+						</ul>
+				    </li>
                 </ul>
 				
 			</div>

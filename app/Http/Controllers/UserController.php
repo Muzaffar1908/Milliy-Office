@@ -41,9 +41,9 @@ class UserController extends Controller
     {
         $data = $request->except(array('_token'));
         $rule = array(
-          'first_name' => 'required',
-          'last_name' => 'required',
-          'email' => 'required',
+          'first_name' => 'required|string|max:255',
+          'last_name' => 'required|string|max:255',
+          'email' => 'required|string|max:255',
         );
 
         $validator = Validator::make($data, $rule);
@@ -102,9 +102,9 @@ class UserController extends Controller
     {
         $data = $request->except(array('_token'));
         $rule = array(
-          'first_name' => 'required',
-          'last_name' => 'required',
-          'email' => 'required',
+          'first_name' => 'required|string|max:255',
+          'last_name' => 'required|string|max:255',
+          'email' => 'required|string|max:255',
         );
 
         $validator = Validator::make($data, $rule);

@@ -3,6 +3,7 @@
 use App\Http\Controllers\News\NewsCategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LangController;
+use App\Http\Controllers\Main\MainController;
 use App\Http\Controllers\News\NewsController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -56,6 +57,16 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function(){
         Route::put('/news/edit', 'update')->name('n-update');
         Route::get('/news/delete', 'delete')->name('n-delete');
         Route::post('/news/isactive/{id}', 'is_active');
+    });
+
+    Route::controller(MainController::class)->group(function () {
+        Route::get('/main/', 'index')->name('m-index');
+        Route::get('/main/create', 'create')->name('m-create');
+        Route::post('/main/create', 'store')->name('m-store');
+        Route::get('/main/edit/{id}', 'edit')->name('m-edit');
+        Route::put('/main/edit', 'update')->name('m-update');
+        Route::get('/main/delete', 'delete')->name('m-delete');
+        Route::post('/main/isactive/{id}', 'is_active');
     });
 
 });

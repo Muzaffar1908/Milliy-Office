@@ -1,29 +1,27 @@
 <?php
 
-namespace App\Http\Controllers\News;
+namespace App\Http\Controllers\Main;
 
 use App\Http\Controllers\Controller;
-use App\Models\News\News;
-use App\Models\News\NewsCategory;
+use App\Models\Main\Main;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 
-class NewsController extends Controller
+class MainController extends Controller
 {
     public function index()
     {
-        $SysLang = \App::getLocale();
-        $news = News::select('id', 'user_id', 'cat_id', 'title_uz', 'news_image', 'is_active', 'created_at')->orderBy('created_at', 'DESC')->paginate(10);
+        $mains = Main::select('id', 'user_id', 'title_uz', 'logo_title_uz', 'youtobe_id', 'background_image', 'is_active', 'created_at')->orderBy('created_at', 'DESC')->paginate(5);
         $users = User::select('id','user_name', 'created_at')->get();
-        return view('admin.news.index', compact('news', 'users'));
+        return view('admin.main.index', compact('mains', 'users'));
     }
 
     public function is_active($id)
     {
-        $update=News::find($id);
+        $update=Main::find($id);
         if($update->is_active==1){
             $update->is_active=0;
         }else{
@@ -35,16 +33,19 @@ class NewsController extends Controller
 
     public function create()
     {
-        $users = User::select('id','user_name', 'created_at')->get();
-        $news_cat = NewsCategory::get();
-        return view('admin.news.create', compact('users', 'news_cat'));
+        $users = User::select('id', 'user_name', 'created_at')->get();
+        return view('admin.main.create', compact('users'));
     }
 
     public function store(Request $request)
     {
         $data = $request->except(array('_token'));
         $rule = array(
+            'logo_title_uz' => 'required|string|max:255',
             'title_uz' => 'required|string|max:255',
+            'description_uz' => 'required',
+            'background_image' => 'required|mimes:png,jpg,jpeg',
+            'youtobe_id' => 'required|string',
         );
 
         $validator = Validator::make($data, $rule);
@@ -56,33 +57,36 @@ class NewsController extends Controller
 
         $inputs = $request->all();
         if (!empty($inputs['id'])) {
-            $news = News::findOrFail($inputs['id']);
+            $main = Main::findOrFail($inputs['id']);
         } else {
-            $news = new News;
+            $main = new Main;
         }
 
-        $image = $request->file('news_image');
+        $image = $request->file('background_image');
         if ($image) {
-            $tmpFilePath = 'upload/news/';
-            $hardPath =  Str::slug('news', '-') . '-' . md5(time());
+            $tmpFilePath = 'upload/main/';
+            $hardPath =  Str::slug('main', '-') . '-' . md5(time());
             $imagine = new \Imagine\Gd\Imagine();
             $image = $imagine->open($image);
-            $thumbnail = $image->thumbnail(new \Imagine\Image\Box(450, 250));
-            $thumbnail->save($tmpFilePath . $hardPath . '_thumbnail_450.png');
-            $news->news_image = $hardPath;
+            $thumbnail = $image->thumbnail(new \Imagine\Image\Box(1920, 1080));
+            $thumbnail->save($tmpFilePath . $hardPath . '_big_1920.png');
+            $main->background_image = $hardPath;
         }
 
-        $news->user_id = $inputs['user_id'];
-        $news->cat_id = $inputs['cat_id'];
-        $news->title_uz = $inputs['title_uz'];
-        $news->title_ru = $inputs['title_ru'];
-        $news->title_en = $inputs['title_en'];
+        $main->user_id = $inputs['user_id'];
+        $main->logo_title_uz = $inputs['logo_title_uz'];
+        $main->logo_title_ru = $inputs['logo_title_ru'];
+        $main->logo_title_en = $inputs['logo_title_en'];
+        $main->title_uz = $inputs['title_uz'];
+        $main->title_ru = $inputs['title_ru'];
+        $main->title_en = $inputs['title_en'];
+        $main->youtobe_id = $inputs['youtobe_id'];
 
-        $news->description_uz = $inputs['description_uz'];
-        if (!empty($news->description_uz)) {
+        $main->description_uz = $inputs['description_uz'];
+        if (!empty($main->description_uz)) {
             $dom_save_uz = new \DomDocument();
             libxml_use_internal_errors(true);
-            $dom_save_uz->loadHtml('<?xml encoding="UTF-8">' . $news->description_uz, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+            $dom_save_uz->loadHtml('<?xml encoding="UTF-8">' . $main->description_uz, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
             $dom_image_save_uz = $dom_save_uz->getElementsByTagName('img');
             foreach ($dom_image_save_uz as $k => $img) {
                 $data = $img->getAttribute('src');
@@ -90,7 +94,7 @@ class NewsController extends Controller
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $image_name = "/upload/news/description_image/uz_" . time() . $k . '.jpg';
+                    $image_name = "/upload/main/description_image/uz_" . time() . $k . '.jpg';
                     $path = public_path() . $image_name;
                     file_put_contents($path, $data);
                     $imagine = new \Imagine\Gd\Imagine();
@@ -101,15 +105,15 @@ class NewsController extends Controller
                     $img->setAttribute('src', $image_name);
                 }
             }
-            $news->description_uz = str_replace('<?xml encoding="UTF-8">', "", $dom_save_uz->saveHTML((new \DOMXPath($dom_save_uz))->query('/')->item(0)));
+            $main->description_uz = str_replace('<?xml encoding="UTF-8">', "", $dom_save_uz->saveHTML((new \DOMXPath($dom_save_uz))->query('/')->item(0)));
 
         }
 
-        $news->description_ru = $inputs['description_ru'];
-        if (!empty($news->description_ru)) {
+        $main->description_ru = $inputs['description_ru'];
+        if (!empty($main->description_ru)) {
             $dom_save_ru = new \DomDocument();
             libxml_use_internal_errors(true);
-            $dom_save_ru->loadHtml('<?xml encoding="UTF-8">' . $news->description_ru, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+            $dom_save_ru->loadHtml('<?xml encoding="UTF-8">' . $main->description_ru, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
             $dom_image_save_ru = $dom_save_ru->getElementsByTagName('img');
             foreach ($dom_image_save_ru as $k => $img) {
                 $data = $img->getAttribute('src');
@@ -117,7 +121,7 @@ class NewsController extends Controller
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $image_name = "/upload/news/description_image/ru_" . time() . $k . '.jpg';
+                    $image_name = "/upload/main/description_image/ru_" . time() . $k . '.jpg';
                     $path = public_path() . $image_name;
                     file_put_contents($path, $data);
                     $imagine = new \Imagine\Gd\Imagine();
@@ -130,15 +134,15 @@ class NewsController extends Controller
             }
             //fixed bug
             //dd(str_replace('<?xml encoding="UTF-8">', "", $dom_save_ru->saveHTML((new \DOMXPath($dom_save_ru))->query('/')->item(0))));
-            $news->description_ru = str_replace('<?xml encoding="UTF-8">', "", $dom_save_ru->saveHTML((new \DOMXPath($dom_save_ru))->query('/')->item(0)));
+            $main->description_ru = str_replace('<?xml encoding="UTF-8">', "", $dom_save_ru->saveHTML((new \DOMXPath($dom_save_ru))->query('/')->item(0)));
         }
 
-        $news->description_en = $inputs['description_en'];
-        if (!empty($news->description_en)) {
+        $main->description_en = $inputs['description_en'];
+        if (!empty($main->description_en)) {
             $dom_save_en = new \DomDocument();
             libxml_use_internal_errors(true);
-            $dom_save_en->loadHtml('<?xml encoding="UTF-8">' . $news->description_en, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-            //$dom_save_en->loadHTML($news->description_en);
+            $dom_save_en->loadHtml('<?xml encoding="UTF-8">' . $main->description_en, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+            //$dom_save_en->loadHTML($main->description_en);
             $dom_image_save_en = $dom_save_en->getElementsByTagName('img');
             foreach ($dom_image_save_en as $k => $img) {
                 $data = $img->getAttribute('src');
@@ -146,7 +150,7 @@ class NewsController extends Controller
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $image_name = "/upload/news/description_image/en_" . time() . $k . '.jpg';
+                    $image_name = "/upload/main/description_image/en_" . time() . $k . '.jpg';
                     $path = public_path() . $image_name;
                     file_put_contents($path, $data);
                     $imagine = new \Imagine\Gd\Imagine();
@@ -157,37 +161,40 @@ class NewsController extends Controller
                     $img->setAttribute('src', $image_name);
                 }
             }
-            $news->description_en = str_replace('<?xml encoding="UTF-8">', "", $dom_save_en->saveHTML((new \DOMXPath($dom_save_en))->query('/')->item(0)));
+            $main->description_en = str_replace('<?xml encoding="UTF-8">', "", $dom_save_en->saveHTML((new \DOMXPath($dom_save_en))->query('/')->item(0)));
         }
 
-        $news->save();
+        $main->save();
 
         if (!empty($inputs['id'])) {
             Session::flash('warning', __('ALL_CHANGES_SUCCESSFUL_SAVED'));
-            return redirect('admin/news');
+            return redirect('admin/main');
         } else {
             Session::flash('warning', __('ALL_SUCCESSFUL_SAVED'));
-            return redirect('admin/news');
+            return redirect('admin/main');
         }
     }
+
 
     public function edit($id)
     {
-        $news = News::find($id);
+        $main = Main::find($id);
         $users = User::select('id','user_name', 'created_at')->get();
-        $news_cat = NewsCategory::select('id', 'user_id', 'title_uz')->get();
-        return view('admin.news.edit', [
-            'news' => $news,
+        return view('admin.main.edit', [
+            'main' => $main,
             'users' => $users,
-            'news_cat' => $news_cat,
         ]);
     }
 
-    public function update(Request $request, News $news)
+    public function update(Request $request, Main $main)
     {
         $data = $request->except(array('_token'));
         $rule = array(
+            'logo_title_uz' => 'required|string|max:255',
             'title_uz' => 'required|string|max:255',
+            'description_uz' => 'required',
+            // 'background_image' => 'required|mimes:png,jpg,jpeg',
+            // 'youtobe_id' => 'required|string',
         );
 
         $validator = Validator::make($data, $rule);
@@ -199,33 +206,36 @@ class NewsController extends Controller
 
         $inputs = $request->all();
         if (!empty($inputs['id'])) {
-            $news = News::findOrFail($inputs['id']);
+            $main = Main::findOrFail($inputs['id']);
         } else {
-            $news = new News;
+            $main = new Main;
         }
 
-        $image = $request->file('news_image');
+        $image = $request->file('background_image');
         if ($image) {
-            $tmpFilePath = 'upload/news/';
-            $hardPath =  Str::slug('news', '-') . '-' . md5(time());
+            $tmpFilePath = 'upload/main/';
+            $hardPath =  Str::slug('main', '-') . '-' . md5(time());
             $imagine = new \Imagine\Gd\Imagine();
             $image = $imagine->open($image);
-            $thumbnail = $image->thumbnail(new \Imagine\Image\Box(450, 250));
-            $thumbnail->save($tmpFilePath . $hardPath . '_thumbnail_450.png');
-            $news->news_image = $hardPath;
+            $thumbnail = $image->thumbnail(new \Imagine\Image\Box(1920, 1080));
+            $thumbnail->save($tmpFilePath . $hardPath . '_big_1920.png');
+            $main->background_image = $hardPath;
         }
 
-        $news->user_id = $inputs['user_id'];
-        $news->cat_id = $inputs['cat_id'];
-        $news->title_uz = $inputs['title_uz'];
-        $news->title_ru = $inputs['title_ru'];
-        $news->title_en = $inputs['title_en'];
+        $main->user_id = $inputs['user_id'];
+        $main->logo_title_uz = $inputs['logo_title_uz'];
+        $main->logo_title_ru = $inputs['logo_title_ru'];
+        $main->logo_title_en = $inputs['logo_title_en'];
+        $main->title_uz = $inputs['title_uz'];
+        $main->title_ru = $inputs['title_ru'];
+        $main->title_en = $inputs['title_en'];
+        $main->youtobe_id = $inputs['youtobe_id'];
 
-        $news->description_uz = $inputs['description_uz'];
-        if (!empty($news->description_uz)) {
+        $main->description_uz = $inputs['description_uz'];
+        if (!empty($main->description_uz)) {
             $dom_save_uz = new \DomDocument();
             libxml_use_internal_errors(true);
-            $dom_save_uz->loadHtml('<?xml encoding="UTF-8">' . $news->description_uz, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+            $dom_save_uz->loadHtml('<?xml encoding="UTF-8">' . $main->description_uz, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
             $dom_image_save_uz = $dom_save_uz->getElementsByTagName('img');
             foreach ($dom_image_save_uz as $k => $img) {
                 $data = $img->getAttribute('src');
@@ -233,7 +243,7 @@ class NewsController extends Controller
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $image_name = "/upload/news/description_image/uz_" . time() . $k . '.jpg';
+                    $image_name = "/upload/main/description_image/uz_" . time() . $k . '.jpg';
                     $path = public_path() . $image_name;
                     file_put_contents($path, $data);
                     $imagine = new \Imagine\Gd\Imagine();
@@ -244,15 +254,15 @@ class NewsController extends Controller
                     $img->setAttribute('src', $image_name);
                 }
             }
-            $news->description_uz = str_replace('<?xml encoding="UTF-8">', "", $dom_save_uz->saveHTML((new \DOMXPath($dom_save_uz))->query('/')->item(0)));
+            $main->description_uz = str_replace('<?xml encoding="UTF-8">', "", $dom_save_uz->saveHTML((new \DOMXPath($dom_save_uz))->query('/')->item(0)));
 
         }
 
-        $news->description_ru = $inputs['description_ru'];
-        if (!empty($news->description_ru)) {
+        $main->description_ru = $inputs['description_ru'];
+        if (!empty($main->description_ru)) {
             $dom_save_ru = new \DomDocument();
             libxml_use_internal_errors(true);
-            $dom_save_ru->loadHtml('<?xml encoding="UTF-8">' . $news->description_ru, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+            $dom_save_ru->loadHtml('<?xml encoding="UTF-8">' . $main->description_ru, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
             $dom_image_save_ru = $dom_save_ru->getElementsByTagName('img');
             foreach ($dom_image_save_ru as $k => $img) {
                 $data = $img->getAttribute('src');
@@ -260,7 +270,7 @@ class NewsController extends Controller
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $image_name = "/upload/news/description_image/ru_" . time() . $k . '.jpg';
+                    $image_name = "/upload/main/description_image/ru_" . time() . $k . '.jpg';
                     $path = public_path() . $image_name;
                     file_put_contents($path, $data);
                     $imagine = new \Imagine\Gd\Imagine();
@@ -273,15 +283,15 @@ class NewsController extends Controller
             }
             //fixed bug
             //dd(str_replace('<?xml encoding="UTF-8">', "", $dom_save_ru->saveHTML((new \DOMXPath($dom_save_ru))->query('/')->item(0))));
-            $news->description_ru = str_replace('<?xml encoding="UTF-8">', "", $dom_save_ru->saveHTML((new \DOMXPath($dom_save_ru))->query('/')->item(0)));
+            $main->description_ru = str_replace('<?xml encoding="UTF-8">', "", $dom_save_ru->saveHTML((new \DOMXPath($dom_save_ru))->query('/')->item(0)));
         }
 
-        $news->description_en = $inputs['description_en'];
-        if (!empty($news->description_en)) {
+        $main->description_en = $inputs['description_en'];
+        if (!empty($main->description_en)) {
             $dom_save_en = new \DomDocument();
             libxml_use_internal_errors(true);
-            $dom_save_en->loadHtml('<?xml encoding="UTF-8">' . $news->description_en, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-            //$dom_save_en->loadHTML($news->description_en);
+            $dom_save_en->loadHtml('<?xml encoding="UTF-8">' . $main->description_en, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+            //$dom_save_en->loadHTML($main->description_en);
             $dom_image_save_en = $dom_save_en->getElementsByTagName('img');
             foreach ($dom_image_save_en as $k => $img) {
                 $data = $img->getAttribute('src');
@@ -289,7 +299,7 @@ class NewsController extends Controller
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $image_name = "/upload/news/description_image/en_" . time() . $k . '.jpg';
+                    $image_name = "/upload/main/description_image/en_" . time() . $k . '.jpg';
                     $path = public_path() . $image_name;
                     file_put_contents($path, $data);
                     $imagine = new \Imagine\Gd\Imagine();
@@ -300,26 +310,30 @@ class NewsController extends Controller
                     $img->setAttribute('src', $image_name);
                 }
             }
-            $news->description_en = str_replace('<?xml encoding="UTF-8">', "", $dom_save_en->saveHTML((new \DOMXPath($dom_save_en))->query('/')->item(0)));
+            $main->description_en = str_replace('<?xml encoding="UTF-8">', "", $dom_save_en->saveHTML((new \DOMXPath($dom_save_en))->query('/')->item(0)));
         }
 
-        $news->save();
+        $main->save();
 
         if (!empty($inputs['id'])) {
             Session::flash('warning', __('ALL_CHANGES_SUCCESSFUL_SAVED'));
-            return redirect('admin/news');
+            return redirect('admin/main');
         } else {
             Session::flash('warning', __('ALL_SUCCESSFUL_SAVED'));
-            return redirect('admin/news');
+            return redirect('admin/main');
         }
+
     }
 
     public function delete($id)
     {
-        $news = News::findOrFail($id);
-        // $image_path = public_path() . '/upload/news/' . $news->user_image . '-d.png';
+        $main = Main::findOrFail($id);
+        // $image_path = public_path() . '/upload/news/' . $main->user_image . '-d.png';
         // unlink($image_path);
-        $news->delete();
-        return redirect('admin/news')->with('warning', 'NEWS TABLES DELETED');
+        $main->delete();
+        return redirect('admin/main')->with('warning', 'NEWS TABLES DELETED');
     }
+
+    
+    
 }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
+use App\Models\Main\Main;
 use App\Models\News\News;
 use App\Models\News\NewsCategory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -42,6 +43,11 @@ class User extends Authenticatable
     public function news()
     {
         return $this->hasOne(News::class, 'user_id', 'id');
+    }
+
+    public function main()
+    {
+        return $this->hasOne(Main::class, 'user_id', 'id');
     }
 
     /**

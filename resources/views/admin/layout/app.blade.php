@@ -193,6 +193,24 @@
 							<li><a href="{{route('m-index')}}">Main Page</a></li>
 						</ul>
 				    </li>
+					<li class="has-menu">
+						<a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-381-networking"></i>
+							<span class="nav-text">About</span>
+				        </a>
+						<ul aria-expanded="false">
+							<li><a href="{{route('a-index')}}">About</a></li>
+						</ul>
+				    </li>
+					<li class="has-menu">
+						<a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-381-networking"></i>
+							<span class="nav-text">Partner</span>
+				        </a>
+						<ul aria-expanded="false">
+							<li><a href="{{route('p-index')}}">Partner</a></li>
+						</ul>
+				    </li>
                 </ul>
 				
 			</div>

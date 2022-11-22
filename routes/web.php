@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\About\AboutController;
 use App\Http\Controllers\News\NewsCategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LangController;
 use App\Http\Controllers\Main\MainController;
 use App\Http\Controllers\News\NewsController;
+use App\Http\Controllers\Partner\PartnerController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -67,6 +69,26 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function(){
         Route::put('/main/edit', 'update')->name('m-update');
         Route::get('/main/delete', 'delete')->name('m-delete');
         Route::post('/main/isactive/{id}', 'is_active');
+    });
+
+    Route::controller(AboutController::class)->group(function () {
+        Route::get('/about/', 'index')->name('a-index');
+        Route::get('/about/create', 'create')->name('a-create');
+        Route::post('/about/create', 'store')->name('a-store');
+        Route::get('/about/edit/{id}', 'edit')->name('a-edit');
+        Route::put('/about/edit', 'update')->name('a-update');
+        Route::get('/about/delete', 'delete')->name('a-delete');
+        Route::post('/about/isactive/{id}', 'is_active');
+    });
+
+    Route::controller(PartnerController::class)->group(function () {
+        Route::get('/patner/', 'index')->name('p-index');
+        Route::get('/patner/create', 'create')->name('p-create');
+        Route::post('/patner/create', 'store')->name('p-store');
+        Route::get('/patner/edit/{id}', 'edit')->name('p-edit');
+        Route::put('/patner/edit', 'update')->name('p-update');
+        Route::get('/patner/delete', 'delete')->name('p-delete');
+        Route::post('/patner/isactive/{id}', 'is_active');
     });
 
 });

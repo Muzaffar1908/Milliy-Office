@@ -328,7 +328,7 @@ class MainController extends Controller
     public function delete($id)
     {
         $main = Main::findOrFail($id);
-        // $image_path = public_path() . '/upload/news/' . $main->user_image . '-d.png';
+        // $image_path = public_path() . '/upload/main/' . $main->user_image . '-d.png';
         // unlink($image_path);
         $main->delete();
         return redirect('admin/main')->with('warning', 'NEWS TABLES DELETED');

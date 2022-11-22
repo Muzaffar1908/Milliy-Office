@@ -28,6 +28,6 @@ class Main extends Model
 
     public function mainPage()
     {
-      return $this->belongsTo(Main::class, 'user_id');
+      return $this->belongsTo(User::class, 'user_id');
     }
 }

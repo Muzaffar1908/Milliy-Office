@@ -4,9 +4,11 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
+use App\Models\About\About;
 use App\Models\Main\Main;
 use App\Models\News\News;
 use App\Models\News\NewsCategory;
+use App\Models\Partner\Partner;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -48,6 +50,16 @@ class User extends Authenticatable
     public function main()
     {
         return $this->hasOne(Main::class, 'user_id', 'id');
+    }
+
+    public function about()
+    {
+        return $this->hasOne(About::class, 'user_id', 'id');
+    }
+
+    public function partner()
+    {
+        return $this->hasOne(Partner::class, 'user_id', 'id');
     }
 
     /**

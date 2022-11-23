@@ -211,6 +211,24 @@
 							<li><a href="{{route('p-index')}}">Partner</a></li>
 						</ul>
 				    </li>
+					<li class="has-menu">
+						<a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-381-networking"></i>
+							<span class="nav-text">Contact</span>
+				        </a>
+						<ul aria-expanded="false">
+							<li><a href="{{route('ct-index')}}">Contact</a></li>
+						</ul>
+				    </li>
+					<li class="has-menu">
+						<a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-381-networking"></i>
+							<span class="nav-text">Gallery</span>
+				        </a>
+						<ul aria-expanded="false">
+							<li><a href="{{route('g-index')}}">Gallery</a></li>
+						</ul>
+				    </li>
                 </ul>
 				
 			</div>

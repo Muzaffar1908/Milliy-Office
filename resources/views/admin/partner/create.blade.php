@@ -68,7 +68,7 @@
                                             class="text-danger">*</span>
                                     </label>
                                     <div>
-                                        <input type="file" name="image"  class="form-control" id="image" placeholder=" Image enter" />
+                                        <input type="file" name="image"  class="form-control" id="image" placeholder=" Image enter" value="{{old('image')}}" />
                                         <div class="invalid-feedback">
                                             Please enter a Image.
                                         </div>
@@ -80,7 +80,7 @@
                                             class="text-danger">*</span>
                                     </label>
                                     <div>
-                                        <input type="text" name="image_url"  class="form-control" id="image_url" placeholder=" Image url enter" />
+                                        <input type="text" name="image_url"  class="form-control" id="image_url" placeholder=" Image url enter" value="{{old('image_url')}}" />
                                         <div class="invalid-feedback">
                                             Please enter a Image url.
                                         </div>

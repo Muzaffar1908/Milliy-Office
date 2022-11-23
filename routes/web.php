@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\About\AboutController;
+use App\Http\Controllers\Contact\ContactController;
+use App\Http\Controllers\Gallery\GalleryController;
 use App\Http\Controllers\News\NewsCategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LangController;
@@ -82,13 +84,33 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function(){
     });
 
     Route::controller(PartnerController::class)->group(function () {
-        Route::get('/patner/', 'index')->name('p-index');
-        Route::get('/patner/create', 'create')->name('p-create');
-        Route::post('/patner/create', 'store')->name('p-store');
-        Route::get('/patner/edit/{id}', 'edit')->name('p-edit');
-        Route::put('/patner/edit', 'update')->name('p-update');
-        Route::get('/patner/delete', 'delete')->name('p-delete');
-        Route::post('/patner/isactive/{id}', 'is_active');
+        Route::get('/partner/', 'index')->name('p-index');
+        Route::get('/partner/create', 'create')->name('p-create');
+        Route::post('/partner/create', 'store')->name('p-store');
+        Route::get('/partner/edit/{id}', 'edit')->name('p-edit');
+        Route::put('/partner/edit', 'update')->name('p-update');
+        Route::get('/partner/delete', 'delete')->name('p-delete');
+        Route::post('/partner/isactive/{id}', 'is_active');
+    });
+
+    Route::controller(ContactController::class)->group(function () {
+        Route::get('/contact/', 'index')->name('ct-index');
+        Route::get('/contact/create', 'create')->name('ct-create');
+        Route::post('/contact/create', 'store')->name('ct-store');
+        Route::get('/contact/edit/{id}', 'edit')->name('ct-edit');
+        Route::put('/contact/edit', 'update')->name('ct-update');
+        // Route::get('/partner/delete', 'delete')->name('p-delete');
+        Route::post('/contact/isactive/{id}', 'is_active');
+    });
+
+    Route::controller(GalleryController::class)->group(function () {
+        Route::get('/gallery/', 'index')->name('g-index');
+        Route::get('/gallery/create', 'create')->name('g-create');
+        Route::post('/gallery/create', 'store')->name('g-store');
+        Route::get('/gallery/edit/{id}', 'edit')->name('g-edit');
+        Route::put('/gallery/edit', 'update')->name('g-update');
+        Route::get('/gallery/delete', 'delete')->name('g-delete');
+        Route::post('/gallery/isactive/{id}', 'is_active');
     });
 
 });

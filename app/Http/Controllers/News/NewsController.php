@@ -15,7 +15,6 @@ class NewsController extends Controller
 {
     public function index()
     {
-        $SysLang = \App::getLocale();
         $news = News::select('id', 'user_id', 'cat_id', 'title_uz', 'news_image', 'is_active', 'created_at')->orderBy('created_at', 'DESC')->paginate(10);
         $users = User::select('id','user_name', 'created_at')->get();
         return view('admin.news.index', compact('news', 'users'));

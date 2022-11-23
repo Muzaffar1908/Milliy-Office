@@ -88,10 +88,10 @@ class PartnerController extends Controller
     
     public function edit($id)
     {
-        $partners = Partner::find($id);
+        $partner = Partner::find($id);
         $users = User::select('id', 'user_name')->get();
         return view('admin.partner.edit', [
-            'partners' => $partners,
+            'partner' => $partner,
             'users' => $users,
         ]);
     }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\About\AboutController;
 use App\Http\Controllers\Contact\ContactController;
+use App\Http\Controllers\Departament\DepartamentController;
 use App\Http\Controllers\Gallery\GalleryController;
 use App\Http\Controllers\News\NewsCategoryController;
 use App\Http\Controllers\HomeController;
@@ -9,7 +10,9 @@ use App\Http\Controllers\LangController;
 use App\Http\Controllers\Main\MainController;
 use App\Http\Controllers\News\NewsController;
 use App\Http\Controllers\Partner\PartnerController;
+use App\Http\Controllers\Position\PositionController;
 use App\Http\Controllers\UserController;
+use App\Models\Position\Position;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -111,6 +114,26 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function(){
         Route::put('/gallery/edit', 'update')->name('g-update');
         Route::get('/gallery/delete', 'delete')->name('g-delete');
         Route::post('/gallery/isactive/{id}', 'is_active');
+    });
+
+    Route::controller(DepartamentController::class)->group(function () {
+        Route::get('/departament/', 'index')->name('d-index');
+        Route::get('/departament/create', 'create')->name('d-create');
+        Route::post('/departament/create', 'store')->name('d-store');
+        Route::get('/departament/edit/{id}', 'edit')->name('d-edit');
+        Route::put('/departament/edit', 'update')->name('d-update');
+        Route::get('/departament/delete', 'delete')->name('d-delete');
+        Route::post('/departament/isactive/{id}', 'is_active');
+    });
+
+    Route::controller(PositionController::class)->group(function () {
+        Route::get('/position/', 'index')->name('po-index');
+        Route::get('/position/create', 'create')->name('po-create');
+        Route::post('/position/create', 'store')->name('po-store');
+        Route::get('/position/edit/{id}', 'edit')->name('po-edit');
+        Route::put('/position/edit', 'update')->name('po-update');
+        Route::get('/position/delete', 'delete')->name('po-delete');
+        Route::post('/position/isactive/{id}', 'is_active');
     });
 
 });

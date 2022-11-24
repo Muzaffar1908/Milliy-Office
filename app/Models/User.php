@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
 use App\Models\About\About;
+use App\Models\Administration\Administration;
 use App\Models\Department\Department;
 use App\Models\Gallery\Gallery;
 use App\Models\Main\Main;
@@ -12,6 +13,7 @@ use App\Models\News\News;
 use App\Models\News\NewsCategory;
 use App\Models\Partner\Partner;
 use App\Models\Position\Position;
+use App\Models\Specialist\Specialist;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -78,6 +80,16 @@ class User extends Authenticatable
     public function position()
     {
         return $this->hasOne(Position::class, 'user_id', 'id');
+    }
+
+    public function administration()
+    {
+        return $this->hasOne(Administration::class, 'user_id', 'id');
+    }
+
+    public function specialist()
+    {
+        return $this->hasOne(Specialist::class, 'user_id', 'id');
     }
 
     /**

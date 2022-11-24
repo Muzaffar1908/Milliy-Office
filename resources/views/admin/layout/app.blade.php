@@ -232,19 +232,13 @@
 					<li class="has-menu">
 						<a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-381-networking"></i>
-							<span class="nav-text">Departament</span>
+							<span class="nav-text">Ministry</span>
 				        </a>
 						<ul aria-expanded="false">
-							<li><a href="{{route('d-index')}}">Departament</a></li>
-						</ul>
-				    </li>
-					<li class="has-menu">
-						<a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-381-networking"></i>
-							<span class="nav-text">Position</span>
-				        </a>
-						<ul aria-expanded="false">
-							<li><a href="{{route('po-index')}}">Position</a></li>
+							<li><a href="{{route('d-index')}}">Divisions</a></li>
+							<li><a href="{{route('po-index')}}">Positions</a></li>
+							<li><a href="{{route('sp-index')}}">Specialist</a></li>
+							<li><a href="{{route('ad-index')}}">Administration</a></li>
 						</ul>
 				    </li>
                 </ul>

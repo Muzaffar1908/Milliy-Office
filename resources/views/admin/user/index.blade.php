@@ -43,7 +43,7 @@
             <div class="card-body">
                 <div class="card">
                     <div class="card-body">
-                        <div class="table-responsive">
+                        <div class="table table-responsive">
                             <table id="example3" class="display table-responsive-lg">
                                 <thead>
                                     <tr>

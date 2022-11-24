@@ -10,8 +10,8 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">Position</h5>
-                <a href="{{route('po-create')}}"><button type="button" class="btn btn-primary">Add Position</button></a>
+                <h5 class="card-title">Positions</h5>
+                <a href="{{route('po-create')}}"><button type="button" class="btn btn-primary">Add Positions</button></a>
             </div>
             <div class="card-body">
 
@@ -44,7 +44,7 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <div class="table-responsive">
+                        <div class="table table-responsive">
                             <table id="example3" class="display table-responsive-lg">
                                 <thead>
                                     <tr>
@@ -78,7 +78,7 @@
                                                 </form>
                                             </td>
                                             <td>
-                                                <div class="d-flex">
+                                                <div class="d-flex p-3">
                                                     <a href="{{route('po-edit', $position->id)}}" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
                                                     <form action="{{route('po-delete')}}" method="POST" enctype="multipart/form-data">
                                                         @csrf

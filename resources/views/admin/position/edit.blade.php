@@ -5,7 +5,7 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">Position Update</h5>
+                <h5 class="card-title">Positions Update</h5>
                 <a href="{{route('po-index')}}"><button type="button" class="btn btn-primary">Back</button></a>
             </div>
 

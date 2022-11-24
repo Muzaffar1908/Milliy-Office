@@ -2,6 +2,7 @@
 
 namespace App\Models\Position;
 
+use App\Models\Administration\Administration;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -21,4 +22,9 @@ class Position extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     } 
+
+    public function position()
+    {
+        return $this->hasOne(Administration::class, 'pos_id', 'id');
+    }
 }

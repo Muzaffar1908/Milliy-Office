@@ -5,7 +5,7 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">Department Create</h5>
+                <h5 class="card-title">Divisions Update</h5>
                 <a href="{{route('d-index')}}"><button type="button" class="btn btn-primary">Back</button></a>
             </div>
 
@@ -39,8 +39,9 @@
             <div class="card-body">
                 <div class="card p-3">
                     <div class="form-validation">
-                        <form action="{{route('d-store')}}" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate >
+                        <form action="{{route('d-update', $departament->id)}}" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate >
                             @csrf
+                            @method('PUT')
                             <div class="row">
                                 <div class="col-xl-12">
 
@@ -49,11 +50,11 @@
                                         <input type="hidden" name="id"  class="form-control" id="id" placeholder="Firstname enter" value="{{$departament->id}}" />
                                     </div>
 
-                                    <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom01">User Name
+                                    <div class="col-sm-12">
+                                        <label class="col-form-label" for="validationCustom01">User Name
                                             <span class="text-danger">*</span>
                                         </label>
-                                        <div class="col-lg-6">
+                                        <div class="">
                                             <select name="user_id" id="single-select" class="form-control">
                                                 <option selected>Choose your username...</option>
                                                 @foreach($users as $user)
@@ -63,41 +64,49 @@
                                         </div>
                                     </div>
 
-                                    <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02" >Departament Name uz <span
+                                    <br>
+
+                                    <div class="col-sm-12">
+                                        <label class="col-form-label" for="validationCustom02" >Divisions Name uz <span
                                                 class="text-danger">*</span>
                                         </label>
-                                        <div class="col-lg-6">
-                                            <input type="text" name="dep_name_uz" class="form-control" id="validationCustom02"  placeholder="Enter is Departament Title uz" required value="{{$departament->dep_name_uz}}">
+                                        <div class="">
+                                            <input type="text" name="dep_name_uz" class="form-control" id="validationCustom02"  placeholder="Enter is Divisions Title uz" required value="{{$departament->dep_name_uz}}">
                                             <div class="invalid-feedback">
-                                                Please enter a Departament Name uz.
+                                                Please enter a Divisions Name uz.
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02" >Departament Name ru <span
+                                    <br>
+
+                                    <div class="col-sm-12">
+                                        <label class="col-form-label" for="validationCustom02" >Divisions Name ru <span
                                                 class="text-danger">*</span>
                                         </label>
-                                        <div class="col-lg-6">
-                                            <input type="text" name="dep_name_ru" class="form-control" id="validationCustom02"  placeholder="Enter is Departament Title ru" required value="{{$departament->dep_name_ru}}">
+                                        <div class="">
+                                            <input type="text" name="dep_name_ru" class="form-control" id="validationCustom02"  placeholder="Enter is Divisions Title ru" required value="{{$departament->dep_name_ru}}">
                                             <div class="invalid-feedback">
-                                                Please enter a Departament Name ru.
+                                                Please enter a Divisions Name ru.
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02" >Departament Name en <span
+                                    <br>
+
+                                    <div class="col-sm-12">
+                                        <label class="col-form-label" for="validationCustom02" >Divisions Name en <span
                                                 class="text-danger">*</span>
                                         </label>
-                                        <div class="col-lg-6">
-                                            <input type="text" name="dep_name_en" class="form-control" id="validationCustom02"  placeholder="Enter is Departament Title en" required value="{{$departament->dep_name_en}}">
+                                        <div class="">
+                                            <input type="text" name="dep_name_en" class="form-control" id="validationCustom02"  placeholder="Enter is Divisions Title en" required value="{{$departament->dep_name_en}}">
                                             <div class="invalid-feedback">
-                                                Please enter a Departament Name en.
+                                                Please enter a Divisions Name en.
                                             </div>
                                         </div>
                                     </div>
+
+                                    <br>
                                     
                                     <div class="col-lg-8">
                                         <button type="submit" class="btn btn-primary">Submit</button>

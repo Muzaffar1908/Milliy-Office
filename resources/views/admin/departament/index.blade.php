@@ -10,8 +10,8 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">Department</h5>
-                <a href="{{route('d-create')}}"><button type="button" class="btn btn-primary">Add Departament</button></a>
+                <h5 class="card-title">Divisions</h5>
+                <a href="{{route('d-create')}}"><button type="button" class="btn btn-primary">Add Divisions</button></a>
             </div>
             <div class="card-body">
 
@@ -44,12 +44,12 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <div class="table-responsive">
+                        <div class="table table-responsive">
                             <table id="example3" class="display table-responsive-lg">
                                 <thead>
                                     <tr>
                                         <th>№</th>
-                                        <th>Departament Name</th>
+                                        <th>Divisions Name</th>
                                         <th>User Name</th>
                                         <th>Status</th>
                                         <th>Action</th>

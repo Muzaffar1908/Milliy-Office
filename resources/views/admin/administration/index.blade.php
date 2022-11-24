@@ -10,8 +10,8 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">Main Page</h5>
-                <a href="{{route('m-create')}}"><button type="button" class="btn btn-primary">Add Main Page</button></a>
+                <h5 class="card-title">Administration</h5>
+                <a href="{{route('ad-create')}}"><button type="button" class="btn btn-primary">Add Administration</button></a>
             </div>
             <div class="card-body">
 
@@ -49,36 +49,38 @@
                                 <thead>
                                     <tr>
                                         <th>№</th>
-                                        <th>Title</th>
-                                        <th>Logo title</th>
-                                        <th>Youtobe ID</th>
-                                        <th>Background Image</th>
+                                        <th>Full Name</th>
+                                        <th>Position</th>
+                                        {{-- <th>Image</th> --}}
+                                        {{-- <th>Email</th> --}}
+                                        {{-- <th>Phone Number</th> --}}
                                         <th>Username</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($mains as $main)
+                                    @foreach ($administrations as $administration)
                                         <tr>
-                                            <td>{{($mains->currentpage() - 1) * $mains->perpage() + ($loop->index+1)}}</td>
-                                            <td>{{ $main->title_uz }}</td>
-                                            <td>{{ $main->logo_title_uz }}</td>
-                                            <td>{{ $main->youtobe_id }}</td>
+                                            <td>{{($administrations->currentpage() - 1) * $administrations->perpage() + ($loop->index+1)}}</td>
+                                            <td>{{ $administration->full_name_uz }}</td>
+                                            <td>{{ $administration->positionTable->pos_name_uz }}</td>
+                                            {{-- <td>
+                                                <img src="{{asset('/upload/administration/' .$administration->user_image.'_thumbnail_550.png')}}" class="p-2" alt="img" with="100px" height="60px">
+                                            </td> --}}
+                                            {{-- <td>{{ $administration->email }}</td> --}}
+                                            {{-- <td>{{ $administration->phone }}</td> --}}
+                                            <td>{{ $administration->administrationTable->user_name }}</td>
                                             <td>
-                                                <img src="{{asset('/upload/main/' .$main->background_image.'_big_1920.png')}}" class="p-2" alt="img" with="100px" height="60px">
-                                            </td>
-                                            <td>{{ $main->mainPage->user_name }}</td>
-                                            <td>
-                                                <form action="{{ asset('/admin/main/isactive/' . $main->id) }}"
+                                                <form action="{{ asset('/admin/administration/isactive/' . $administration->id) }}"
                                                     method="POST" enctype="multipart/form-data">
                                                     @csrf
                                                     <div class="sweetalert">
-                                                        <button type="button" class=" @if ($main->is_active == 1) btn-success @endif  @if ($main->is_active == 0) btn-danger @endif btn sweet-confirm btn-sm">
-                                                            @if ($main->is_active == 1)
+                                                        <button type="button" class=" @if ($administration->is_active == 1) btn-success @endif  @if ($administration->is_active == 0) btn-danger @endif btn sweet-confirm btn-sm">
+                                                            @if ($administration->is_active == 1)
                                                                 Active
                                                             @endif
-                                                            @if ($main->is_active == 0)
+                                                            @if ($administration->is_active == 0)
                                                                 Not Active
                                                             @endif
                                                         </button>
@@ -86,9 +88,9 @@
                                                 </form>
                                             </td>
                                             <td>
-                                                <div class="d-flex">
-                                                    <a href="{{route('m-edit', $main->id)}}" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-                                                    <form action="{{route('m-delete')}}" method="POST" enctype="multipart/form-data">
+                                                <div class="d-flex p-3">
+                                                    <a href="{{route('ad-edit', $administration->id)}}" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+                                                    <form action="{{route('ad-delete')}}" method="POST" enctype="multipart/form-data">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
@@ -99,7 +101,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            {{$mains->links()}}
+                            {{$administrations->links()}}
                         </div>
                     </div>
                 </div>

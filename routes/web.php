@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\About\AboutController;
+use App\Http\Controllers\Administration\AdministrationController;
 use App\Http\Controllers\Contact\ContactController;
 use App\Http\Controllers\Departament\DepartamentController;
 use App\Http\Controllers\Gallery\GalleryController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\Main\MainController;
 use App\Http\Controllers\News\NewsController;
 use App\Http\Controllers\Partner\PartnerController;
 use App\Http\Controllers\Position\PositionController;
+use App\Http\Controllers\Specialist\SpecialistController;
 use App\Http\Controllers\UserController;
 use App\Models\Position\Position;
 use Illuminate\Support\Facades\Route;
@@ -134,6 +136,26 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function(){
         Route::put('/position/edit', 'update')->name('po-update');
         Route::get('/position/delete', 'delete')->name('po-delete');
         Route::post('/position/isactive/{id}', 'is_active');
+    });
+
+    Route::controller(AdministrationController::class)->group(function () {
+        Route::get('/administration/', 'index')->name('ad-index');
+        Route::get('/administration/create', 'create')->name('ad-create');
+        Route::post('/administration/create', 'store')->name('ad-store');
+        Route::get('/administration/edit/{id}', 'edit')->name('ad-edit');
+        Route::put('/administration/edit', 'update')->name('ad-update');
+        Route::get('/administration/delete', 'delete')->name('ad-delete');
+        Route::post('/administration/isactive/{id}', 'is_active');
+    });
+
+    Route::controller(SpecialistController::class)->group(function () {
+        Route::get('/specialist/', 'index')->name('sp-index');
+        Route::get('/specialist/create', 'create')->name('sp-create');
+        Route::post('/specialist/create', 'store')->name('sp-store');
+        Route::get('/specialist/edit/{id}', 'edit')->name('sp-edit');
+        Route::put('/specialist/edit', 'update')->name('sp-update');
+        Route::get('/specialist/delete', 'delete')->name('sp-delete');
+        Route::post('/specialist/isactive/{id}', 'is_active');
     });
 
 });

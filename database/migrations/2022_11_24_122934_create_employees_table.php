@@ -15,6 +15,14 @@ return new class extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('restrict');
+            $table->foreignId('emp_id')->constrained('specialists')->onDelete('restrict');
+            $table->string('full_name_uz', 255);
+            $table->string('full_name_ru', 255)->nullable();
+            $table->string('full_name_en', 255)->nullable();
+            $table->string('email', 255);
+            $table->string('phone', 15);
+            $table->boolean('is_active')->nullable()->default(true);
             $table->timestamps();
         });
     }

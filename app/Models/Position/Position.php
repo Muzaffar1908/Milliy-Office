@@ -3,6 +3,7 @@
 namespace App\Models\Position;
 
 use App\Models\Administration\Administration;
+use App\Models\Employee\Employee;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -25,6 +26,7 @@ class Position extends Model
 
     public function position()
     {
-        return $this->hasOne(Administration::class, 'pos_id', 'id');
+        return $this->hasOne(Employee::class, 'pos_id', 'id');
     }
+
 }

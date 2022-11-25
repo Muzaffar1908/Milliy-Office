@@ -10,8 +10,10 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">Administration</h5>
+                <h5 class="card-title">Employee</h5>
                 <a href="{{route('ad-create')}}"><button type="button" class="btn btn-primary">Add Administration</button></a>
+                <a href=""><button type="button" class="btn btn-primary">Add Division head</button></a>
+                <a href=""><button type="button" class="btn btn-primary">Add Employee</button></a>
             </div>
             <div class="card-body">
 

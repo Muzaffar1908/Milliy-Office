@@ -7,6 +7,7 @@ namespace App\Models;
 use App\Models\About\About;
 use App\Models\Administration\Administration;
 use App\Models\Department\Department;
+use App\Models\Employee\Employee;
 use App\Models\Gallery\Gallery;
 use App\Models\Main\Main;
 use App\Models\News\News;
@@ -87,10 +88,11 @@ class User extends Authenticatable
         return $this->hasOne(Administration::class, 'user_id', 'id');
     }
 
-    public function specialist()
+    public function employee()
     {
-        return $this->hasOne(Specialist::class, 'user_id', 'id');
+        return $this->hasOne(Employee::class, 'user_id', 'id');
     }
+
 
     /**
      * The attributes that should be hidden for serialization.

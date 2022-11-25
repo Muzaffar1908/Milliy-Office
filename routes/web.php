@@ -4,6 +4,7 @@ use App\Http\Controllers\About\AboutController;
 use App\Http\Controllers\Administration\AdministrationController;
 use App\Http\Controllers\Contact\ContactController;
 use App\Http\Controllers\Departament\DepartamentController;
+use App\Http\Controllers\Employee\EmployeeController;
 use App\Http\Controllers\Gallery\GalleryController;
 use App\Http\Controllers\News\NewsCategoryController;
 use App\Http\Controllers\HomeController;
@@ -148,14 +149,20 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function(){
         Route::post('/administration/isactive/{id}', 'is_active');
     });
 
-    Route::controller(SpecialistController::class)->group(function () {
-        Route::get('/specialist/', 'index')->name('sp-index');
-        Route::get('/specialist/create', 'create')->name('sp-create');
-        Route::post('/specialist/create', 'store')->name('sp-store');
-        Route::get('/specialist/edit/{id}', 'edit')->name('sp-edit');
-        Route::put('/specialist/edit', 'update')->name('sp-update');
-        Route::get('/specialist/delete', 'delete')->name('sp-delete');
-        Route::post('/specialist/isactive/{id}', 'is_active');
+    Route::controller(EmployeeController::class)->group(function () {
+        Route::get('/employee/', 'index')->name('emp-index');
+        Route::get('/employee/create', 'create')->name('emp-create');
+        Route::get('/employee/create_division', 'create_division')->name('emp-create_division');
+        Route::get('/employee/create_employee', 'create_employee')->name('emp-create_employee');
+        Route::post('/employee/create', 'store')->name('emp-store');
+        Route::post('/employee/create_division', 'store_division')->name('emp-store_division');
+        Route::post('/employee/create_employee', 'store_employee')->name('emp-store_employee');
+        Route::get('/employee/edit/{id}', 'edit')->name('ad-edit');
+        Route::get('/employee/edit_division/{id}', 'edit_division')->name('emp-edit_division');
+        Route::get('/employee/edit_employee/{id}', 'edit_employee')->name('ad-edit_employee');
+        // Route::put('/employee/edit', 'update')->name('ad-update');
+        // Route::get('/employee/delete', 'delete')->name('ad-delete');
+        // Route::post('/employee/isactive/{id}', 'is_active');
     });
 
 });

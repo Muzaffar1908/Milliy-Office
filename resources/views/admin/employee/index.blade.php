@@ -10,8 +10,10 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">Specialist</h5>
-                <a href="{{route('sp-create')}}"><button type="button" class="btn btn-primary">Add Specialist</button></a>
+                <h5 class="card-title">Employee</h5>
+                <a href="{{route('emp-create')}}"><button type="button" class="btn btn-primary">Add Administration</button></a>
+                <a href="{{route('emp-create_division')}}"><button type="button" class="btn btn-primary">Add Division head</button></a>
+                <a href="{{route('emp-create_employee')}}"><button type="button" class="btn btn-primary">Add Employee</button></a>
             </div>
             <div class="card-body">
 
@@ -49,28 +51,32 @@
                                 <thead>
                                     <tr>
                                         <th>№</th>
-                                        <th>Specialist Name</th>
-                                        <th>User Name</th>
+                                        <th>Full Name</th>
+                                        <th>Position</th>
+                                        <th>Division</th>
+                                        <th>Username</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($specialists as $specialist)
+                                    @foreach ($employees as $employee)
                                         <tr>
-                                            <td>{{($specialists->currentpage() - 1) * $specialists->perpage() + ($loop->index+1)}}</td>
-                                            <td>{{ $specialist->spe_name_uz }}</td>
-                                            <td>{{ $specialist->specialistTable->user_name }}</td>
+                                            <td>{{($employees->currentpage() - 1) * $employees->perpage() + ($loop->index+1)}}</td>
+                                            <td>{{ $employee->full_name_uz }}</td>
+                                            <td>{{ $employee->posTable->pos_name_uz }}</td>
+                                            <td>{{ $employee->depTable->pos_name_uz }}</td>
+                                            <td>{{ $employee->empuserTable->user_name }}</td>
                                             <td>
-                                                <form action="{{ asset('/admin/specialist/isactive/' . $specialist->id) }}"
+                                                <form action="{{ asset('/admin/employee/isactive/' . $employee->id) }}"
                                                     method="POST" enctype="multipart/form-data">
                                                     @csrf
                                                     <div class="sweetalert">
-                                                        <button type="button" class=" @if ($specialist->is_active == 1) btn-success @endif  @if ($specialist->is_active == 0) btn-danger @endif btn sweet-confirm btn-sm">
-                                                            @if ($specialist->is_active == 1)
+                                                        <button type="button" class=" @if ($employee->is_active == 1) btn-success @endif  @if ($employee->is_active == 0) btn-danger @endif btn sweet-confirm btn-sm">
+                                                            @if ($employee->is_active == 1)
                                                                 Active
                                                             @endif
-                                                            @if ($specialist->is_active == 0)
+                                                            @if ($employee->is_active == 0)
                                                                 Not Active
                                                             @endif
                                                         </button>
@@ -78,20 +84,20 @@
                                                 </form>
                                             </td>
                                             <td>
-                                                <div class="d-flex">
-                                                    <a href="{{route('sp-edit', $specialist->id)}}" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-                                                    <form action="{{route('sp-delete')}}" method="POST" enctype="multipart/form-data">
+                                                {{-- <div class="d-flex p-3">
+                                                    <a href="{{route('ad-edit', $employee->id)}}" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+                                                    <form action="{{route('ad-delete')}}" method="POST" enctype="multipart/form-data">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
                                                     </form>
-                                                </div>
+                                                </div> --}}
                                             </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
                             </table>
-                            {{$specialists->links()}}
+                            {{$employees->links()}}
                         </div>
                     </div>
                 </div>

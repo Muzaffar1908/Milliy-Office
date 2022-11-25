@@ -237,8 +237,8 @@
 						<ul aria-expanded="false">
 							<li><a href="{{route('d-index')}}">Divisions</a></li>
 							<li><a href="{{route('po-index')}}">Positions</a></li>
-							<li><a href="{{route('sp-index')}}">Specialist</a></li>
-							<li><a href="{{route('ad-index')}}">Administration</a></li>
+							<li><a href="{{route('ad-index')}}">Admin</a></li>
+							<li><a href="{{route('emp-index')}}">Employee</a></li>
 						</ul>
 				    </li>
                 </ul>

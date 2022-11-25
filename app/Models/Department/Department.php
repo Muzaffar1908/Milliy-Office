@@ -21,5 +21,10 @@ class Department extends Model
     public function departmentTable()
     {
         return $this->belongsTo(User::class, 'user_id');
-    } 
+    }
+    
+    public function departament()
+    {
+        return $this->hasOne(Department::class, 'dep_id', 'id');
+    }
 }

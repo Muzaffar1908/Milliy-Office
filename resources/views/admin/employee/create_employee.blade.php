@@ -64,6 +64,20 @@
                                     </div>
 
                                     <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Division Name
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <select name="dep_id" id="single-select" class="form-control">
+                                                <option selected>Choose your division name...</option>
+                                                @foreach($departments as $dep)
+                                                 <option value="{{$dep->id}}">{{$dep->dep_name_uz}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3 row">
                                         <label class="col-lg-4 col-form-label" for="validationCustom01">Position Name
                                             <span class="text-danger">*</span>
                                         </label>

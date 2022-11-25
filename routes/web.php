@@ -157,9 +157,9 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function(){
         Route::post('/employee/create', 'store')->name('emp-store');
         Route::post('/employee/create_division', 'store_division')->name('emp-store_division');
         Route::post('/employee/create_employee', 'store_employee')->name('emp-store_employee');
-        Route::get('/employee/edit/{id}', 'edit')->name('ad-edit');
-        Route::get('/employee/edit_division/{id}', 'edit_division')->name('emp-edit_division');
-        Route::get('/employee/edit_employee/{id}', 'edit_employee')->name('ad-edit_employee');
+        Route::get('/employee/edit/{id}', 'edit')->name('emp-edit');
+        Route::get('/employee/edit_division/{id}', 'edit_division')->name('emp-edit_division'); 
+        Route::get('/employee/edit_employee/{id}', 'edit_employee')->name('emp-edit_employee');
         // Route::put('/employee/edit', 'update')->name('ad-update');
         // Route::get('/employee/delete', 'delete')->name('ad-delete');
         // Route::post('/employee/isactive/{id}', 'is_active');

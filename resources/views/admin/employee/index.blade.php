@@ -64,8 +64,8 @@
                                         <tr>
                                             <td>{{($employees->currentpage() - 1) * $employees->perpage() + ($loop->index+1)}}</td>
                                             <td>{{ $employee->full_name_uz }}</td>
-                                            <td>{{ $employee->posTable->pos_name_uz }}</td>
-                                            <td>{{ $employee->depTable->pos_name_uz }}</td>
+                                            <td>{{ $employee->posTable->pos_name_uz ?? null }}</td>
+                                            <td>{{ $employee->depTable->dep_name_uz ?? null }}</td>
                                             <td>{{ $employee->empuserTable->user_name }}</td>
                                             <td>
                                                 <form action="{{ asset('/admin/employee/isactive/' . $employee->id) }}"
@@ -84,14 +84,14 @@
                                                 </form>
                                             </td>
                                             <td>
-                                                {{-- <div class="d-flex p-3">
-                                                    <a href="{{route('ad-edit', $employee->id)}}" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-                                                    <form action="{{route('ad-delete')}}" method="POST" enctype="multipart/form-data">
+                                                <div class="d-flex p-3">
+                                                    <a href="{{route('emp-edit', $employee->id)}}" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+                                                    {{-- <form action="{{route('emp-delete')}}" method="POST" enctype="multipart/form-data">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
-                                                    </form>
-                                                </div> --}}
+                                                    </form> --}}
+                                                </div>
                                             </td>
                                         </tr>
                                     @endforeach

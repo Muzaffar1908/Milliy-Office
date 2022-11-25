@@ -148,47 +148,7 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="col-sm-12">
-                                        <label class="col-form-label" for="validationCustom02">Title uz <span
-                                                class="text-danger">*</span>
-                                        </label>
-                                        <div class="">
-                                            <input type="text" name="title_uz" class="form-control" id="validationCustom02"  placeholder="Enter is Title uz" required value="{{old('title_uz')}}">
-                                            <div class="invalid-feedback">
-                                                Please enter a Title uz.
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <br>
-
-                                    <div class="col-sm-12">
-                                        <label class="col-form-label" for="validationCustom02">Title ru <span
-                                                class="text-danger">*</span>
-                                        </label>
-                                        <div class="">
-                                            <input type="text" name="title_ru" class="form-control" id="validationCustom02"  placeholder="Enter is Title ru" required value="{{old('title_ru')}}">
-                                            <div class="invalid-feedback">
-                                                Please enter a Title ru.
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <br>
-
-                                    <div class="col-sm-12">
-                                        <label class="col-form-label" for="validationCustom02">Title en <span
-                                                class="text-danger">*</span>
-                                        </label>
-                                        <div class="">
-                                            <input type="text" name="title_en" class="form-control" id="validationCustom02"  placeholder="Enter is Title en" required value="{{old('title_en')}}">
-                                            <div class="invalid-feedback">
-                                                Please enter a Title en.
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                      
                                     <br>
 
                                     <div class="col-sm-12">

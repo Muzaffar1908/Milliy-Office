@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('restrict');
-            $table->foreignId('pos_id')->constrained('positions')->onDelete('restrict');
-            $table->foreignId('dep_id')->constrained('departments')->onDelete('restrict');
+            $table->foreignId('pos_id')->nullable()->constrained('positions')->onDelete('restrict');
+            $table->foreignId('dep_id')->nullable()->constrained('departments')->onDelete('restrict');
             $table->string('user_image')->nullable()->default('upload/config/default_user.png');
             $table->string('full_name_uz');
             $table->string('full_name_ru')->nullable();
@@ -28,10 +28,10 @@ return new class extends Migration
             $table->string('title_ru', 255)->nullable();
             $table->string('title_en', 255)->nullable();
             $table->string('number_of_members', 255)->nullable();
-            $table->longText('biography_uz');
+            $table->longText('biography_uz')->nullable();
             $table->longText('biography_ru')->nullable();
             $table->longText('biography_en')->nullable();
-            $table->longText('responsibilities_uz');
+            $table->longText('responsibilities_uz')->nullable();
             $table->longText('responsibilities_ru')->nullable();
             $table->longText('responsibilities_en')->nullable();
             $table->boolean('is_active')->nullable()->default(true);

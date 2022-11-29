@@ -46,7 +46,8 @@
 
                                     <div class="mb-3">
                                         {{-- <label for="id"></label> --}}
-                                        <input type="hidden" name="id"  class="form-control" id="id" placeholder="Firstname enter" value="{{old('id')}}" />
+                                        <input type="hidden" name="id"  class="form-control" id="id" value="{{old('id')}}" />
+                                        <input type="hidden" name="slug" value="{{ old('slug') }}">
                                     </div>
 
                                     <div class="mb-3 row">

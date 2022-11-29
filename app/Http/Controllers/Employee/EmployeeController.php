@@ -67,10 +67,16 @@ class EmployeeController extends Controller
             $employees = new Employee;
         }
 
+        if ($inputs['slug'] == "") {
+            $employee_url = Str::slug($inputs['full_name_uz'], "-");
+        } else {
+            $employee_url = Str::slug($inputs['slug'], "-");
+        }
+
         $image = $request->file('user_image');
         if ($image) {
             $tmpFilePath = 'upload/employee/';
-            $hardPath =  Str::slug('employee', '-') . '-' . md5(time());
+            $hardPath =  Str::slug('employee', '-') . '-' .$employee_url. '-' . md5(time());
             $imagine = new \Imagine\Gd\Imagine();
             $image = $imagine->open($image);
             $thumbnail = $image->thumbnail(new \Imagine\Image\Box(550, 450));
@@ -103,7 +109,7 @@ class EmployeeController extends Controller
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $image_name = "/upload/employee/biography_image/uz_" . time() . $k . '.jpg';
+                    $image_name = "/upload/employee/biography_image/uz_" .$employee_url.'_'. time() . $k . '.jpg';
                     $path = public_path() . $image_name;
                     file_put_contents($path, $data);
                     $imagine = new \Imagine\Gd\Imagine();
@@ -130,7 +136,7 @@ class EmployeeController extends Controller
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $image_name = "/upload/employee/biography_image/ru_" . time() . $k . '.jpg';
+                    $image_name = "/upload/employee/biography_image/ru_" .$employee_url.'_'. time() . $k . '.jpg';
                     $path = public_path() . $image_name;
                     file_put_contents($path, $data);
                     $imagine = new \Imagine\Gd\Imagine();
@@ -159,7 +165,7 @@ class EmployeeController extends Controller
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $image_name = "/upload/employee/biography_image/en_" . time() . $k . '.jpg';
+                    $image_name = "/upload/employee/biography_image/en_" .$employee_url.'_'. time() . $k . '.jpg';
                     $path = public_path() . $image_name;
                     file_put_contents($path, $data);
                     $imagine = new \Imagine\Gd\Imagine();
@@ -185,7 +191,7 @@ class EmployeeController extends Controller
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $image_name = "/upload/employee/responsibilities_image/uz_" . time() . $k . '.jpg';
+                    $image_name = "/upload/employee/responsibilities_image/uz_" .$employee_url.'_'. time() . $k . '.jpg';
                     $path = public_path() . $image_name;
                     file_put_contents($path, $data);
                     $imagine = new \Imagine\Gd\Imagine();
@@ -212,7 +218,7 @@ class EmployeeController extends Controller
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $image_name = "/upload/employee/responsibilities_image/ru_" . time() . $k . '.jpg';
+                    $image_name = "/upload/employee/responsibilities_image/ru_" .$employee_url.'_'. time() . $k . '.jpg';
                     $path = public_path() . $image_name;
                     file_put_contents($path, $data);
                     $imagine = new \Imagine\Gd\Imagine();
@@ -241,7 +247,7 @@ class EmployeeController extends Controller
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $image_name = "/upload/employee/responsibilities_image/en_" . time() . $k . '.jpg';
+                    $image_name = "/upload/employee/responsibilities_image/en_" .$employee_url.'_'. time() . $k . '.jpg';
                     $path = public_path() . $image_name;
                     file_put_contents($path, $data);
                     $imagine = new \Imagine\Gd\Imagine();
@@ -610,10 +616,16 @@ class EmployeeController extends Controller
             $employees = new Employee;
         }
 
+        if ($inputs['slug'] == "") {
+            $employee_url = Str::slug($inputs['full_name_uz'], "-");
+        } else {
+            $employee_url = Str::slug($inputs['slug'], "-");
+        }
+
         $image = $request->file('user_image');
         if ($image) {
             $tmpFilePath = 'upload/employee/';
-            $hardPath =  Str::slug('employee', '-') . '-' . md5(time());
+            $hardPath =  Str::slug('employee', '-') . '-' .$employee_url.'-'. md5(time());
             $imagine = new \Imagine\Gd\Imagine();
             $image = $imagine->open($image);
             $thumbnail = $image->thumbnail(new \Imagine\Image\Box(550, 450));
@@ -646,7 +658,7 @@ class EmployeeController extends Controller
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $image_name = "/upload/employee/biography_image/uz_" . time() . $k . '.jpg';
+                    $image_name = "/upload/employee/biography_image/uz_" .$employee_url.'_'. time() . $k . '.jpg';
                     $path = public_path() . $image_name;
                     file_put_contents($path, $data);
                     $imagine = new \Imagine\Gd\Imagine();
@@ -673,7 +685,7 @@ class EmployeeController extends Controller
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $image_name = "/upload/employee/biography_image/ru_" . time() . $k . '.jpg';
+                    $image_name = "/upload/employee/biography_image/ru_" .$employee_url.'_'. time() . $k . '.jpg';
                     $path = public_path() . $image_name;
                     file_put_contents($path, $data);
                     $imagine = new \Imagine\Gd\Imagine();
@@ -702,7 +714,7 @@ class EmployeeController extends Controller
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $image_name = "/upload/employee/biography_image/en_" . time() . $k . '.jpg';
+                    $image_name = "/upload/employee/biography_image/en_" .$employee_url.'_'. time() . $k . '.jpg';
                     $path = public_path() . $image_name;
                     file_put_contents($path, $data);
                     $imagine = new \Imagine\Gd\Imagine();
@@ -728,7 +740,7 @@ class EmployeeController extends Controller
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $image_name = "/upload/employee/responsibilities_image/uz_" . time() . $k . '.jpg';
+                    $image_name = "/upload/employee/responsibilities_image/uz_" .$employee_url.'_'. time() . $k . '.jpg';
                     $path = public_path() . $image_name;
                     file_put_contents($path, $data);
                     $imagine = new \Imagine\Gd\Imagine();
@@ -755,7 +767,7 @@ class EmployeeController extends Controller
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $image_name = "/upload/employee/responsibilities_image/ru_" . time() . $k . '.jpg';
+                    $image_name = "/upload/employee/responsibilities_image/ru_" .$employee_url.'_'. time() . $k . '.jpg';
                     $path = public_path() . $image_name;
                     file_put_contents($path, $data);
                     $imagine = new \Imagine\Gd\Imagine();
@@ -784,7 +796,7 @@ class EmployeeController extends Controller
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $image_name = "/upload/employee/responsibilities_image/en_" . time() . $k . '.jpg';
+                    $image_name = "/upload/employee/responsibilities_image/en_" .$employee_url.'_'. time() . $k . '.jpg';
                     $path = public_path() . $image_name;
                     file_put_contents($path, $data);
                     $imagine = new \Imagine\Gd\Imagine();

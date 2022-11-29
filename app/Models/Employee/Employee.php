@@ -16,6 +16,7 @@ class Employee extends Model
       'user_id', 
       'pos_id',
       'dep_id',
+      'slug',
       'user_image',
       'full_name_uz',
       'full_name_ru',

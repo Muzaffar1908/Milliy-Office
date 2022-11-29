@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('restrict');
             $table->foreignId('cat_id')->constrained('news_categories')->onDelete('restrict');
+            $table->string('slug')->nullable();
             $table->string('title_uz');
             $table->string('title_ru')->nullable()->default('');
             $table->string('title_en')->nullable()->default('');

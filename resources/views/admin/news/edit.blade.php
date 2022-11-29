@@ -48,6 +48,7 @@
                                     <div class="mb-3">
                                         {{-- <label for="id"></label> --}}
                                         <input type="hidden" name="id"  class="form-control" id="id" placeholder="Firstname enter" value="{{$news->id}}" />
+                                        <input type="hidden" name="slug" value="{{ isset($news->slug) ? $news->slug : null }}">
                                     </div>
 
                                     <div class="mb-3 row">

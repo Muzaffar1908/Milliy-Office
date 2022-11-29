@@ -60,10 +60,16 @@ class NewsController extends Controller
             $news = new News;
         }
 
+        if ($inputs['slug'] == "") {
+            $news_url = Str::slug($inputs['title_uz'], "-");
+        } else {
+            $news_url = Str::slug($inputs['slug'], "-");
+        }
+
         $image = $request->file('news_image');
         if ($image) {
             $tmpFilePath = 'upload/news/';
-            $hardPath =  Str::slug('news', '-') . '-' . md5(time());
+            $hardPath =  Str::slug('news', '-') . '-' .$news_url. '-' . md5(time());
             $imagine = new \Imagine\Gd\Imagine();
             $image = $imagine->open($image);
             $thumbnail = $image->thumbnail(new \Imagine\Image\Box(450, 250));
@@ -89,7 +95,7 @@ class NewsController extends Controller
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $image_name = "/upload/news/description_image/uz_" . time() . $k . '.jpg';
+                    $image_name = "/upload/news/description_image/uz_" .$news_url.'_'. time() . $k . '.jpg';
                     $path = public_path() . $image_name;
                     file_put_contents($path, $data);
                     $imagine = new \Imagine\Gd\Imagine();
@@ -116,7 +122,7 @@ class NewsController extends Controller
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $image_name = "/upload/news/description_image/ru_" . time() . $k . '.jpg';
+                    $image_name = "/upload/news/description_image/ru_" .$news_url.'_'. time() . $k . '.jpg';
                     $path = public_path() . $image_name;
                     file_put_contents($path, $data);
                     $imagine = new \Imagine\Gd\Imagine();
@@ -145,7 +151,7 @@ class NewsController extends Controller
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $image_name = "/upload/news/description_image/en_" . time() . $k . '.jpg';
+                    $image_name = "/upload/news/description_image/en_" .$news_url.'_'. time() . $k . '.jpg';
                     $path = public_path() . $image_name;
                     file_put_contents($path, $data);
                     $imagine = new \Imagine\Gd\Imagine();
@@ -203,10 +209,16 @@ class NewsController extends Controller
             $news = new News;
         }
 
+        if ($inputs['slug'] == "") {
+            $news_url = Str::slug($inputs['title_uz'], "-");
+        } else {
+            $news_url = Str::slug($inputs['slug'], "-");
+        }
+
         $image = $request->file('news_image');
         if ($image) {
             $tmpFilePath = 'upload/news/';
-            $hardPath =  Str::slug('news', '-') . '-' . md5(time());
+            $hardPath =  Str::slug('news', '-') . '-' .$news_url. '-' . md5(time());
             $imagine = new \Imagine\Gd\Imagine();
             $image = $imagine->open($image);
             $thumbnail = $image->thumbnail(new \Imagine\Image\Box(450, 250));
@@ -232,7 +244,7 @@ class NewsController extends Controller
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $image_name = "/upload/news/description_image/uz_" . time() . $k . '.jpg';
+                    $image_name = "/upload/news/description_image/uz_" .$news_url.'_'. time() . $k . '.jpg';
                     $path = public_path() . $image_name;
                     file_put_contents($path, $data);
                     $imagine = new \Imagine\Gd\Imagine();
@@ -259,7 +271,7 @@ class NewsController extends Controller
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $image_name = "/upload/news/description_image/ru_" . time() . $k . '.jpg';
+                    $image_name = "/upload/news/description_image/ru_" .$news_url.'_'. time() . $k . '.jpg';
                     $path = public_path() . $image_name;
                     file_put_contents($path, $data);
                     $imagine = new \Imagine\Gd\Imagine();
@@ -288,7 +300,7 @@ class NewsController extends Controller
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $image_name = "/upload/news/description_image/en_" . time() . $k . '.jpg';
+                    $image_name = "/upload/news/description_image/en_" .$news_url.'_'. time() . $k . '.jpg';
                     $path = public_path() . $image_name;
                     file_put_contents($path, $data);
                     $imagine = new \Imagine\Gd\Imagine();

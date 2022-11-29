@@ -26,6 +26,7 @@
 	{{-- <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet"> --}}
 	{{-- <link href="{{asset('/admin/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet"> --}}
     <link href="{{asset('/admin/css/style.css')}}" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
 <body>
@@ -285,6 +286,52 @@
         Main wrapper end
     ***********************************-->
 
+	   
+<!-- <script> 
+    let btn = document.getElementById('btn');
+	
+	btn.addEventListener('click' ,()=>{
+		
+ Swal.fire({
+     title: 'Admin',
+     icon: 'question',
+     iconHtml: 'a',
+     confirmButtonText: 'HA',
+     cancelButtonText: 'YOQ',
+     showCancelButton: true,
+     showCloseButton: true
+ })
+	})
+</script> -->
+<script>
+        "use strict";
+      jQuery(function () {
+          $(".sweet-confirm").click(function (e) {
+              e.preventDefault();
+              let form = $(this).parents("form");
+              Swal.fire({
+                  title: "Siz haqiqatdan ham ushbu malumotni o\'chirmoqchimisiz",
+                  showDenyButton: true,
+                  icon: "warning",
+                  confirmButtonText: "Yes!",
+                  cancelButtonText: "No",
+              }).then((result) => {
+                  if (result.isConfirmed) {
+                      Swal.fire({
+                          icon: "success",
+                          title: "Your work has been changed",
+                          showConfirmButton: false,
+                      });
+                      setTimeout(() => {
+                          form.submit();
+                      }, 1001);
+                  }
+              });
+          });
+        
+      });
+      </script>
+	
     <!--**********************************
         Scripts
     ***********************************-->

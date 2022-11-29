@@ -18,8 +18,7 @@
                 <div class="mb-3 mb-lg-0">
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                                    aria-hidden="true">&times;</span></button>
+                            <button type="button" class="close" onclick="" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             <ul>
                                 @foreach ($errors->all() as $error)
                                 <li>{{ $error }}</li>
@@ -72,7 +71,7 @@
                                                     method="POST" enctype="multipart/form-data">
                                                     @csrf
                                                     <div class="sweetalert">
-                                                        <button type="button" class=" @if ($new->is_active == 1) btn-success @endif  @if ($new->is_active == 0) btn-danger @endif btn sweet-confirm btn-sm">
+                                                        <button type="button"   class=" @if ($new->is_active == 1) btn-success @endif  @if ($new->is_active == 0) btn-danger @endif btn sweet-confirm btn-sm">
                                                             @if ($new->is_active == 1)
                                                                 Active
                                                             @endif
@@ -89,7 +88,7 @@
                                                     <form action="{{route('n-delete')}}" method="POST" enctype="multipart/form-data">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
+                                                        <button class="btn btn-danger sweet-confirm shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
                                                     </form>
                                                 </div>
                                             </td>
@@ -112,3 +111,6 @@
  <script src="{{asset('//cdn.jsdelivr.net/npm/sweetalert2@11')}}"></script>  
  <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 @endsection
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+

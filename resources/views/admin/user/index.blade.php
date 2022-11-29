@@ -1,7 +1,8 @@
 @extends('admin.layout.index')
 
 @section('style')
-  <link href="{{asset('/admin/vendor/sweetalert2/dist/sweetalert2.min.css')}}" rel="stylesheet">    
+  <link href="{{asset('/admin/vendor/sweetalert2/dist/sweetalert2.min.css')}}" rel="stylesheet">  
+  <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">  
 @endsection
 
 @section('content')
@@ -74,7 +75,7 @@
                                                     method="POST" enctype="multipart/form-data">
                                                     @csrf
                                                     <div class="sweetalert">
-                                                        <button type="submit" class=" @if ($user->is_active == 1) btn-success @endif  @if ($user->is_active == 0) btn-danger @endif btn sweet-confirm btn-sm">
+                                                        <button type="button" class=" @if ($user->is_active == 1) btn-success @endif  @if ($user->is_active == 0) btn-danger @endif btn sweet-confirm btn-sm">
                                                             @if ($user->is_active == 1)
                                                                 Active
                                                             @endif
@@ -91,7 +92,7 @@
                                                     <form action="{{route('u-destroy', $user->id)}}" method="POST" enctype="multipart/form-data">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
+                                                        <button class="btn btn-danger sweet-confirm shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
                                                     </form>
                                                 </div>
                                             </td>
@@ -113,3 +114,5 @@
 <script src="{{asset('/admin/vendor/sweetalert2/dist/sweetalert2.min.js')}}"></script>
 
 @endsection
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

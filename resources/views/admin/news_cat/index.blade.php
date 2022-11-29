@@ -61,7 +61,7 @@
                                                     method="POST" enctype="multipart/form-data">
                                                     @csrf
                                                     <div class="sweetalert">
-                                                        <button type="submit" class=" @if ($cat->is_active == 1) btn-success @endif  @if ($cat->is_active == 0) btn-danger @endif btn sweet-confirm btn-sm">
+                                                        <button type="button" value=""  class=" @if ($cat->is_active == 1) btn-success @endif  @if ($cat->is_active == 0) btn-danger @endif btn sweet-confirm btn-sm">
                                                             @if ($cat->is_active == 1)
                                                                 Active
                                                             @endif

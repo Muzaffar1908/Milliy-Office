@@ -139,16 +139,6 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function(){
         Route::post('/position/isactive/{id}', 'is_active');
     });
 
-    Route::controller(AdministrationController::class)->group(function () {
-        Route::get('/administration/', 'index')->name('ad-index');
-        Route::get('/administration/create', 'create')->name('ad-create');
-        Route::post('/administration/create', 'store')->name('ad-store');
-        Route::get('/administration/edit/{id}', 'edit')->name('ad-edit');
-        Route::put('/administration/edit', 'update')->name('ad-update');
-        Route::get('/administration/delete', 'delete')->name('ad-delete');
-        Route::post('/administration/isactive/{id}', 'is_active');
-    });
-
     Route::controller(EmployeeController::class)->group(function () {
         Route::get('/employee/', 'index')->name('emp-index');
         Route::get('/employee/create', 'create')->name('emp-create');
@@ -160,7 +150,9 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function(){
         Route::get('/employee/edit/{id}', 'edit')->name('emp-edit');
         Route::get('/employee/edit_division/{id}', 'edit_division')->name('emp-edit_division'); 
         Route::get('/employee/edit_employee/{id}', 'edit_employee')->name('emp-edit_employee');
-        // Route::put('/employee/edit', 'update')->name('ad-update');
+        Route::put('/employee/edit', 'update')->name('emp-update');
+        Route::put('/employee/edit_division', 'update_division')->name('emp-update_division');
+        Route::put('/employee/edit_employee', 'update_employee')->name('emp-update_employee');
         // Route::get('/employee/delete', 'delete')->name('ad-delete');
         // Route::post('/employee/isactive/{id}', 'is_active');
     });

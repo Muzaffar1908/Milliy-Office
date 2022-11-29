@@ -85,7 +85,7 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex p-3">
-                                                    <a href="{{route('emp-edit', $employee->id)}}" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+                                                    <a href="{{route('emp-edit_employee', $employee->id)}}" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
                                                     {{-- <form action="{{route('emp-delete')}}" method="POST" enctype="multipart/form-data">
                                                         @csrf
                                                         @method('DELETE')

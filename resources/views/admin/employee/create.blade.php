@@ -82,7 +82,7 @@
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
-                                            <input type="file" name="image" class="form-control" id="validationCustom02"  placeholder="Image" required value="{{old('image')}}">
+                                            <input type="file" name="user_image" class="form-control" id="validationCustom02"  placeholder="Image" required value="{{old('user_image')}}">
                                             <div class="invalid-feedback">
                                                 Please enter a Image.
                                             </div>
@@ -142,7 +142,7 @@
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
-                                            <input type="text" name="phone" class="form-control" id="validationCustom02"  placeholder="Enter is Phone Number" required value="{{old('email')}}">
+                                            <input type="text" name="phone" class="form-control" id="validationCustom02"  placeholder="Enter is Phone Number" required value="{{old('phone')}}">
                                             <div class="invalid-feedback">
                                                 Please enter a Phone Number.
                                             </div>

@@ -50,7 +50,7 @@ class User extends Authenticatable
 
     public function news()
     {
-        return $this->hasOne(News::class, 'user_id', 'id');
+        return $this->hasMany(News::class, 'user_id', 'id');
     }
 
     public function main()

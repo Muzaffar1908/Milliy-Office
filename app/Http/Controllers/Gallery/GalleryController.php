@@ -159,7 +159,7 @@ class GalleryController extends Controller
 
     public function delete($id)
     {
-        $gallery = Gallery::findOrFail($id);
+        $gallery = Gallery::find($id);
         // $image_path = public_path() . '/upload/gallery$gallery/' . $gallery->image . '-d.png';
         // unlink($image_path);
         $gallery->delete();

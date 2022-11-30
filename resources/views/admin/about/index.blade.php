@@ -84,7 +84,7 @@
                                             <td>
                                                 <div class="d-flex p-3">
                                                     <a href="{{route('a-edit', $about->id)}}" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-                                                    <form action="{{route('a-delete')}}" method="POST" enctype="multipart/form-data">
+                                                    <form action="{{route('a-delete', $about->id)}}" method="POST" enctype="multipart/form-data">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>

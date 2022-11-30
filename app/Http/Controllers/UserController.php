@@ -153,11 +153,11 @@ class UserController extends Controller
         }
     }
 
-    public function destroy($id)
+    public function delete($id)
     {
         $user = User::find($id);
-        $hardPath = public_path() . '/upload/user/' . $user->user_image . '_phone_300.png';
-        unlink($hardPath);
+        // $hardPath = public_path() . '/upload/user/' . $user->user_image . '_phone_300.png';
+        // unlink($hardPath);
         $user->delete();
         return redirect('admin/user')->with('warning', 'USER TABLES DELETED');
     }

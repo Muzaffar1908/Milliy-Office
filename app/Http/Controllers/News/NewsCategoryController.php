@@ -7,7 +7,6 @@ use App\Models\News\NewsCategory;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Event\ViewEvent;
@@ -124,7 +123,7 @@ class NewsCategoryController extends Controller
 
     public function delete($id)
     {
-        $news_cat = NewsCategory::findOrFail($id);
+        $news_cat = NewsCategory::find($id);
         $news_cat->delete();
         return redirect('admin/news_cat')->with('warning', 'ALL_SUCCESSFUL_DELETED');
     }

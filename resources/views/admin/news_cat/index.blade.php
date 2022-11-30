@@ -61,7 +61,7 @@
                                                     method="POST" enctype="multipart/form-data">
                                                     @csrf
                                                     <div class="sweetalert">
-                                                        <button type="button" value=""  class=" @if ($cat->is_active == 1) btn-success @endif  @if ($cat->is_active == 0) btn-danger @endif btn sweet-confirm btn-sm">
+                                                        <button type="button" class=" @if ($cat->is_active == 1) btn-success @endif  @if ($cat->is_active == 0) btn-danger @endif btn sweet-confirm btn-sm">
                                                             @if ($cat->is_active == 1)
                                                                 Active
                                                             @endif
@@ -75,10 +75,10 @@
                                             <td>
                                                 <div class="d-flex">
                                                     <a href="{{ route('c-edit', $cat->id) }}" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-                                                    <form action="{{route('c-delete', $cat->id)}}" method="POST" enctype="multipart/form-data">
+                                                    <form action="{{ route('c-delete',  [ 'id'=> $cat->id ] )}}" method="POST" enctype="multipart/form-data">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
+                                                        <button type="submit" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
                                                     </form>
                                                 </div>
                                             </td>

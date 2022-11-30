@@ -327,10 +327,9 @@ class NewsController extends Controller
 
     public function delete($id)
     {
-        // $del=News::where('id',$id)->first();
-        $news = News::findOrFail($id);
-        $image_path = public_path() . '/upload/news/' . $news->user_image . '-d.png';
-        unlink($image_path);
+        $news = News::find($id);
+        // $image_path = public_path() . '/upload/news/' . $news->user_image . '-d.png';
+        // unlink($image_path);
         $news->delete();
         return redirect('admin/news')->with('warning', 'NEWS TABLES DELETED');
     }

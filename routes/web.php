@@ -44,7 +44,7 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function(){
         Route::post('/user/create', 'store')->name('u-store');
         Route::get('/user/edit/{id}', 'edit')->name('u-edit');
         Route::put('/user/edit', 'update')->name('u-update');
-        Route::get('/user/destroy', 'destroy')->name('u-destroy');
+        Route::delete('/user/delete/{id}', 'delete')->name('u-delete');
         Route::post('/user/isactive/{id}', 'is_active');
 
     });
@@ -55,7 +55,7 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function(){
         Route::post('/news_cat/create', 'store')->name('c-store');
         Route::get('/news_cat/edit/{id}', 'edit')->name('c-edit');
         Route::put('/news_cat/edit', 'update')->name('c-update');
-        Route::get('/news_cat/delete', 'delete')->name('c-delete');
+        Route::delete('/news_cat/delete/{id}', 'delete')->name('c-delete');
         Route::post('/news_cat/isactive/{id}', 'is_active');
     });
 
@@ -65,7 +65,7 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function(){
         Route::post('/news/create', 'store')->name('n-store');
         Route::get('/news/edit/{id}', 'edit')->name('n-edit');
         Route::put('/news/edit', 'update')->name('n-update');
-        Route::get('/news/delete', 'delete')->name('n-delete');
+        Route::delete('/news/delete/{id}', 'delete')->name('n-delete');
         Route::post('/news/isactive/{id}', 'is_active');
     });
 
@@ -75,7 +75,7 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function(){
         Route::post('/main/create', 'store')->name('m-store');
         Route::get('/main/edit/{id}', 'edit')->name('m-edit');
         Route::put('/main/edit', 'update')->name('m-update');
-        Route::get('/main/delete', 'delete')->name('m-delete');
+        Route::delete('/main/delete/{id}', 'delete')->name('m-delete');
         Route::post('/main/isactive/{id}', 'is_active');
     });
 
@@ -85,7 +85,7 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function(){
         Route::post('/about/create', 'store')->name('a-store');
         Route::get('/about/edit/{id}', 'edit')->name('a-edit');
         Route::put('/about/edit', 'update')->name('a-update');
-        Route::get('/about/delete', 'delete')->name('a-delete');
+        Route::delete('/about/delete/{id}', 'delete')->name('a-delete');
         Route::post('/about/isactive/{id}', 'is_active');
     });
 
@@ -95,7 +95,7 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function(){
         Route::post('/partner/create', 'store')->name('p-store');
         Route::get('/partner/edit/{id}', 'edit')->name('p-edit');
         Route::put('/partner/edit', 'update')->name('p-update');
-        Route::get('/partner/delete', 'delete')->name('p-delete');
+        Route::delete('/partner/delete/{id}', 'delete')->name('p-delete');
         Route::post('/partner/isactive/{id}', 'is_active');
     });
 
@@ -105,7 +105,7 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function(){
         Route::post('/contact/create', 'store')->name('ct-store');
         Route::get('/contact/edit/{id}', 'edit')->name('ct-edit');
         Route::put('/contact/edit', 'update')->name('ct-update');
-        // Route::get('/partner/delete', 'delete')->name('p-delete');
+        Route::delete('/partner/delete/{id}', 'delete')->name('p-delete');
         Route::post('/contact/isactive/{id}', 'is_active');
     });
 
@@ -115,7 +115,7 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function(){
         Route::post('/gallery/create', 'store')->name('g-store');
         Route::get('/gallery/edit/{id}', 'edit')->name('g-edit');
         Route::put('/gallery/edit', 'update')->name('g-update');
-        Route::get('/gallery/delete', 'delete')->name('g-delete');
+        Route::delete('/gallery/delete/{id}', 'delete')->name('g-delete');
         Route::post('/gallery/isactive/{id}', 'is_active');
     });
 
@@ -125,7 +125,7 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function(){
         Route::post('/departament/create', 'store')->name('d-store');
         Route::get('/departament/edit/{id}', 'edit')->name('d-edit');
         Route::put('/departament/edit', 'update')->name('d-update');
-        Route::get('/departament/delete', 'delete')->name('d-delete');
+        Route::delete('/departament/delete/{id}', 'delete')->name('d-delete');
         Route::post('/departament/isactive/{id}', 'is_active');
     });
 
@@ -135,7 +135,7 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function(){
         Route::post('/position/create', 'store')->name('po-store');
         Route::get('/position/edit/{id}', 'edit')->name('po-edit');
         Route::put('/position/edit', 'update')->name('po-update');
-        Route::get('/position/delete', 'delete')->name('po-delete');
+        Route::delete('/position/delete/{id}', 'delete')->name('po-delete');
         Route::post('/position/isactive/{id}', 'is_active');
     });
 

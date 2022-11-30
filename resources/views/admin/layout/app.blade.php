@@ -233,7 +233,7 @@
 					<li class="has-menu">
 						<a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-381-networking"></i>
-							<span class="nav-text">Ministry</span>
+							<span class="nav-text">National Office</span>
 				        </a>
 						<ul aria-expanded="false">
 							<li><a href="{{route('d-index')}}">Divisions</a></li>

@@ -112,8 +112,8 @@ class GalleryController extends Controller
     {
         $data = $request->except(array('_token'));
         $rule = array(
-            'image',
-            'youtobe_id',
+            // 'image' => 'required',
+            'youtobe_id' => 'required',
         );
         
         $validator = Validator::make($data, $rule);

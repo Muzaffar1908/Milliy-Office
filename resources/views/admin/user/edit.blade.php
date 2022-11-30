@@ -151,6 +151,7 @@
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="form-file">
+                                                <img src="{{asset('/upload/user/' .$user->user_image.'_phone_300.png')}}" class="p-2" alt="img" with="100px" height="60px">
                                                 <input type="file" name="user_image" class="form-file-input form-control">
                                             </div>
                                         </div>

@@ -303,56 +303,57 @@
  })
 	})
 </script> -->
-<script>
-        "use strict";
-      jQuery(function () {
-          $(".sweet-confirm").click(function (e) {
-              e.preventDefault();
-              let form = $(this).parents("form");
-              Swal.fire({
-                  title: "Siz ushbu ma`lumotni statusini o`zgartirmoqchimisiz?",
-                  showDenyButton: true,
-                  icon: "warning",
-                  confirmButtonText: "Yes!",
-                  cancelButtonText: "No",
-              }).then((result) => {
-                  if (result.isConfirmed) {
-                      Swal.fire({
-                          icon: "success",
-                          title: "Your work has been changed",
-                          showConfirmButton: false,
-                      });
-                      setTimeout(() => {
-                          form.submit();
-                      }, 1001);
-                  }
-              });
-          });
-          $(".sweetalert2").click(function (e) {
-              e.preventDefault();
-              let form = $(this).parents("form");
-              Swal.fire({
-                  title: "Siz ushbu ma`lumotni  o`zgartirmoqchimisiz?",
-                  showDenyButton: true,
-                  icon: "warning",
-                  confirmButtonText: "Yes!",
-                  cancelButtonText: "No",
-              }).then((result) => {
-                  if (result.isConfirmed) {
-                      Swal.fire({
-                          icon: "success",
-                          title: "Your work has been changed",
-                          showConfirmButton: false,
-                      });
-                      setTimeout(() => {
-                          form.submit();
-                      }, 1001);
-                  }
-              });
-          });
-        
-      });
-      </script>
+
+	<script>
+			"use strict";
+		jQuery(function () {
+			$(".sweet-confirm").click(function (e) {
+				e.preventDefault();
+				let form = $(this).parents("form");
+				Swal.fire({
+					title: "Siz ushbu ma`lumotni statusini o`zgartirmoqchimisiz?",
+					showDenyButton: true,
+					icon: "warning",
+					confirmButtonText: "Yes!",
+					cancelButtonText: "No",
+				}).then((result) => {
+					if (result.isConfirmed) {
+						Swal.fire({
+							icon: "success",
+							title: "Your work has been changed",
+							showConfirmButton: false,
+						});
+						setTimeout(() => {
+							form.submit();
+						}, 1001);
+					}
+				});
+			});
+			$(".sweetalert2").click(function (e) {
+				e.preventDefault();
+				let form = $(this).parents("form");
+				Swal.fire({
+					title: "Siz ushbu ma`lumotni  o`zgartirmoqchimisiz?",
+					showDenyButton: true,
+					icon: "warning",
+					confirmButtonText: "Yes!",
+					cancelButtonText: "No",
+				}).then((result) => {
+					if (result.isConfirmed) {
+						Swal.fire({
+							icon: "success",
+							title: "Your work has been changed",
+							showConfirmButton: false,
+						});
+						setTimeout(() => {
+							form.submit();
+						}, 1001);
+					}
+				});
+			});
+			
+		});
+	</script>
 	
     <!--**********************************
         Scripts

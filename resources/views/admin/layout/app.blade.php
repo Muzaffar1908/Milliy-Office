@@ -310,7 +310,7 @@
               e.preventDefault();
               let form = $(this).parents("form");
               Swal.fire({
-                  title: "Siz haqiqatdan ham ushbu malumotni o\'chirmoqchimisiz",
+                  title: "Siz ushbu ma`lumotni statusini o`zgartirmoqchimisiz?",
                   showDenyButton: true,
                   icon: "warning",
                   confirmButtonText: "Yes!",

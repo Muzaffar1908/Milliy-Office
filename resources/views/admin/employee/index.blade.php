@@ -54,7 +54,7 @@
                                         <th>Full Name</th>
                                         <th>Position</th>
                                         <th>Division</th>
-                                        <th>Username</th>
+                                        <th>User Name</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>

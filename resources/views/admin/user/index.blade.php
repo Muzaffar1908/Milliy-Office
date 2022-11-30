@@ -92,7 +92,7 @@
                                                     <form action="{{route('u-delete', $user->id)}}" method="POST" enctype="multipart/form-data">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button class="btn btn-danger sweet-confirm shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
+                                                        <button class="btn btn-danger sweetalert2 shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
                                                     </form>
                                                 </div>
                                             </td>

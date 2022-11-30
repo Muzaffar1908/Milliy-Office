@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('middle_name', 255)->nullable();
             $table->string('user_name', 255)->nullable();
             $table->integer('gender')->unsigned()->nullable()->default(1);
-            $table->string('user_image')->nullable()->default('upload/config/default_user.png');
+            $table->string('user_image')->nullable()->default('user');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('phone', 15)->unique()->nullable();

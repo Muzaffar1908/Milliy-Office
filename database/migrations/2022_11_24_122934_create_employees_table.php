@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('pos_id')->nullable()->constrained('positions')->onDelete('restrict');
             $table->foreignId('dep_id')->nullable()->constrained('departments')->onDelete('restrict');
             $table->string('slug')->nullable();
-            $table->string('user_image')->nullable()->default('upload/config/default_user.png');
+            $table->string('user_image')->nullable()->default('employee');
             $table->string('full_name_uz');
             $table->string('full_name_ru')->nullable();
             $table->string('full_name_en')->nullable();

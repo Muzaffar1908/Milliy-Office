@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('title_uz');
             $table->string('title_ru')->nullable()->default('');
             $table->string('title_en')->nullable()->default('');
-            $table->string('news_image')->nullable()->default('upload/config/default_user.png');
+            $table->string('news_image')->nullable()->default('news');
             $table->longText('description_uz')->nullable();
             $table->longText('description_ru')->nullable();
             $table->longText('description_en')->nullable();

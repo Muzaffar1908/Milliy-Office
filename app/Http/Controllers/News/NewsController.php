@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
 class NewsController extends Controller
@@ -324,14 +325,16 @@ class NewsController extends Controller
             return redirect('admin/news');
         }
     }
-
     public function delete($id)
     {
-        $news = News::find($id);
-        // $image_path = public_path() . '/upload/news/' . $news->user_image . '-d.png';
-        // unlink($image_path);
-        $news->delete();
-        return redirect('admin/news')->with('warning', 'NEWS TABLES DELETED');
+        // $news = News::find($id);
+          $news=News::find($id);
+        // $image_path = public_path() . '/upload/news$news/' . $news->image  ;
+        // if(File::exists($image_path)){
+        //     unlink($image_path);
+        //    }     
+          $news->delete();
+           return redirect('admin/news')->with('warning', 'ALL_SUCCESSFUL_DELETED');
     }
 }
 

@@ -157,6 +157,9 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function(){
         // Route::post('/employee/isactive/{id}', 'is_active');
     });
 
+    $url = route('profile', ['id' => 1]);
+
+
 });
 
 

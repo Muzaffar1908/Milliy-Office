@@ -25,7 +25,7 @@
 	{{-- <link href="{{asset('/admin/vendor/owl-carousel/owl.carousel.css')}}" rel="stylesheet"> --}}
 	{{-- <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet"> --}}
 	{{-- <link href="{{asset('/admin/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet"> --}}
-    <link href="{{asset('/admin/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('admin/css/style.css')}}" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
@@ -286,24 +286,6 @@
         Main wrapper end
     ***********************************-->
 
-	   
-<!-- <script> 
-    let btn = document.getElementById('btn');
-	
-	btn.addEventListener('click' ,()=>{
-		
- Swal.fire({
-     title: 'Admin',
-     icon: 'question',
-     iconHtml: 'a',
-     confirmButtonText: 'HA',
-     cancelButtonText: 'YOQ',
-     showCancelButton: true,
-     showCloseButton: true
- })
-	})
-</script> -->
-
 	<script>
 			"use strict";
 		jQuery(function () {
@@ -359,8 +341,8 @@
         Scripts
     ***********************************-->
     <!-- Required vendors -->
-    <script src="{{asset('/admin/vendor/global/global.min.js')}}"></script>
-	<script src="{{asset('/admin/vendor/bootstrap-select/dist/js/bootstrap-select.min.js')}}"></script>
+    <script src="{{asset('admin/vendor/global/global.min.js')}}"></script>
+	<script src="{{asset('admin/vendor/bootstrap-select/dist/js/bootstrap-select.min.js')}}"></script>
 	{{-- <script src="{{asset('/admin/vendor/chart.js/Chart.bundle.min.js')}}"></script> --}}
 	{{-- <script src="{{asset('/admin/vendor/owl-carousel/owl.carousel.js')}}"></script> --}}
 	
@@ -370,10 +352,10 @@
 	<!-- Dashboard 1 -->
 	{{-- <script src="{{asset('/admin/js/dashboard/dashboard-1.js')}}"></script> --}}
 	
-    <script src="{{asset('/admin/js/custom.min.js')}}"></script>
-	<script src="{{asset('/admin/js/deznav-init.js')}}"></script>
+    <script src="{{asset('admin/js/custom.min.js')}}"></script>
+	<script src="{{asset('admin/js/deznav-init.js')}}"></script>
 	{{-- <script src="{{asset('/admin/js/demo.js')}}"></script> --}}
-    <script src="{{asset('/admin/js/styleSwitcher.js')}}"></script>
+    <script src="{{asset('admin/js/styleSwitcher.js')}}"></script>
 
 	@yield('scripts')
 
@@ -382,8 +364,8 @@
     {{-- <script src="{{asset('//cdn.jsdelivr.net/npm/sweetalert2@11')}}"></script> --}}
 
 
-	 <script src="{{ asset('/admin/vendor/tinymce/tinymce.min.js')}}"></script>
-
+     <script src="{{ asset('admin/vendor/tinymce/tinymce.min.js')}}"></script>
+    
 
 	<script>
         var useDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;

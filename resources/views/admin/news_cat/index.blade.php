@@ -1,5 +1,10 @@
 @extends('admin.layout.index')
 
+@section('styles')
+  <link href="{{asset('admin/vendor/sweetalert2/dist/sweetalert2.min.css')}}" rel="stylesheet">  
+  <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">  
+@endsection
+
 @section('content')
 
     <div class="container">
@@ -94,3 +99,10 @@
     </div>
 
 @endsection
+
+@section('scripts')
+ <script src="{{asset('admin/vendor/sweetalert2/dist/sweetalert2.min.js')}}"></script>
+ <script src="{{asset('//cdn.jsdelivr.net/npm/sweetalert2@11')}}"></script>  
+ <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+@endsection
+

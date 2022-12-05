@@ -365,6 +365,8 @@
 
 
      <script src="{{ asset('admin/vendor/tinymce/tinymce.min.js')}}"></script>
+
+	 <script src="{{ asset('/tinymce/tinymce.min.js')}}"></script>
     
 
 	<script>

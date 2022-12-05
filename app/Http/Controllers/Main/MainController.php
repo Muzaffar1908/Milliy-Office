@@ -44,7 +44,6 @@ class MainController extends Controller
             'logo_title_uz' => 'required|string|max:255',
             'title_uz' => 'required|string|max:255',
             'description_uz' => 'required',
-            'background_image' => 'required|mimes:png,jpg,jpeg',
             'youtobe_id' => 'required|string',
         );
 
@@ -74,9 +73,6 @@ class MainController extends Controller
         }
 
         $main->user_id = $inputs['user_id'];
-        $main->logo_title_uz = $inputs['logo_title_uz'];
-        $main->logo_title_ru = $inputs['logo_title_ru'];
-        $main->logo_title_en = $inputs['logo_title_en'];
         $main->title_uz = $inputs['title_uz'];
         $main->title_ru = $inputs['title_ru'];
         $main->title_en = $inputs['title_en'];
@@ -223,9 +219,6 @@ class MainController extends Controller
         }
 
         $main->user_id = $inputs['user_id'];
-        $main->logo_title_uz = $inputs['logo_title_uz'];
-        $main->logo_title_ru = $inputs['logo_title_ru'];
-        $main->logo_title_en = $inputs['logo_title_en'];
         $main->title_uz = $inputs['title_uz'];
         $main->title_ru = $inputs['title_ru'];
         $main->title_en = $inputs['title_en'];

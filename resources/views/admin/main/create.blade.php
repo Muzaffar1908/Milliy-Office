@@ -64,42 +64,6 @@
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Logo Title uz <span
-                                                class="text-danger">*</span>
-                                        </label>
-                                        <div class="col-lg-6">
-                                            <input type="text" name="logo_title_uz" class="form-control" id="validationCustom02"  placeholder="Enter is Logo Title uz" required value="{{old('logo_title_uz')}}">
-                                            <div class="invalid-feedback">
-                                                Please enter a Logo Title uz.
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Logo Title ru <span
-                                                class="text-danger">*</span>
-                                        </label>
-                                        <div class="col-lg-6">
-                                            <input type="text" name="logo_title_ru" class="form-control" id="validationCustom02"  placeholder="Enter is Logo Title ru" required value="{{old('logo_title_ru')}}">
-                                            <div class="invalid-feedback">
-                                                Please enter a Logo Title ru.
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Logo Title en <span
-                                                class="text-danger">*</span>
-                                        </label>
-                                        <div class="col-lg-6">
-                                            <input type="text" name="logo_title_en" class="form-control" id="validationCustom02"  placeholder="Enter is Logo Title en" required value="{{old('logo_title_en')}}">
-                                            <div class="invalid-feedback">
-                                                Please enter a Logo Title en.
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="mb-3 row">
                                         <label class="col-lg-4 col-form-label" for="validationCustom02">Title uz <span
                                                 class="text-danger">*</span>
                                         </label>

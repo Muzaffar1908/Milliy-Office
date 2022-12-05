@@ -12,9 +12,6 @@ class Main extends Model
 
     protected $fillable = [
       'user_id',
-      'logo_title_uz',
-      'logo_title_ru',
-      'logo_title_en',
       'title_uz',
       'title_ru',
       'title_en',

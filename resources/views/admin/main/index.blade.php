@@ -50,7 +50,6 @@
                                     <tr>
                                         <th>№</th>
                                         <th>Title</th>
-                                        <th>Logo title</th>
                                         <th>Youtobe ID</th>
                                         <th>Background Image</th>
                                         <th>Username</th>
@@ -63,7 +62,6 @@
                                         <tr>
                                             <td>{{($mains->currentpage() - 1) * $mains->perpage() + ($loop->index+1)}}</td>
                                             <td>{{ $main->title_uz }}</td>
-                                            <td>{{ $main->logo_title_uz }}</td>
                                             <td>{{ $main->youtobe_id }}</td>
                                             <td>
                                                 <img src="{{asset('/upload/main/' .$main->background_image.'_big_1920.png')}}" class="p-2" alt="img" with="100px" height="60px">

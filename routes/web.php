@@ -5,6 +5,7 @@ use App\Http\Controllers\Administration\AdministrationController;
 use App\Http\Controllers\Contact\ContactController;
 use App\Http\Controllers\Departament\DepartamentController;
 use App\Http\Controllers\Employee\EmployeeController;
+use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\Gallery\GalleryController;
 use App\Http\Controllers\News\NewsCategoryController;
 use App\Http\Controllers\HomeController;
@@ -29,9 +30,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
+
+
+// Frontend start !!!
+
+Route::controller(PageController::class)->group(function () {
+    Route::get('/', 'index')->name('page-index');
+});
+
+
+// Frontend end !!!
+
+
+
+// Backend start !!!
 
 Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function(){
     Route::get('/dashboard/', function () {
@@ -159,6 +174,9 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function(){
 
 
 });
+
+// Backend end !!!
+
 
 
 Auth::routes();

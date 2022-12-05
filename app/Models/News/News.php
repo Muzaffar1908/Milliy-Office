@@ -40,7 +40,7 @@ class News extends Model
       return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function news_cat()
+    public function news_catTable()
     {
       return $this->belongsTo(NewsCategory::class, 'cat_id');
     }

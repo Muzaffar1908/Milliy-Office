@@ -17,6 +17,7 @@ use App\Http\Controllers\Position\PositionController;
 use App\Http\Controllers\Specialist\SpecialistController;
 use App\Http\Controllers\UserController;
 use App\Models\Position\Position;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/welcome', function () {
     return view('welcome');
+});
+
+Route::get('locale/{locale}', function ($locale) {
+    Session::put('locale', $locale);
+    return redirect()->back();
 });
 
 

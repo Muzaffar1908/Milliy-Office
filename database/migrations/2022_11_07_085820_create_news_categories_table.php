@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('news_categories', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('restrict');
-            $table->string('title_uz');
-            $table->string('title_ru')->nullable()->default('');
-            $table->string('title_en')->nullable()->default('');
+            $table->string('category_name_uz');
+            $table->string('category_name_ru')->nullable()->default('');
+            $table->string('category_name_en')->nullable()->default('');
             $table->boolean('is_active')->nullable()->default(true);
             $table->timestamps();
         });

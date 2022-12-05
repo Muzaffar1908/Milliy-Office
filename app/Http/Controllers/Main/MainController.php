@@ -14,7 +14,7 @@ class MainController extends Controller
 {
     public function index()
     {
-        $mains = Main::select('id', 'user_id', 'title_uz', 'logo_title_uz', 'youtobe_id', 'background_image', 'is_active', 'created_at')->orderBy('created_at', 'DESC')->paginate(5);
+        $mains = Main::select('id', 'user_id', 'title_uz', 'youtobe_id', 'background_image', 'is_active', 'created_at')->orderBy('created_at', 'DESC')->paginate(5);
         $users = User::select('id','user_name', 'created_at')->get();
         return view('admin.main.index', compact('mains', 'users'));
     }
@@ -41,7 +41,6 @@ class MainController extends Controller
     {
         $data = $request->except(array('_token'));
         $rule = array(
-            'logo_title_uz' => 'required|string|max:255',
             'title_uz' => 'required|string|max:255',
             'description_uz' => 'required',
             'youtobe_id' => 'required|string',
@@ -186,7 +185,6 @@ class MainController extends Controller
     {
         $data = $request->except(array('_token'));
         $rule = array(
-            'logo_title_uz' => 'required|string|max:255',
             'title_uz' => 'required|string|max:255',
             'description_uz' => 'required',
             // 'background_image' => 'required|mimes:png,jpg,jpeg',

@@ -12,9 +12,9 @@ class NewsCategory extends Model
 
     protected $fillable = [
       'user_id',
-      'title_uz',
-      'title_ru',
-      'title_en',
+      'category_name_uz',
+      'category_name_ru',
+      'category_name_en',
       'is_active',
     ];
 

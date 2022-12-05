@@ -61,7 +61,7 @@
                                         <tr>
                                             <td>{{($news->currentpage() - 1) * $news->perpage() + ($loop->index+1)}}</td>
                                             <td>{{ $new->title_uz }}</td>
-                                            <td>{{ $new->news_cat->title_uz }}</td>
+                                            <td>{{ $new->news_catTable->category_name_uz }}</td>
                                             <td>{{ $new->usersNews->user_name }}</td>
                                             <td>
                                                 <img src="{{asset('/upload/news/' .$new->news_image.'_thumbnail_450.png')}}" class="p-2" alt="img" with="100px" height="60px">

@@ -6,13 +6,13 @@
         <div class="d-flex flex-column wow fadeInUp animated" data-wow-delay="1s">
             <h1 class="mt-5 wow fadeInUp animated" data-wow-delay="1s">{{$mains->title}}</h1>
             <p>{{strip_tags($mains->long_text)}}</p>
-            <button>Batafsil</button>
+            <button>{{__('words.Read more')}}</button>
         </div>
         <div class="wow fadeInLeft animated" data-wow-delay="0.1s" data-wow-duration="1s">
             <div class="process-box-layout1 color-one">
             <a href="{{'https://www.youtube.com/watch?v='.$mains->youtobe_id}}" class="icon-box-link play-btn">
                 <div class="icon-box">
-                    <img src="https://img.youtube.com/vi/{{$mains->youtobe_id}}/" width="1000px" alt="">
+                    <img src="https://img.youtube.com/vi/{{$mains->youtobe_id}}/hqdefault.jpg" width="1000px" alt="">
                     <div class="player"></div>
                 </div>
             </a>
@@ -23,81 +23,35 @@
     <!-- News Section Area Start -->
     <section id="Yangiliklar">
         <div class="container-fluid">
-            <h2 class="titlee wow fadeInUp animated" data-wow-delay="0.3s" data-wow-duration="1s">News</h2>
+            <h2 class="titlee wow fadeInUp animated" data-wow-delay="0.3s" data-wow-duration="1s">{{__('News')}}</h2>
         <div class="topHeadlines">
             <div class="left">
             <div class="img" id="breakingImg" ></div>
             <div class="text" id="breakingNews">
                 <div class="news-title">
-                <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, quasi.</h2>
+                <h2>{{$news->title}}</h2>
                 </div>
                 <div class="description">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nemo assumenda veritatis veniam dolor fuga.
+                    {{strip_tags($news->long_text)}}
                 </div>
             </div>
-            <button>Barcha yangiliklar</button>
+            <button>{{__('All news')}}</button>
             </div>
             <div class="right">
             <div class="topNews">
                 <div class="news">
-                <div class="img"></div>
-                <div class="text">
-                    <div class="news-title">
-                    <h2>Lorem ipsum dolor, sit amet consectetur adipisicing.</h2>
-                    <span class="date mt-4 d-flex">
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <span class="mx-2">01.01.2022</span>
-                    </span>
+                  <div class="img"></div>
+                    <div class="text">
+                        {{-- @foreach ($news as $new)
+                            <div class="news-title">
+                                <h2>{{$new->title}}</h2>
+                                <span class="date mt-4 d-flex">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <span class="mx-2">{{$new->created_at}}</span>
+                                </span>
+                            </div>
+                        @endforeach --}}
                     </div>
-                </div>
-                </div>
-                <div class="news">
-                <div class="img"></div>
-                <div class="text">
-                    <div class="news-title">
-                    <h2>Lorem ipsum dolor, sit amet consectetur adipisicing.</h2>
-                    <span class="date mt-4 d-flex">
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <span class="mx-2">01.01.2022</span>
-                    </span>
-                    </div>
-                </div>
-                </div>
-                <div class="news">
-                <div class="img"></div>
-                <div class="text">
-                    <div class="news-title">
-                    <h2>Lorem ipsum dolor, sit amet consectetur adipisicing.</h2>
-                    <span class="date mt-4 d-flex">
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <span class="mx-2">01.01.2022</span>
-                    </span>
-                    </div>
-                </div>
-                </div>
-                <div class="news">
-                <div class="img"></div>
-                <div class="text">
-                    <div class="news-title">
-                    <h2>Lorem ipsum dolor, sit amet consectetur adipisicing.</h2>
-                    <span class="date mt-4 d-flex">
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <span class="mx-2">01.01.2022</span>
-                    </span>
-                    </div>
-                </div>
-                </div>
-                <div class="news">
-                <div class="img"></div>
-                <div class="text">
-                    <div class="news-title">
-                    <h2>Lorem ipsum dolor, sit amet consectetur adipisicing.</h2>
-                    <span class="date mt-4 d-flex">
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <span class="mx-2">01.01.2022</span>
-                    </span>
-                    </div>
-                </div>
                 </div>
             </div>
             </div>

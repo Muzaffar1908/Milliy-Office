@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <title>Innowatsiyalar Milliy Ofisi
+  <title>{{__('words.National Office of Innovation')}}
   </title>
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="{{asset('/frontend/images/logo/logo.png')}}">
@@ -36,24 +36,24 @@
                       <div class="d-flex">
                         <a href="index.html" class="pt-4 logo logo-light wow fadeInUp animated" data-wow-delay="0.20s"><img src="{{asset('/frontend/images/logo/MOOFFICIAL.png')}}" alt="Logo" width="100"></a>
                       <a href="index.html" class="logo logo-light wow fadeInUp animated" data-wow-delay="0.40s">
-                        <h1 class="pt-4 mt-1 mx-2 text-white">Innovatsiyalarni joriy <br> qilish va  Texnalogiyalar <br> transferi milliy ofisi</h1>
+                        <h1 class="pt-4 mt-1 mx-2 text-white">{{__('words.National Office of')}} <br> {{__('words.Innovation and')}} <br> {{__('words.Technology Transfer')}}</h1>
                       </a>
                       </div>
                       <div class="d-flex">
                         <a href="index.html" class="logo logo-dark"><img src="/frontend/images/logo/MOOFFICIAL.png" alt="Logo" width="100"></a>
                       <a href="index.html" class="logo logo-dark">
-                        <h1 class="text-white pt-1 mx-2">Innovatsiyalarni joriy <br> qilish va  Texnalogiyalar <br> transferi milliy ofisi</h1>
+                        <h1 class="text-white pt-1 mx-2">{{__('words.National Office of')}} <br> {{__('words.Innovation and')}} <br> {{__('words.Technology Transfer')}}</h1>
                       </a>
                       </div>
                     </div>
                     <nav id="dropdown" class="template-main-menu menu-text-light">
                       <ul class="menu">
                         <li class="menu-item menu-item-has-children wow fadeInUp animated" data-wow-delay="0.8s">
-                          <a href="#home" class="inno-cursor">Bosh sahifa</a>
+                          <a href="#home" class="inno-cursor">{{__('words.Home')}}</a>
                         </li>
 
                         <li class="menu-item menu-item-has-children wow fadeInUp animated" data-wow-delay="0.8s">
-                          <a class="d-flex align-items-center justify-content-center inno-cursor">Tuzilma
+                          <a class="d-flex align-items-center justify-content-center inno-cursor">{{__('words.Structure')}}
                             <i class="fa fa-angle-down mx-2"></i>
                           </a>
                           <ul class="sub-menu menu-w">
@@ -67,7 +67,7 @@
                         </li>
 
                         <li class="menu-item menu-item-has-children wow fadeInUp animated" data-wow-delay="0.8s">
-                          <a class="d-flex align-items-center justify-content-center inno-cursor">Faoliyat
+                          <a class="d-flex align-items-center justify-content-center inno-cursor">{{__('words.Activity')}}
                             <i class="fa fa-angle-down mx-2"></i>
                           </a>
                           <ul class="sub-menu menu-w">
@@ -80,7 +80,7 @@
                         </li>
 
                         <li class="menu-item menu-item-has-children wow fadeInUp animated" data-wow-delay="0.8s">
-                          <a class="d-flex align-items-center justify-content-center inno-cursor">Ochiq ma'lumotlar
+                          <a class="d-flex align-items-center justify-content-center inno-cursor">{{__('words.Open data')}}
                             <i class="fa fa-angle-down mx-2"></i>
                           </a>
                           <ul class="sub-menu menu-w">
@@ -95,7 +95,7 @@
                         </li>
 
                         <li class="menu-item menu-item-has-children wow fadeInUp animated" data-wow-delay="0.8s">
-                          <a class="d-flex align-items-center justify-content-center inno-cursor">Matbout markazi
+                          <a class="d-flex align-items-center justify-content-center inno-cursor">{{__('words.The press center')}}
                             <i class="fa fa-angle-down mx-2"></i>
                           </a>
                           <ul class="sub-menu menu-w">
@@ -109,21 +109,64 @@
                         </li>
 
                         <li class="menu-item menu-item-has-children wow fadeInUp animated" data-wow-delay="0.8s">
-                          <a href="#contact" class="inno-cursor">Bog'lanish</a>
+                          <a href="#contact" class="inno-cursor">{{__('words.Connection')}}</a>
                         </li>
 
-                        <li class="menu-item menu-item-has-children wow fadeInUp animated" data-wow-delay="0.9s">
-                          <a class="d-flex align-items-center justify-content-center inno-cursor">
-                            <img class="mx-2" width="30" src="{{asset('/frontend/images/languages/uz.png')}}" alt="">
-                            <i class="fa fa-angle-down"></i>
-                          </a>
-                          <ul class="sub-menu menu-color">
-                            <li class="menu-item text-center"><a href="#"><img class="mx-2" width="30" src="{{asset('/frontend/images/languages/en.png')}}" alt=""></a>
-                            </li>
-                            <li class="menu-item text-center"><a href="#"><img class="mx-2" width="30" src="{{asset('/frontend/images/languages/ru.png')}}" alt=""></a>
-                            </li>
-                          </ul>
-                        </li>
+                        @php $locale = session()->get('locale'); @endphp
+
+                        <ul>
+                          @switch($locale)
+                              @case('uz')
+                                <li class="menu-item menu-item-has-children wow fadeInUp animated" data-wow-delay="0.9s">
+                                  <a href="{{ URL::to('locale/uz') }}" class="d-flex align-items-center justify-content-center inno-cursor">
+                                    <img class="mx-2" width="30" src="{{asset('/frontend/images/languages/uz.png')}}" alt="">
+                                    <i class="fa fa-angle-down"></i>
+                                  </a>
+                                  <ul class="sub-menu menu-color">
+                                    <li class="menu-item text-center"><a href="{{ URL::to('locale/en') }}"><img class="mx-2" width="30" src="{{asset('/frontend/images/languages/en.png')}}" alt=""></a>
+                                    </li>
+                                    <li class="menu-item text-center"><a href="{{ URL::to('locale/ru') }}"><img class="mx-2" width="30" src="{{asset('/frontend/images/languages/ru.png')}}" alt=""></a>
+                                    </li>
+                                  </ul>
+                                </li>
+                                  @break
+
+                              @case('en')
+                                  <li class="menu-item menu-item-has-children wow fadeInUp animated" data-wow-delay="0.9s">
+                                    <a href="{{ URL::to('locale/en') }}" class="d-flex align-items-center justify-content-center inno-cursor">
+                                      <img class="mx-2" width="30" src="{{asset('/frontend/images/languages/en.png')}}" alt="">
+                                      <i class="fa fa-angle-down"></i>
+                                    </a>
+                                    <ul class="sub-menu menu-color">
+                                      <li class="menu-item text-center"><a href="{{ URL::to('locale/ru') }}"><img class="mx-2" width="30" src="{{asset('/frontend/images/languages/ru.png')}}" alt=""></a>
+                                      </li>
+                                      <li class="menu-item text-center"><a href="{{ URL::to('locale/uz') }}"><img class="mx-2" width="30" src="{{asset('/frontend/images/languages/uz.png')}}" alt=""></a>
+                                      </li>
+                                    </ul>
+                                  </li>
+                                  @break
+
+                              @case('ru')
+                                  <li class="menu-item menu-item-has-children wow fadeInUp animated" data-wow-delay="0.9s">
+                                    <a href="{{ URL::to('locale/ru') }}" class="d-flex align-items-center justify-content-center inno-cursor">
+                                      <img class="mx-2" width="30" src="{{asset('/frontend/images/languages/ru.png')}}" alt="">
+                                      <i class="fa fa-angle-down"></i>
+                                    </a>
+                                    <ul class="sub-menu menu-color">
+                                      <li class="menu-item text-center"><a href="{{ URL::to('locale/uz') }}"><img class="mx-2" width="30" src="{{asset('/frontend/images/languages/uz.png')}}" alt=""></a>
+                                      </li>
+                                      <li class="menu-item text-center"><a href="{{ URL::to('locale/en') }}"><img class="mx-2" width="30" src="{{asset('/frontend/images/languages/en.png')}}" alt=""></a>
+                                      </li>
+                                    </ul>
+                                  </li>
+                                 @break    
+
+                              @default
+                                  
+                          @endswitch
+
+                        </ul>
+
                       </ul>
                     </nav>
                   </div>
@@ -138,7 +181,7 @@
         <div class="mean-bar d-flex">
           <div class="d-flex">
             <a href="#"><img src="{{asset('/frontend/images/logo//logo.png')}}" alt="Logo" width="65"></a>
-            <a href="#"><h6 class="mt-1 mx-2 text-dark">Innovatsiyalarni joriy <br> qilish va  Texnalogiyalar <br> transferi milliy ofisi</h6></a>
+            <a href="#"><h6 class="mt-1 mx-2 text-dark">{{__('words.National Office of')}} <br> {{__('words.Innovation and')}} <br> {{__('words.Technology Transfer')}}</h6></a>
           </div>
           <span class="sidebarBtn">
             <span class="bar"></span>
@@ -152,19 +195,19 @@
             <nav class="menu-main-primary-container">
               <ul class="menu">
                 <li class="list active-link">
-                  <a class="animation" href="#">Tuzilma</a>
+                  <a class="animation" href="#">{{__('words.Structure')}}</a>
                 </li>
                 <li class="list">
-                  <a class="animation" href="#">Faoliyat</a>
+                  <a class="animation" href="#">{{__('words.Activity')}}</a>
                 </li>
                 <li class="list">
-                  <a class="animation" href="#">Ochiq ma'lumotlar</a>
+                  <a class="animation" href="#">{{__('words.Open data')}}</a>
                 </li>
                 <li class="list">
-                  <a class="animation" href="#">Matbout markazi</a>
+                  <a class="animation" href="#">{{__('words.The press center')}}</a>
                 </li>
                 <li class="list">
-                  <a class="animation" href="#">Bog'lanish</a>
+                  <a class="animation" href="#">{{__('words.Connection')}}</a>
                 </li>
               </ul>
             </nav>

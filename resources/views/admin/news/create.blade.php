@@ -72,7 +72,7 @@
                                             <select name="cat_id" id="single-select" class="form-control">
                                                 <option selected>Choose your news category name...</option>
                                                 @foreach($news_cat as $cat)
-                                                 <option value="{{$cat->id}}">{{$cat->title_uz}}</option>
+                                                 <option value="{{$cat->id}}">{{$cat->category_name_uz}}</option>
                                                 @endforeach
                                             </select>
                                         </div>

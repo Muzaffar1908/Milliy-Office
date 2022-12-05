@@ -16,7 +16,7 @@ class NewsCategoryController extends Controller
     public function index()
     {
         $lang = \App::getLocale();
-        $news_cat = NewsCategory::orderBy('created_at', 'DESC')->paginate(10);
+        $news_cat = NewsCategory::select('id', 'user_id', 'category_name_uz', 'is_active', 'created_at')->orderBy('created_at', 'DESC')->paginate(10);
         $users = User::select('id','user_name', 'created_at')->get();
         return view('admin.news_cat.index', compact('news_cat', 'users'));
     }
@@ -43,7 +43,7 @@ class NewsCategoryController extends Controller
     {
         $data = $request->except(array('_token'));
         $rule = array(
-         'title_uz' => 'required|string|max:255',
+         'category_name_uz' => 'required|string|max:255',
         );
 
         $validator = Validator::make($data, $rule);
@@ -61,9 +61,9 @@ class NewsCategoryController extends Controller
         }
 
         $news_cats->user_id = $inputs['user_id'];
-        $news_cats->title_uz = $inputs['title_uz'];
-        $news_cats->title_ru = $inputs['title_ru'] ?? null;
-        $news_cats->title_en = $inputs['title_en'] ?? null;
+        $news_cats->category_name_uz = $inputs['category_name_uz'];
+        $news_cats->category_name_ru = $inputs['category_name_ru'] ?? null;
+        $news_cats->category_name_en = $inputs['category_name_en'] ?? null;
         $news_cats->save();
 
         if (!empty($inputs['id'])) {
@@ -89,7 +89,7 @@ class NewsCategoryController extends Controller
     {
         $data = $request->except(array('_token'));
         $rule = array(
-         'title_uz' => 'required|string|max:255',
+         'category_name_uz' => 'required|string|max:255',
         );
 
         $validator = Validator::make($data, $rule);
@@ -107,9 +107,9 @@ class NewsCategoryController extends Controller
         }
 
         $news_cats->user_id = $inputs['user_id'];
-        $news_cats->title_uz = $inputs['title_uz'];
-        $news_cats->title_ru = $inputs['title_ru'] ?? null;
-        $news_cats->title_en = $inputs['title_en'] ?? null;
+        $news_cats->category_name_uz = $inputs['category_name_uz'];
+        $news_cats->category_name_ru = $inputs['category_name_ru'] ?? null;
+        $news_cats->category_name_en = $inputs['category_name_en'] ?? null;
         $news_cats->save();
 
         if (!empty($inputs['id'])) {

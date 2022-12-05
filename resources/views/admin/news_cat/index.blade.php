@@ -49,7 +49,7 @@
                                 <thead>
                                     <tr>
                                         <th>№</th>
-                                        <th>Title</th>
+                                        <th>Category Name</th>
                                         <th>Username</th>
                                         <th>Status</th>
                                         <th>Action</th>
@@ -59,7 +59,7 @@
                                     @foreach ($news_cat as $cat)
                                         <tr>
                                             <td>{{($news_cat->currentpage() - 1) * $news_cat->perpage() + ($loop->index+1)}}</td>
-                                            <td>{{ $cat->title_uz }}</td>
+                                            <td>{{ $cat->category_name_uz }}</td>
                                             <td>{{ $cat->usersTable->user_name }}</td>
                                             <td class="p-2">
                                                 <form action="{{ asset('/admin/news_cat/isactive/' . $cat->id) }}"

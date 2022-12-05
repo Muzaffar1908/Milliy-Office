@@ -17,6 +17,7 @@ class NewsController extends Controller
     public function index()
     {
         $news = News::select('id', 'user_id', 'cat_id', 'title_uz', 'news_image', 'is_active', 'created_at')->orderBy('created_at', 'DESC')->paginate(10);
+        $news_cat = NewsCategory::select('id', 'category_name_uz', 'created_at')->get();
         $users = User::select('id','user_name', 'created_at')->get();
         return view('admin.news.index', compact('news', 'users'));
     }
@@ -36,7 +37,7 @@ class NewsController extends Controller
     public function create()
     {
         $users = User::select('id','user_name', 'created_at')->get();
-        $news_cat = NewsCategory::get();
+        $news_cat = NewsCategory::select('id', 'category_name_uz', 'created_at')->get();
         return view('admin.news.create', compact('users', 'news_cat'));
     }
 
@@ -181,7 +182,7 @@ class NewsController extends Controller
     {
         $news = News::find($id);
         $users = User::select('id','user_name', 'created_at')->get();
-        $news_cat = NewsCategory::select('id', 'user_id', 'title_uz')->get();
+        $news_cat = NewsCategory::select('id', 'user_id', 'category_name_uz')->get();
         return view('admin.news.edit', [
             'news' => $news,
             'users' => $users,

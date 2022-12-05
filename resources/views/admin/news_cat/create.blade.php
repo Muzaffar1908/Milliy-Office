@@ -73,37 +73,37 @@
                             <div class="row">
 
                                 <div class="col-sm-4">
-                                    <label class="col-form-label" for="validationCustom02">Title uz <span
+                                    <label class="col-form-label" for="validationCustom02">Category Name uz <span
                                             class="text-danger">*</span>
                                     </label>
                                     <div>
-                                        <input type="text" name="title_uz" class="form-control" id="validationCustom02"  placeholder="Enter is Title uz" required value="{{old('title_uz')}}">
+                                        <input type="text" name="category_name_uz" class="form-control" id="validationCustom02"  placeholder="Enter is Category Name uz" required value="{{old('category_name_uz')}}">
                                         <div class="invalid-feedback">
-                                            Please enter a Title uz.
+                                            Please enter a Category Name uz.
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-4">
-                                    <label class="col-form-label" for="validationCustom02">Title ru <span
+                                    <label class="col-form-label" for="validationCustom02">Category Name ru <span
                                             class="text-danger">*</span>
                                     </label>
                                     <div>
-                                        <input type="text" name="title_ru" class="form-control" id="validationCustom02"  placeholder="Enter is Title ru" required value="{{old('title_ru')}}">
+                                        <input type="text" name="category_name_ru" class="form-control" id="validationCustom02"  placeholder="Enter is Category Name ru" required value="{{old('category_name_ru')}}">
                                         <div class="invalid-feedback">
-                                            Please enter a Title ru.
+                                            Please enter a Category Name ru.
                                         </div>
                                     </div>
                                 </div>
     
                                 <div class="col-sm-4">
-                                    <label class="col-form-label" for="validationCustom02">Title en <span
+                                    <label class="col-form-label" for="validationCustom02">Category Name en <span
                                             class="text-danger">*</span>
                                     </label>
                                     <div>
-                                        <input type="text" name="title_en" class="form-control" id="validationCustom02"  placeholder="Enter is Title en" required value="{{old('title_en')}}">
+                                        <input type="text" name="category_name_en" class="form-control" id="validationCustom02"  placeholder="Enter is Category Name en" required value="{{old('category_name_en')}}">
                                         <div class="invalid-feedback">
-                                            Please enter a Title en.
+                                            Please enter a Category Name en.
                                         </div>
                                     </div>
                                 </div>

@@ -96,6 +96,11 @@ return [
     */
 
     'fallback_locale' => 'en',
+    'locales' => [
+        'uz' => 'Uzbek',
+        'en' => 'English',
+        'ru' => 'Russian'
+    ],    
 
     /*
     |--------------------------------------------------------------------------
@@ -212,4 +217,4 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
-];
+    ];

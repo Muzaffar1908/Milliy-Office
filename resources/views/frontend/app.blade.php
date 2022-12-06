@@ -42,7 +42,7 @@
                 <div class="news">
                   <div class="img"></div>
                     <div class="text">
-                        {{-- @foreach ($news as $new)
+                        @foreach ($news_show as $new)
                             <div class="news-title">
                                 <h2>{{$new->title}}</h2>
                                 <span class="date mt-4 d-flex">
@@ -50,7 +50,7 @@
                                     <span class="mx-2">{{$new->created_at}}</span>
                                 </span>
                             </div>
-                        @endforeach --}}
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -63,152 +63,86 @@
     <!-- Platform Section Area Start -->
     <section id="platform">
         <div class="container-fluid">
-          <h2 class="titlee wow fadeInUp animated" data-wow-delay="0.3s" data-wow-duration="1s">Platforms</h2>
+          <h2 class="titlee wow fadeInUp animated" data-wow-delay="0.3s" data-wow-duration="1s">{{__('words.Platforms')}}</h2>
           <div class="slider">
-            <!-- <div class="slide d-flex justify-content-between">
-              <div class="slide-content">
-                <h1>International Week Of <br> <span>Innovative</span> Ideas 2022 </h1>
-                <h3>innoweek.uz</h3>
-                <button> Batafsil </button>
-              </div>
-              <div class="platform-container d-flex justify-content-center align-items-center">
-                <div class="mac">
-                  <img src="./images/devices/mac.png" width="473px"  alt="">
-                  <div class="imgBx"></div>
-                </div>
-                <div class="macBook">
-                  <img src="./images/devices/macbook.png" width="430px" alt="">
-                  <div class="imgBx"></div>
-                </div>
-                <div class="iphone">
-                  <img src="./images/devices/iphone.png" width="170px" alt="">
-                  <div class="imgBx"></div>
-                </div>
-              </div>
-            </div> -->
-    
-        <!-- Первый слайд -->
-        <div class="item">
-        <div class="slide d-flex justify-content-between">
-                <div class="slide-content">
-                    <h1>International Week Of <br> <span>Innovative</span> Ideas 2021 </h1>
-                    <h3>innoweek.uz</h3>
-                    <button> Batafsil </button>
-                </div>
-                <div class="platform-container d-flex justify-content-center align-items-center">
-                    <div class="mac">
-                    <img src="{{asset('/frontend/images/devices/mac.png')}}" width="473px"  alt="">
-                    <div class="imgBx"></div>
-                    </div>
-                    <div class="macBook">
-                    <img src="{{asset('/frontend/images/devices/macbook.png')}}" width="430px" alt="">
-                    <div class="imgBx"></div>
-                    </div>
-                    <div class="iphone">
-                    <img src="{{asset('/frontend/images/devices/iphone.png')}}" width="170px" alt="">
-                    <div class="imgBx"></div>
+                <!-- Первый слайд -->
+                <div class="item">
+                    <div class="slide d-flex justify-content-between">
+                            <div class="slide-content">
+                                <h1>International Week Of <br> <span>Innovative</span> Ideas 2021 </h1>
+                                <h3>innoweek.uz</h3>
+                                <button> Batafsil </button>
+                            </div>
+                            <div class="platform-container d-flex justify-content-center align-items-center">
+                                <div class="mac">
+                                    <img src="{{asset('/frontend/images/devices/mac.png')}}" width="473px"  alt="">
+                                    <div class="imgBx"></div>
+                                </div>
+                                <div class="macBook">
+                                    <img src="{{asset('/frontend/images/devices/macbook.png')}}" width="430px" alt="">
+                                    <div class="imgBx"></div>
+                                </div>
+                                <div class="iphone">
+                                    <img src="{{asset('/frontend/images/devices/iphone.png')}}" width="170px" alt="">
+                                    <div class="imgBx"></div>
+                                </div>
+                            </div>
                     </div>
                 </div>
-                </div>
-        </div>
 
-        <!-- Второй слайд -->
-        <div class="item">
-        <div class="slide d-flex justify-content-between">
-            <div class="slide-content">
-            <h1>International Week Of <br> <span>Innovative</span> Ideas 2022 </h1>
-            <h3>innoweek.uz</h3>
-            <button> Batafsil </button>
-            </div>
-            <div class="platform-container d-flex justify-content-center align-items-center">
-            <div class="mac">
-                <img src="{{asset('/frontend/images/devices/mac.png')}}" width="473px"  alt="">
-                <div class="imgBx"></div>
-            </div>
-            <div class="macBook">
-                <img src="{{asset('/frontend/images/devices/macbook.png')}}" width="430px" alt="">
-                <div class="imgBx"></div>
-            </div>
-            <div class="iphone">
-                <img src="{{asset('/frontend/images/devices/iphone.png')}}" width="170px" alt="">
-                <div class="imgBx"></div>
-            </div>
-            </div>
-        </div>
-        </div>
+                <!-- Второй слайд -->
+                <div class="item">
+                    <div class="slide d-flex justify-content-between">
+                            <div class="slide-content">
+                            <h1>International Week Of <br> <span>Innovative</span> Ideas 2022 </h1>
+                            <h3>innoweek.uz</h3>
+                            <button> Batafsil </button>
+                        </div>
+                        <div class="platform-container d-flex justify-content-center align-items-center">
+                            <div class="mac">
+                                <img src="{{asset('/frontend/images/devices/mac.png')}}" width="473px"  alt="">
+                                <div class="imgBx"></div>
+                            </div>
+                            <div class="macBook">
+                                <img src="{{asset('/frontend/images/devices/macbook.png')}}" width="430px" alt="">
+                                <div class="imgBx"></div>
+                            </div>
+                            <div class="iphone">
+                                <img src="{{asset('/frontend/images/devices/iphone.png')}}" width="170px" alt="">
+                                <div class="imgBx"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Третий слайд -->
-        <div class="item">
-        <div class="slide d-flex justify-content-between">
-            <div class="slide-content">
-            <h1>International Week Of <br> <span>Innovative</span> Ideas 2023 </h1>
-            <h3>innoweek.uz</h3>
-            <button> Batafsil </button>
-            </div>
-            <div class="platform-container d-flex justify-content-center align-items-center">
-            <div class="mac">
-                <img src="{{asset('/frontend/images/devices/mac.png')}}" width="473px"  alt="">
-                <div class="imgBx"></div>
-            </div>
-            <div class="macBook">
-                <img src="{{asset('/frontend/images/devices/macbook.png')}}" width="430px" alt="">
-                <div class="imgBx"></div>
-            </div>
-            <div class="iphone">
-                <img src="{{asset('/frontend/images/devices/iphone.png')}}" width="170px" alt="">
-                <div class="imgBx"></div>
-            </div>
-            </div>
-        </div>
-        </div>
+                <!-- Третий слайд -->
+                <div class="item">
+                    <div class="slide d-flex justify-content-between">
+                        <div class="slide-content">
+                            <h1>International Week Of <br> <span>Innovative</span> Ideas 2023 </h1>
+                            <h3>innoweek.uz</h3>
+                            <button> Batafsil </button>
+                        </div>
+                        <div class="platform-container d-flex justify-content-center align-items-center">
+                            <div class="mac">
+                                <img src="{{asset('/frontend/images/devices/mac.png')}}" width="473px"  alt="">
+                                <div class="imgBx"></div>
+                            </div>
+                            <div class="macBook">
+                                <img src="{{asset('/frontend/images/devices/macbook.png')}}" width="430px" alt="">
+                                <div class="imgBx"></div>
+                            </div>
+                            <div class="iphone">
+                                <img src="{{asset('/frontend/images/devices/iphone.png')}}" width="170px" alt="">
+                                <div class="imgBx"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Кнопки-стрелочки -->
-        <a class="previous" onclick="previousSlide()">&#10094;</a>
-        <a class="next" onclick="nextSlide()">&#10095;</a>
-
-            <!-- <div class="slide d-flex justify-content-between">
-              <div class="slide-content">
-                <h1>International Week Of <br> <span>Innovative</span> Ideas 2022 </h1>
-                <h3>innoweek.uz</h3>
-                <button> Batafsil </button>
-              </div>
-              <div class="platform-container d-flex justify-content-center align-items-center">
-                <div class="mac">
-                  <img src="./images/devices/mac.png" width="473px"  alt="">
-                  <div class="imgBx"></div>
-                </div>
-                <div class="macBook">
-                  <img src="./images/devices/macbook.png" width="430px" alt="">
-                  <div class="imgBx"></div>
-                </div>
-                <div class="iphone">
-                  <img src="./images/devices/iphone.png" width="170px" alt="">
-                  <div class="imgBx"></div>
-                </div>
-              </div>
-            </div> -->
-
-            <!-- <div class="slide d-flex justify-content-between">
-              <div class="slide-content">
-                <h1>International Week Of <br> <span>Innovative</span> Ideas 2022 </h1>
-                <h3>innoweek.uz</h3>
-                <button> Batafsil </button>
-              </div>
-              <div class="platform-container d-flex justify-content-center align-items-center">
-                <div class="mac">
-                  <img src="./images/devices/mac.png" width="473px"  alt="">
-                  <div class="imgBx"></div>
-                </div>
-                <div class="macBook">
-                  <img src="./images/devices/macbook.png" width="430px" alt="">
-                  <div class="imgBx"></div>
-                </div>
-                <div class="iphone">
-                  <img src="./images/devices/iphone.png" width="170px" alt="">
-                  <div class="imgBx"></div>
-                </div>
-              </div>
-            </div> -->
+                <!-- Кнопки-стрелочки -->
+                <a class="previous" onclick="previousSlide()">&#10094;</a>
+                <a class="next" onclick="nextSlide()">&#10095;</a>
           </div>
         </div>
     </section>
@@ -217,7 +151,7 @@
     <!-- Services Section Area Start -->
     <section id="services">
     <div class="section-heading style-four">
-        <h2 class="titlee wow fadeInUp animated" data-wow-delay="0.2s" data-wow-duration="1s">Xizmatlar</h2>
+        <h2 class="titlee wow fadeInUp animated" data-wow-delay="0.2s" data-wow-duration="1s">{{__('words.Services')}}</h2>
     </div>
     <div class="row">
         <div class="column">
@@ -281,34 +215,39 @@
     <!-- Gallery Section Area Start -->
     <div id="gallery" class="gallery-wrap-layout3">
         <div class="section-heading style-four">
-           <h2 class="titlee wow fadeInUp animated" data-wow-delay="0.2s" data-wow-duration="1s">Gallery</h2>
+           <h2 class="titlee wow fadeInUp animated" data-wow-delay="0.2s" data-wow-duration="1s">{{__('words.Gallery')}}</h2>
         </div>
         <div class="container-fluid ps-3 pe-3">
             <div class="row">
-                <div class="col-xl-3 col-md-4 col-sm-6 col-12">
-                    <div class="gallery-box-layout3 has-animation">
-                        <a href="{{asset('/frontend/images/background.png')}}" class="rt-mfp-gallery-item"><img class="galery-img" src="{{asset('/frontend/images/background.png')}}" alt="Gallery" width="900" height="780"></a>
-                    </div>
+                    @foreach($galleries as $gall)
+                        <div class="col-xl-3 col-md-4 col-sm-6 col-12">
+                            <div class="gallery-box-layout3 has-animation">
+                                <a href="{{asset('/upload/gallery/' . $gall->image.'_big_1920.png')}}" class="rt-mfp-gallery-item"><img class="galery-img" src="{{asset('/upload/gallery/' . $gall->image.'_thumbnail_450.png')}}" alt="Gallery" width="900" height="780"></a>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
-        </div>
+        
     </div>
     <!-- Gallery Section Area End -->
 
     <!-- Partners Section Area Start -->
     <section id="partner" class="testimonials-wrap-layout2">
         <div class="section-heading style-four">
-            <h2 class="titlee mt-5 wow fadeInUp animated" data-wow-delay="0.2s" data-wow-duration="1s">Hamkorlar</h2>
+            <h2 class="titlee mt-5 wow fadeInUp animated" data-wow-delay="0.2s" data-wow-duration="1s">{{__('words.Partners')}}</h2>
             </div>
         <div class="sliderPartnerOne swiper-container mb-5">
             <div class="swiper-wrapper align-items-center">
-                <div class="swiper-slide">
-                    <div class="col">
-                        <div class="brand-box-layout4">
-                            <a href="#" target="_blank"><img src="{{asset('/frontend/images/partners/minin.png')}}" class="mt-5" alt="Brand" width="270" height="112"></a>
-                        </div>
+                @foreach($partners as $partner)
+                    <div class="swiper-slide">
+                            <div class="col">
+                                    <div class="brand-box-layout4">
+                                        <a href="{{$partner->image_url}}" target="_blank"><img src="{{asset('/upload/partner/' .$partner->image.'_thumbnail_550.png')}}" class="mt-5" alt="Brand" width="270" height="112"></a>
+                                    </div>
+                            </div>
                     </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -317,26 +256,26 @@
     <!-- Location Section Area Start -->
     <section id="contact" class="location-wrap-layout1">
         <div class="section-heading style-four">
-          <h2 class="titlee wow fadeInUp animated" data-wow-delay="0.2s" data-wow-duration="1s">Bog'lanish</h2>
+          <h2 class="titlee wow fadeInUp animated" data-wow-delay="0.2s" data-wow-duration="1s">{{__('words.Connection')}}</h2>
         </div>
         <div class="location-box-layout1 has-animation d-flex">
         <div class="address d-flex flex-column">
             <div class="card">
-            <img src="{{asset('/frontend/images/icon/location.svg')}}" width="50px" alt="" class="m-3">
-            
-            <div class="card-body">
-                <h1 class="m-2">Manzilimiz</h1>
-                <p class="m-2">100174, Toshkent sh., Olmazor t., Universitet ko‘ch., 7 uy.</p>
-            </div>
+                <img src="{{asset('/frontend/images/icon/location.svg')}}" width="50px" alt="" class="m-3">
+                
+                <div class="card-body">
+                    <h1 class="m-2">{{__('words.Address')}}</h1>
+                    <p class="m-2">{{$contacts->address}}</p>
+                </div>
             </div>
 
             <div class="card">
-            <img src="{{asset('/frontend/images/icon/sms.svg')}}" width="50px" alt="" class="m-3">
-            
-            <div class="card-body">
-                <h1 class="m-2">Email</h1>
-                <a class="m-2" href="#">milliyofis@mininnovation.uz</a>
-            </div>
+                <img src="{{asset('/frontend/images/icon/sms.svg')}}" width="50px" alt="" class="m-3">
+                
+                <div class="card-body">
+                    <h1 class="m-2">{{__('words.Email')}}</h1>
+                    <a class="m-2" href="{{$contacts->email}}">{{$contacts->email}}</a>
+                </div>
             </div>
         </div>
 
@@ -345,8 +284,8 @@
             <img src="{{asset('/frontend/images/icon/call.svg')}}" width="50px" alt="" class="m-3">
             
             <div class="card-body">
-                <h1 class="m-2">Telefon</h1>
-                <p class="m-2">+99871 203-32-00</p>
+                <h1 class="m-2">{{__('words.Phone')}}</h1>
+                <p class="m-2">{{$contacts->phone}}</p>
             </div>
             </div>
 
@@ -354,8 +293,8 @@
             <img src="{{asset('/frontend/images/icon//clock.svg')}}" width="50px" alt="" class="m-3">
             
             <div class="card-body">
-                <h1 class="m-2">Ish vaqti</h1>
-                <p class="m-2">Dushanba - Juma 09:00 - 18:00</p>
+                <h1 class="m-2">{{__('words.Working time')}}</h1>
+                <p class="m-2">{{__('words.Monday - Friday')}} 09:00 - 18:00</p>
             </div>
             </div>
         </div>

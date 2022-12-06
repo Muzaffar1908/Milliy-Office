@@ -12,6 +12,8 @@
         "The press center" => "Пресс-центр",
         "Connection" => "Связь",
         "Read more" => "Читать далее",
+        "Platforms" => "Платформы",
+
         
 
 

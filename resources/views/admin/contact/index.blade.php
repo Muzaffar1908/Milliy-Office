@@ -11,7 +11,7 @@
         <div class="card">
             <div class="card-header border-0 pb-0">
                 <h5 class="card-title">Contact</h5>
-                {{-- <a href="{{route('ct-create')}}"><button type="button" class="btn btn-primary">Add Contact</button></a> --}}
+                <a href="{{route('ct-create')}}"><button type="button" class="btn btn-primary">Add Contact</button></a>
             </div>
             <div class="card-body">
 

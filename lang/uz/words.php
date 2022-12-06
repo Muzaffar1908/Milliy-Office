@@ -12,6 +12,7 @@
         "The press center" => "Matbuot markazi",
         "Connection" => "Bog`lanish",
         "Read more" => "Batafsil",
+        "Platforms" => "Platformalar",
 
 
     ];

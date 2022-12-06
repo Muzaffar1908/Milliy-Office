@@ -114,7 +114,21 @@
 
                         @php $locale = session()->get('locale'); @endphp
 
-                        <ul>
+                        <li class="menu-item menu-item-has-children wow fadeInUp animated" data-wow-delay="0.9s">
+                          <a href="{{ URL::to('locale/uz') }}" class="d-flex align-items-center justify-content-center inno-cursor">
+                            <img class="mx-2" width="30" src="{{asset('/frontend/images/languages/uz.png')}}" alt="">
+                            <i class="fa fa-angle-down"></i>
+                          </a>
+                          <ul class="sub-menu menu-color">
+                            <li class="menu-item text-center"><a href="{{ URL::to('locale/en') }}"><img class="mx-2" width="30" src="{{asset('/frontend/images/languages/en.png')}}" alt=""></a>
+                            </li>
+                            <li class="menu-item text-center"><a href="{{ URL::to('locale/ru') }}"><img class="mx-2" width="30" src="{{asset('/frontend/images/languages/ru.png')}}" alt=""></a>
+                            </li>
+                          </ul>
+                        </li>
+
+                        {{-- <ul>
+
                           @switch($locale)
                               @case('uz')
                                 <li class="menu-item menu-item-has-children wow fadeInUp animated" data-wow-delay="0.9s">
@@ -165,7 +179,7 @@
                                   
                           @endswitch
 
-                        </ul>
+                        </ul> --}}
 
                       </ul>
                     </nav>

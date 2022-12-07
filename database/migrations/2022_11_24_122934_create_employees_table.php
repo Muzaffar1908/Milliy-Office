@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('full_name_en')->nullable();
             $table->string('email', 255)->unique();
             $table->string('phone', 15)->unique();
+            $table->string('code', 10)->nullable();
             $table->string('title_uz', 255)->nullable();
             $table->string('title_ru', 255)->nullable();
             $table->string('title_en', 255)->nullable();

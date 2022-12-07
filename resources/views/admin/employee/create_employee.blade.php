@@ -5,8 +5,8 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">Employee Create</h5>
-                <a href="{{route('emp-index')}}"><button type="button" class="btn btn-primary">Back</button></a>
+                <h5 class="card-title">Xodim yaratish</h5>
+                <a href="{{route('emp-index')}}"><button type="button" class="btn btn-primary">Orqaga</button></a>
             </div>
 
             <div class="mb-3 mb-lg-0">
@@ -50,12 +50,12 @@
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom01">User Name
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Foydalanuvchi nomi
                                             <span class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
                                             <select name="user_id" id="single-select" class="form-control">
-                                                <option selected>Choose your username...</option>
+                                                <option selected>O'zingizga foydalanuvchi nom tanlang...</option>
                                                 @foreach($users as $user)
                                                  <option value="{{$user->id}}">{{$user->user_name}}</option>
                                                 @endforeach
@@ -64,12 +64,12 @@
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Division Name
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Bo'lim nomi
                                             <span class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
                                             <select name="dep_id" id="single-select" class="form-control">
-                                                <option selected>Choose your division name...</option>
+                                                <option selected>Bo'lim nomini tanlang...</option>
                                                 @foreach($departments as $dep)
                                                  <option value="{{$dep->id}}">{{$dep->dep_name_uz}}</option>
                                                 @endforeach
@@ -78,12 +78,12 @@
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Position Name
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Lavozim nomi
                                             <span class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
                                             <select name="pos_id" id="single-select" class="form-control">
-                                                <option selected>Choose your position name...</option>
+                                                <option selected>Lavozim nomini tanlang...</option>
                                                 @foreach($positions as $pos)
                                                  <option value="{{$pos->id}}">{{$pos->pos_name_uz}}</option>
                                                 @endforeach
@@ -92,79 +92,91 @@
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Image <span
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Rasm <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
-                                            <input type="file" name="user_image" class="form-control" id="validationCustom02"  placeholder="Image" required value="{{old('user_image')}}">
+                                            <input type="file" name="user_image" class="form-control" id="validationCustom02"  placeholder="Rasm ..." required value="{{old('user_image')}}">
                                             <div class="invalid-feedback">
-                                                Please enter a Image.
+                                                Iltimos, rasm kiriting.
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Full Name uz <span
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02">To'liq ismi uz <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
-                                            <input type="text" name="full_name_uz" class="form-control" id="validationCustom02"  placeholder="Enter is Full Name uz" required value="{{old('full_name_uz')}}">
+                                            <input type="text" name="full_name_uz" class="form-control" id="validationCustom02"  placeholder="To'liq ism uz ni kiriting ..." required value="{{old('full_name_uz')}}">
                                             <div class="invalid-feedback">
-                                                Please enter a Full Name uz.
+                                                Iltimos, to'liq ismingizni kiriting uz.
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Full Name ru <span
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02">To'liq ismi ru <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
-                                            <input type="text" name="full_name_ru" class="form-control" id="validationCustom02"  placeholder="Enter is Full Name ru" required value="{{old('full_name_ru')}}">
+                                            <input type="text" name="full_name_ru" class="form-control" id="validationCustom02"  placeholder="To'liq ism ru ni kiriting ..." required value="{{old('full_name_ru')}}">
                                             <div class="invalid-feedback">
-                                                Please enter a Full Name ru.
+                                                Iltimos, to'liq ismingizni kiriting ru.
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Full Name en <span
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02">To'liq ismi en <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
-                                            <input type="text" name="full_name_en" class="form-control" id="validationCustom02"  placeholder="Enter is Full Name en" required value="{{old('full_name_en')}}">
+                                            <input type="text" name="full_name_en" class="form-control" id="validationCustom02"  placeholder="To'liq ism en ni kiriting ..." required value="{{old('full_name_en')}}">
                                             <div class="invalid-feedback">
-                                                Please enter a Full Name en.
+                                                Iltimos, to'liq ismingizni kiriting en.
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Email <span
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Elektron pochta <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
-                                            <input type="email" name="email" class="form-control" id="validationCustom02"  placeholder="Enter is Email" required value="{{old('email')}}">
+                                            <input type="email" name="email" class="form-control" id="validationCustom02"  placeholder="Elektron pochta manzilini kiriting ..." required value="{{old('email')}}">
                                             <div class="invalid-feedback">
-                                                Please enter a Email.
+                                                Iltimos, elektron pochta manzilini kiriting.
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Phone Number <span
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Telefon raqam <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
-                                            <input type="text" name="phone" class="form-control" id="validationCustom02"  placeholder="Enter is Phone Number" required value="{{old('phone')}}">
+                                            <input type="text" name="phone" class="form-control" id="validationCustom02"  placeholder="Telefon raqamini kiriting ..." required value="{{old('phone')}}">
                                             <div class="invalid-feedback">
-                                                Please enter a Phone Number.
+                                                Telefon raqamini kiriting.
                                             </div>
                                         </div>
                                     </div>
 
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Telefon raqami kodi <span
+                                                class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input type="text" name="code" class="form-control" id="validationCustom02"  placeholder="Telefon raqami kodini kiriting ..." required value="{{old('code')}}">
+                                            <div class="invalid-feedback">
+                                                Telefon raqami kodini kiriting.
+                                            </div>
+                                        </div>
+                                    </div>
+                                      
                                     <div class="col-lg-8">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-primary">Yuborish</button>
                                     </div>
                                    
                                 </div>

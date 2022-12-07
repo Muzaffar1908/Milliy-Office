@@ -5,8 +5,8 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">Divisions Create</h5>
-                <a href="{{route('d-index')}}"><button type="button" class="btn btn-primary">Back</button></a>
+                <h5 class="card-title">Bo'lim yaratish</h5>
+                <a href="{{route('d-index')}}"><button type="button" class="btn btn-primary">Orqaga</button></a>
             </div>
 
             <div class="mb-3 mb-lg-0">
@@ -50,12 +50,12 @@
                                     </div>
 
                                     <div class="col-sm-12">
-                                        <label class="col-form-label" for="validationCustom01">User Name
+                                        <label class="col-form-label" for="validationCustom01">Foydalanuvchi nomi
                                             <span class="text-danger">*</span>
                                         </label>
                                         <div class="">
                                             <select name="user_id" id="single-select" class="form-control">
-                                                <option selected>Choose your username...</option>
+                                                <option selected>O'zingizga foydalanuvchi nom tanlang...</option>
                                                 @foreach($users as $user)
                                                  <option value="{{$user->id}}">{{$user->user_name}}</option>
                                                 @endforeach
@@ -66,13 +66,13 @@
                                     <br>
 
                                     <div class="col-sm-12">
-                                        <label class="col-form-label" for="validationCustom02" >Divisions Name uz <span
+                                        <label class="col-form-label" for="validationCustom02" >Bo'lim nomi uz <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="">
-                                            <input type="text" name="dep_name_uz" class="form-control" id="validationCustom02"  placeholder="Enter is Divisions Title uz" required value="{{old('dep_name_uz')}}">
+                                            <input type="text" name="dep_name_uz" class="form-control" id="validationCustom02"  placeholder="Bo'lim sarlavha uz ni kiriting ..." required value="{{old('dep_name_uz')}}">
                                             <div class="invalid-feedback">
-                                                Please enter a Divisions Name uz.
+                                                Iltimos, bo'lim uz nomini kiriting.
                                             </div>
                                         </div>
                                     </div>
@@ -80,13 +80,13 @@
                                     <br>
 
                                     <div class="col-sm-12">
-                                        <label class="col-form-label" for="validationCustom02" >Divisions Name ru <span
+                                        <label class="col-form-label" for="validationCustom02" >Bo'lim nomi ru <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="">
-                                            <input type="text" name="dep_name_ru" class="form-control" id="validationCustom02"  placeholder="Enter is Divisions Title ru" required value="{{old('dep_name_ru')}}">
+                                            <input type="text" name="dep_name_ru" class="form-control" id="validationCustom02"  placeholder="Bo'lim sarlavha ru ni kiriting ..." required value="{{old('dep_name_ru')}}">
                                             <div class="invalid-feedback">
-                                                Please enter a Divisions Name ru.
+                                                Iltimos, bo'lim ru nomini kiriting.
                                             </div>
                                         </div>
                                     </div>
@@ -94,13 +94,13 @@
                                     <br>
 
                                     <div class="col-sm-12">
-                                        <label class="col-form-label" for="validationCustom02" >Divisions Name en <span
+                                        <label class="col-form-label" for="validationCustom02" >Bo'lim nomi en <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="">
-                                            <input type="text" name="dep_name_en" class="form-control" id="validationCustom02"  placeholder="Enter is Divisions Title en" required value="{{old('dep_name_en')}}">
+                                            <input type="text" name="dep_name_en" class="form-control" id="validationCustom02"  placeholder="Bo'lim sarlavha en ni kiriting ..." required value="{{old('dep_name_en')}}">
                                             <div class="invalid-feedback">
-                                                Please enter a Divisions Name en.
+                                                Iltimos, bo'lim en nomini kiriting.
                                             </div>
                                         </div>
                                     </div>
@@ -108,7 +108,7 @@
                                     <br>
                                     
                                     <div class="col-lg-8">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-primary">Yuborish</button>
                                     </div>
                                    
                                 </div>

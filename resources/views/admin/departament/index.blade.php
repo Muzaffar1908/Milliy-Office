@@ -10,8 +10,8 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">Divisions</h5>
-                <a href="{{route('d-create')}}"><button type="button" class="btn btn-primary">Add Divisions</button></a>
+                <h5 class="card-title">Bo'limlar</h5>
+                <a href="{{route('d-create')}}"><button type="button" class="btn btn-primary">Qo`shish</button></a>
             </div>
             <div class="card-body">
 
@@ -49,10 +49,10 @@
                                 <thead>
                                     <tr>
                                         <th>№</th>
-                                        <th>Divisions Name</th>
-                                        <th>User Name</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
+                                        <th>Bo'lim nomi</th>
+                                        <th>Foydalanuvchi nomi</th>
+                                        <th>Holat</th>
+                                        <th>Harakat</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -68,10 +68,10 @@
                                                     <div class="sweetalert">
                                                         <button type="button" class=" @if ($departament->is_active == 1) btn-success @endif  @if ($departament->is_active == 0) btn-danger @endif btn sweet-confirm btn-sm">
                                                             @if ($departament->is_active == 1)
-                                                                Active
+                                                              Faol
                                                             @endif
                                                             @if ($departament->is_active == 0)
-                                                                Not Active
+                                                              Faol emas
                                                             @endif
                                                         </button>
                                                     </div>

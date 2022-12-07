@@ -5,7 +5,7 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">About Create</h5>
+                <h5 class="card-title">Milliy Offis ma`lumotlarini o`zgartirish</h5>
                 <a href="{{route('a-index')}}"><button type="button" class="btn btn-primary">Back</button></a>
             </div>
 
@@ -51,12 +51,12 @@
                                 </div>
 
                                 <div class="col-sm-12">
-                                    <label class="col-form-label" for="validationCustom01">User Name
+                                    <label class="col-form-label" for="validationCustom01">Foydalanuvchi nomi
                                         <span class="text-danger">*</span>
                                     </label>
                                     <div>
                                         <select name="user_id" id="single-select" class="form-control">
-                                            <option selected>Choose your username...</option>
+                                            <option selected>O'zingizga foydalanuvchi nom tanlang...</option>
                                             @foreach($users as $user)
                                                 <option value="{{$user->id}}" @if($user->id == $about->user_id) selected @endif>{{$user->user_name}}</option>
                                             @endforeach
@@ -65,85 +65,85 @@
                                 </div>
 
                                 <div class="col-sm-12 p-2">
-                                    <label class="col-form-label" for="validationCustom02">About Title uz <span
+                                    <label class="col-form-label" for="validationCustom02">Sarlavha uz <span
                                             class="text-danger">*</span>
                                     </label>
                                     <div>
-                                        <input type="text" name="about_title_uz" class="form-control" id="validationCustom02"  placeholder="Enter is About Title uz" required value="{{$about->about_title_uz}}">
+                                        <input type="text" name="about_title_uz" class="form-control" id="validationCustom02"  placeholder="Sarlavha uz ..." required value="{{$about->about_title_uz}}">
                                         <div class="invalid-feedback">
-                                            Please enter a About Title uz.
+                                            Iltimos, sarlavha uz ni kiriting.
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-12 p-2">
-                                    <label class="col-form-label" for="validationCustom02">About Title ru <span
+                                    <label class="col-form-label" for="validationCustom02">Sarlavha ru <span
                                             class="text-danger">*</span>
                                     </label>
                                     <div>
-                                        <input type="text" name="about_title_ru" class="form-control" id="validationCustom02"  placeholder="Enter is About Title ru" required value="{{$about->about_title_ru}}">
+                                        <input type="text" name="about_title_ru" class="form-control" id="validationCustom02"  placeholder="Sarlavha ru ..." required value="{{$about->about_title_ru}}">
                                         <div class="invalid-feedback">
-                                            Please enter a About Title ru.
+                                            Iltimos, sarlavha ru ni kiriting.
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-12 p-2">
-                                    <label class="col-form-label" for="validationCustom02">About Title en <span
+                                    <label class="col-form-label" for="validationCustom02">Sarlavha en <span
                                             class="text-danger">*</span>
                                     </label>
                                     <div>
-                                        <input type="text" name="about_title_en" class="form-control" id="validationCustom02"  placeholder="Enter is About Title en" required value="{{$about->about_title_en}}">
+                                        <input type="text" name="about_title_en" class="form-control" id="validationCustom02"  placeholder="Sarlavha en ..." required value="{{$about->about_title_en}}">
                                         <div class="invalid-feedback">
-                                            Please enter a About Title en.
+                                            Iltimos, sarlavha en ni kiriting.
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-12 p-2">
-                                    <label class="col-form-label" for="validationCustom02">Section Number <span
+                                    <label class="col-form-label" for="validationCustom02">Bo'lim raqami <span
                                             class="text-danger">*</span>
                                     </label>
                                     <div>
-                                        <input type="number" name="section_number" class="form-control" id="validationCustom02"  placeholder="Enter is Section Number" required value="{{$about->section_number}}">
+                                        <input type="number" name="section_number" class="form-control" id="validationCustom02"  placeholder="Bo'lim raqamini kiriting ..." required value="{{$about->section_number}}">
                                         <div class="invalid-feedback">
-                                            Please enter a Section Number.
+                                            Iltimos Bo'lim raqamini kiriting.
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-12 p-2">
-                                    <label class="col-form-label" for="validationCustom02" >Section Title uz <span
+                                    <label class="col-form-label" for="validationCustom02" >Bo'lim nomi uz <span
                                             class="text-danger">*</span>
                                     </label>
                                     <div>
-                                        <input type="text" name="section_title_uz" class="form-control" id="validationCustom02"  placeholder="Enter is  Section Title uz" required value="{{$about->section_title_uz}}">
+                                        <input type="text" name="section_title_uz" class="form-control" id="validationCustom02"  placeholder="Bo'lim nomi uz ..." required value="{{$about->section_title_uz}}">
                                         <div class="invalid-feedback">
-                                            Please enter a  Section Title uz.
+                                            Iltimos, bo'lim sarlavhasini kiriting uz.
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-12 p-2">
-                                    <label class="col-form-label" for="validationCustom02" >Section Title ru <span
+                                    <label class="col-form-label" for="validationCustom02" >Bo'lim nomi ru <span
                                             class="text-danger">*</span>
                                     </label>
                                     <div>
-                                        <input type="text" name="section_title_ru" class="form-control" id="validationCustom02"  placeholder="Enter is  Section Title ru" required value="{{$about->section_title_ru}}">
+                                        <input type="text" name="section_title_ru" class="form-control" id="validationCustom02"  placeholder="Bo'lim nomi ru ..." required value="{{$about->section_title_ru}}">
                                         <div class="invalid-feedback">
-                                            Please enter a  Section Title ru.
+                                            Iltimos, bo'lim sarlavhasini kiriting ru.
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-12 p-2">
-                                    <label class="col-form-label" for="validationCustom02" >Section Title en <span
+                                    <label class="col-form-label" for="validationCustom02" >Bo'lim nomi en <span
                                             class="text-danger">*</span>
                                     </label>
                                     <div>
-                                        <input type="text" name="section_title_en" class="form-control" id="validationCustom02"  placeholder="Enter is  Section Title en" required value="{{$about->section_title_en}}">
+                                        <input type="text" name="section_title_en" class="form-control" id="validationCustom02"  placeholder="Bo'lim nomi ru ..." required value="{{$about->section_title_en}}">
                                         <div class="invalid-feedback">
-                                            Please enter a  Section Title en.
+                                            Iltimos, bo'lim sarlavhasini kiriting en.
                                         </div>
                                     </div>
                                 </div>
@@ -151,7 +151,7 @@
                             </div>
         
                             <div class="col-lg-8">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Yuborish</button>
                             </div>
                                    
                         </form>

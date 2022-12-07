@@ -10,10 +10,10 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">Employee</h5>
-                <a href="{{route('emp-create')}}"><button type="button" class="btn btn-primary">Add Administration</button></a>
-                <a href="{{route('emp-create_division')}}"><button type="button" class="btn btn-primary">Add Division head</button></a>
-                <a href="{{route('emp-create_employee')}}"><button type="button" class="btn btn-primary">Add Employee</button></a>
+                <h5 class="card-title">Xodimlar</h5>
+                <a href="{{route('emp-create')}}"><button type="button" class="btn btn-primary">Rahbariyat qo'shing</button></a>
+                <a href="{{route('emp-create_division')}}"><button type="button" class="btn btn-primary">Bo'lim boshlig'ini qo'shing</button></a>
+                <a href="{{route('emp-create_employee')}}"><button type="button" class="btn btn-primary">Xodim qo'shish</button></a>
             </div>
             <div class="card-body">
 
@@ -51,12 +51,12 @@
                                 <thead>
                                     <tr>
                                         <th>№</th>
-                                        <th>Full Name</th>
-                                        <th>Position</th>
-                                        <th>Division</th>
-                                        <th>User Name</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
+                                        <th>To'liq ismi sharif</th>
+                                        <th>Lavozim</th>
+                                        <th>Bo'lim</th>
+                                        <th>Foydalanuvchi nomi</th>
+                                        <th>Holat</th>
+                                        <th>Harakat</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -74,10 +74,10 @@
                                                     <div class="sweetalert">
                                                         <button type="button" class=" @if ($employee->is_active == 1) btn-success @endif  @if ($employee->is_active == 0) btn-danger @endif btn sweet-confirm btn-sm">
                                                             @if ($employee->is_active == 1)
-                                                                Active
+                                                              Faol
                                                             @endif
                                                             @if ($employee->is_active == 0)
-                                                                Not Active
+                                                              Faol emas
                                                             @endif
                                                         </button>
                                                     </div>

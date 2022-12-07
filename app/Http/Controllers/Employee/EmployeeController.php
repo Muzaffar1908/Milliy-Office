@@ -49,6 +49,7 @@ class EmployeeController extends Controller
             'full_name_uz' => 'required|string|max:255',
             'email' => 'required|string|max:255',
             'phone' => 'required',
+            'code' => 'required',
             'biography_uz' => 'required',
             'responsibilities_uz' => 'required',
         );
@@ -93,6 +94,7 @@ class EmployeeController extends Controller
         $employees->full_name_en = $inputs['full_name_en'];
         $employees->email = $inputs['email'];
         $employees->phone = $inputs['phone'];
+        $employees->code = $inputs['code'];
         $employees->title_uz = $inputs['title_uz'];
         $employees->title_ru = $inputs['title_ru'];
         $employees->title_en = $inputs['title_en'];
@@ -280,6 +282,7 @@ class EmployeeController extends Controller
             'full_name_uz' => 'required|string|max:255',
             'email' => 'required|string|max:255',
             'phone' => 'required',
+            'code' => 'required',
             'biography_uz' => 'required',
             'responsibilities_uz' => 'required',
         );
@@ -318,6 +321,7 @@ class EmployeeController extends Controller
         $employees->full_name_en = $inputs['full_name_en'];
         $employees->email = $inputs['email'];
         $employees->phone = $inputs['phone'];
+        $employees->code = $inputs['code'];
         $employees->number_of_members = $inputs['number_of_members'];
 
         $employees->biography_uz = $inputs['biography_uz'];
@@ -503,6 +507,7 @@ class EmployeeController extends Controller
             'full_name_uz' => 'required|string|max:255',
             'email' => 'required|string|max:255',
             'phone' => 'required',
+            'code' => 'required',
         );
 
         $validator = Validator::make($data, $rule);
@@ -540,6 +545,7 @@ class EmployeeController extends Controller
         $employees->full_name_en = $inputs['full_name_en'];
         $employees->email = $inputs['email'];
         $employees->phone = $inputs['phone'];
+        $employees->code = $inputs['code'];
         $employees->save();
         
         if (!empty($inputs['id'])) {
@@ -642,6 +648,7 @@ class EmployeeController extends Controller
         $employees->full_name_en = $inputs['full_name_en'];
         $employees->email = $inputs['email'];
         $employees->phone = $inputs['phone'];
+        $employees->code = $inputs['code'];
         $employees->title_uz = $inputs['title_uz'];
         $employees->title_ru = $inputs['title_ru'];
         $employees->title_en = $inputs['title_en'];
@@ -866,6 +873,7 @@ class EmployeeController extends Controller
         $employees->full_name_en = $inputs['full_name_en'];
         $employees->email = $inputs['email'];
         $employees->phone = $inputs['phone'];
+        $employees->code = $inputs['code'];
         $employees->title_uz = $inputs['title_uz'];
         $employees->title_ru = $inputs['title_ru'];
         $employees->title_en = $inputs['title_en'];
@@ -1090,6 +1098,7 @@ class EmployeeController extends Controller
         $employees->full_name_en = $inputs['full_name_en'];
         $employees->email = $inputs['email'];
         $employees->phone = $inputs['phone'];
+        $employees->code = $inputs['code'];
         
         if (!empty($inputs['id'])) {
             Session::flash('warning', __('ALL_CHANGES_SUCCESSFUL_SAVED'));

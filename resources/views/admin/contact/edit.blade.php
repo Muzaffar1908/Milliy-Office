@@ -5,8 +5,8 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">Contact Create</h5>
-                <a href="{{route('ct-index')}}"><button type="button" class="btn btn-primary">Back</button></a>
+                <h5 class="card-title">Aloqani o`zgartirish</h5>
+                <a href="{{route('ct-index')}}"><button type="button" class="btn btn-primary">Orqaga</button></a>
             </div>
 
             <div class="mb-3 mb-lg-0">
@@ -51,85 +51,85 @@
                                 </div>
 
                                 <div class="col-sm-12 p-3">
-                                    <label class="col-form-label" for="validationCustom02">Address uz<span
+                                    <label class="col-form-label" for="validationCustom02">Manzil uz<span
                                             class="text-danger">*</span>
                                     </label>
                                     <div>
-                                        <input type="text" name="address_uz"  class="form-control" id="address_uz" placeholder="Address uz enter" value="{{$contact->address_uz}}" />
+                                        <input type="text" name="address_uz"  class="form-control" id="address_uz" placeholder="Manzil uz kiriting ..." value="{{$contact->address_uz}}" />
                                         <div class="invalid-feedback">
-                                            Please enter a Address uz.
+                                            Iltimos, manzil uz ni kiriting.
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-12 p-3">
-                                    <label class="col-form-label" for="validationCustom02">Address ru<span
+                                    <label class="col-form-label" for="validationCustom02">Manzil ru<span
                                             class="text-danger">*</span>
                                     </label>
                                     <div>
-                                        <input type="text" name="address_ru"  class="form-control" id="address_ru" placeholder="Address ru enter" value="{{$contact->address_ru}}" />
+                                        <input type="text" name="address_ru"  class="form-control" id="address_ru" placeholder="Manzil ru kiriting ..." value="{{$contact->address_ru}}" />
                                         <div class="invalid-feedback">
-                                            Please enter a Address ru.
+                                            Iltimos, manzil ru ni kiriting.
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-12 p-3">
-                                    <label class="col-form-label" for="validationCustom02">Address en<span
+                                    <label class="col-form-label" for="validationCustom02">Manzil en<span
                                             class="text-danger">*</span>
                                     </label>
                                     <div>
-                                        <input type="text" name="address_en"  class="form-control" id="address_en" placeholder="Address en enter" value="{{$contact->address_en}}" />
+                                        <input type="text" name="address_en"  class="form-control" id="address_en" placeholder="Manzil en kiriting ..." value="{{$contact->address_en}}" />
                                         <div class="invalid-feedback">
-                                            Please enter a Address en.
+                                            Iltimos, manzil en ni kiriting.
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-12 p-3">
-                                    <label class="col-form-label" for="validationCustom02">Phone Number<span
+                                    <label class="col-form-label" for="validationCustom02">Telefon raqam<span
                                             class="text-danger">*</span>
                                     </label>
                                     <div>
-                                        <input type="text" name="phone"  class="form-control" id="phone" placeholder="Phone Number enter" value="{{$contact->phone}}" />
+                                        <input type="text" name="phone"  class="form-control" id="phone" placeholder="Telefon raqamini kiriting ..." value="{{$contact->phone}}" />
                                         <div class="invalid-feedback">
-                                            Please enter a Phone Number.
+                                            Telefon raqamini kiriting.
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-12 p-3">
-                                    <label class="col-form-label" for="validationCustom02">Email<span
+                                    <label class="col-form-label" for="validationCustom02">Elektron pochta<span
                                             class="text-danger">*</span>
                                     </label>
                                     <div>
-                                        <input type="email" name="email"  class="form-control" id="email" placeholder="Email enter" value="{{$contact->email}}" />
+                                        <input type="email" name="email"  class="form-control" id="email" placeholder="Elektron pochtani kiriting ..." value="{{$contact->email}}" />
                                         <div class="invalid-feedback">
-                                            Please enter a Email.
+                                            Iltimos, elektron pochta manzilini kiriting.
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-12 p-3">
-                                    <label class="col-form-label" for="validationCustom02">Started At<span
+                                    <label class="col-form-label" for="validationCustom02">Boshlangan vaqt<span
                                             class="text-danger">*</span>
                                     </label>
                                     <div>
-                                        <input type="datetime-local" name="started_at"  class="form-control" id="started_at" placeholder="Started At enter" value="{{$contact->started_at}}" />
+                                        <input type="datetime-local" name="started_at"  class="form-control" id="started_at" placeholder="Boshlangan vaqtni kiriting ..." value="{{$contact->started_at}}" />
                                         <div class="invalid-feedback">
-                                            Please enter a Started At.
+                                            Iltimos, Boshlangan vaqtni kiriting.
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-12 p-3">
-                                    <label class="col-form-label" for="validationCustom02">Stopped At<span
+                                    <label class="col-form-label" for="validationCustom02">Tugagan vaqt<span
                                             class="text-danger">*</span>
                                     </label>
                                     <div>
-                                        <input type="datetime-local" name="stopped_at"  class="form-control" id="stopped_at" placeholder="Stopped At enter" value="{{$contact->stopped_at}}" />
+                                        <input type="datetime-local" name="stopped_at"  class="form-control" id="stopped_at" placeholder="Tugagan vaqtni kiriting ..." value="{{$contact->stopped_at}}" />
                                         <div class="invalid-feedback">
-                                            Please enter a Stopped At.
+                                            Iltimos, Tugagan vaqtni kiriting.
                                         </div>
                                     </div>
                                 </div>
@@ -137,7 +137,7 @@
                             </div>
         
                             <div class="col-lg-8">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Yuborish</button>
                             </div>
                                    
                         </form>

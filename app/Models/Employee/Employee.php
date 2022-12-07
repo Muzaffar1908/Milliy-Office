@@ -23,6 +23,7 @@ class Employee extends Model
       'full_name_en',
       'email',
       'phone',
+      'code',
       'title_uz',
       'title_ru',
       'title_en',

@@ -10,8 +10,8 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">Contact</h5>
-                <a href="{{route('ct-create')}}"><button type="button" class="btn btn-primary">Add Contact</button></a>
+                <h5 class="card-title">Aloqa</h5>
+                <a href="{{route('ct-create')}}"><button type="button" class="btn btn-primary">Qo`shish</button></a>
             </div>
             <div class="card-body">
 
@@ -49,12 +49,12 @@
                                 <thead>
                                     <tr>
                                         <th>№</th>
-                                        <th>Address</th>
-                                        <th>Phone</th>
-                                        <th>Email</th>
-                                        <th>Started At</th>
-                                        <th>Stopped At</th>
-                                        <th>Action</th>
+                                        <th>Manzil</th>
+                                        <th>Telefon raqam</th>
+                                        <th>Elektron pochta</th>
+                                        <th>Boshlangan vaqt</th>
+                                        <th>Tugagan vaqt</th>
+                                        <th>Harakat</th>
                                     </tr>
                                 </thead>
                                 <tbody>

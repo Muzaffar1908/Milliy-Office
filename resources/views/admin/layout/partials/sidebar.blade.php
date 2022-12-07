@@ -9,76 +9,85 @@
             </li>
             <li class="has-menu"><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-networking"></i>
-                    <span class="nav-text">Users</span>
+                    <span class="nav-text">Foydalanuvchilar</span>
                </a>
                 <ul aria-expanded="false">
-                    <li><a href="{{route('u-index')}}">Users</a></li>
+                    <li><a href="{{route('u-index')}}">Foydalanuvchilar</a></li>
                 </ul>
             </li>
             <li class="has-menu">
                 <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-networking"></i>
-                    <span class="nav-text">News</span>
+                    <span class="nav-text">Yangiliklar</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="{{route('c-index')}}">News Category</a></li>
-                    <li><a href="{{route('n-index')}}">News</a></li>
+                    <li><a href="{{route('c-index')}}">Yangiliklar Kategoriyasi</a></li>
+                    <li><a href="{{route('n-index')}}">Yangiliklar</a></li>
                 </ul>
             </li>
             <li class="has-menu">
                 <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-networking"></i>
-                    <span class="nav-text">Main Page</span>
+                    <span class="nav-text">Bosh sahifa</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="{{route('m-index')}}">Main Page</a></li>
+                    <li><a href="{{route('m-index')}}">Bosh sahifa</a></li>
                 </ul>
             </li>
             <li class="has-menu">
                 <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-networking"></i>
-                    <span class="nav-text">About</span>
+                    <span class="nav-text">Milliy Offis haqida</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="{{route('a-index')}}">About</a></li>
+                    <li><a href="{{route('a-index')}}">Milliy Offis haqida</a></li>
                 </ul>
             </li>
             <li class="has-menu">
                 <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-networking"></i>
-                    <span class="nav-text">Partner</span>
+                    <span class="nav-text">Hamkorlar</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="{{route('p-index')}}">Partner</a></li>
+                    <li><a href="{{route('p-index')}}">Hamkorlar</a></li>
                 </ul>
             </li>
             <li class="has-menu">
                 <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-networking"></i>
-                    <span class="nav-text">Contact</span>
+                    <span class="nav-text">Aloqa</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="{{route('ct-index')}}">Contact</a></li>
+                    <li><a href="{{route('ct-index')}}">Aloqa</a></li>
                 </ul>
             </li>
             <li class="has-menu">
                 <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-networking"></i>
-                    <span class="nav-text">Gallery</span>
+                    <span class="nav-text">Galereya</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="{{route('g-index')}}">Gallery</a></li>
+                    <li><a href="{{route('g-index')}}">Galereya</a></li>
                 </ul>
             </li>
             <li class="has-menu">
                 <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-networking"></i>
-                    <span class="nav-text">National Office</span>
+                    <span class="nav-text">Milliy Offis</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="{{route('d-index')}}">Divisions</a></li>
-                    <li><a href="{{route('po-index')}}">Positions</a></li>
-                    <li><a href="{{route('emp-index')}}">Employee</a></li>
+                    <li><a href="{{route('d-index')}}">Bo'limlar</a></li>
+                    <li><a href="{{route('po-index')}}">Lavozimlar</a></li>
+                    <li><a href="{{route('emp-index')}}">Xodimlar</a></li>
+                </ul>
+            </li>
+            <li class="has-menu">
+                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-381-networking"></i>
+                    <span class="nav-text">Faoliyat</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="">Davlat dasturlari</a></li>
                 </ul>
             </li>
         </ul>

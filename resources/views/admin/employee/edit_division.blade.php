@@ -154,6 +154,20 @@
 
                                     <br>
 
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Phone Number Code <span
+                                                class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input type="text" name="code" class="form-control" id="validationCustom02"  placeholder="Enter is Phone Number Code" required value="{{$employee->code}}">
+                                            <div class="invalid-feedback">
+                                                Please enter a Phone Number Code.
+                                            </div>
+                                        </div>
+                                    </div>
+                                      
+                                    <br>
+
                                     <div class="mb-3">
                                         <label class="col-form-label" for="validationCustom02">Biography uz <span
                                                 class="text-danger">*</span>

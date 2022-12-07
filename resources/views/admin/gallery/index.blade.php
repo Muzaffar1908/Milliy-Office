@@ -11,7 +11,7 @@
         <div class="card">
             <div class="card-header border-0 pb-0">
                 <h5 class="card-title">Gallery</h5>
-                <a href="{{route('g-create')}}"><button type="button" class="btn btn-primary">Gallery yaratish</button></a>
+                <a href="{{route('g-create')}}"><button type="button" class="btn btn-primary">Qo'shish</button></a>
             </div>
             <div class="card-body">
 
@@ -72,10 +72,10 @@
                                                     <div class="sweetalert">
                                                         <button type="button" class=" @if ($gallery->is_active == 1) btn-success @endif  @if ($gallery->is_active == 0) btn-danger @endif btn sweet-confirm btn-sm">
                                                             @if ($gallery->is_active == 1)
-                                                                Active
+                                                                Faol
                                                             @endif
                                                             @if ($gallery->is_active == 0)
-                                                                Not Active
+                                                             Faol emas
                                                             @endif
                                                         </button>
                                                     </div>

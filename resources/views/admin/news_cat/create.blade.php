@@ -9,7 +9,7 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">Yangiliklar kategoriyasi yaratish</h5>
+                <h5 class="card-title">Yangiliklar kategoriyasini yaratish</h5>
                 <a href="{{route('c-index')}}"><button type="button" class="btn btn-primary">Orqaga</button></a>
             </div>
 
@@ -73,37 +73,37 @@
                             <div class="row">
 
                                 <div class="col-sm-4">
-                                    <label class="col-form-label" for="validationCustom02">Kategoriyasi nomi uz <span
+                                    <label class="col-form-label" for="validationCustom02">Kategoriya nomi uz <span
                                             class="text-danger">*</span>
                                     </label>
                                     <div>
                                         <input type="text" name="category_name_uz" class="form-control" id="validationCustom02"  placeholder="Enter is Category Name uz" required value="{{old('category_name_uz')}}">
                                         <div class="invalid-feedback">
-                                             Iltimos, kategoriyasi kiriting uz.
+                                             Iltimos, kategoriya kiriting uz.
                                         </div>
                                     </div>
                                 </div>
                                 
                                 <div class="col-sm-4">
-                                    <label class="col-form-label" for="validationCustom02">Kategoriyasi nomi ru <span
+                                    <label class="col-form-label" for="validationCustom02">Kategoriya nomi ru <span
                                             class="text-danger">*</span>
                                     </label>
                                     <div>
                                         <input type="text" name="category_name_ru" class="form-control" id="validationCustom02"  placeholder="Enter is Category Name ru" required value="{{old('category_name_ru')}}">
                                         <div class="invalid-feedback">
-                                             Iltimos, kategoriyasi kiriting ru.
+                                             Iltimos, kategoriya kiriting ru.
                                         </div>
                                     </div>
                                 </div>
     
                                 <div class="col-sm-4">
-                                    <label class="col-form-label" for="validationCustom02">Kategoriyasi nomi en <span
+                                    <label class="col-form-label" for="validationCustom02">Kategoriya nomi en <span
                                             class="text-danger">*</span>
                                     </label>
                                     <div>
                                         <input type="text" name="category_name_en" class="form-control" id="validationCustom02"  placeholder="Enter is Category Name en" required value="{{old('category_name_en')}}">
                                         <div class="invalid-feedback">
-                                             Iltimos, kategoriyasi kiriting en.
+                                             Iltimos, kategoriya kiriting en.
                                         </div>
                                     </div>
                                 </div>

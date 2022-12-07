@@ -9,8 +9,8 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">Users Update</h5>
-                <a href="{{route('u-index')}}"><button type="button" class="btn btn-primary">Back</button></a>
+                <h5 class="card-title">Foydalanuvchini o'zgartirish</h5>
+                <a href="{{route('u-index')}}"><button type="button" class="btn btn-primary">Orqaga</button></a>
             </div>
 
             <div class="mb-3 mb-lg-0">
@@ -56,7 +56,7 @@
                                     <div class="row">
 
                                         <div class="col-sm-4">
-                                            <label for="firstName" class="form-label">First name
+                                            <label for="firstName" class="form-label">Ismi
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <input type="text" name="first_name" class="form-control" id="firstName" placeholder="First name..." value="{{$user->first_name}}" required>
@@ -66,7 +66,7 @@
                                         </div>
 
                                         <div class="col-sm-4 mt-2 mt-sm-0">
-                                            <label for="lastName"  class="form-label">Last name
+                                            <label for="lastName"  class="form-label">Familiyasi
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <input type="text" name="last_name" class="form-control" id="lastName" placeholder="Last name..." value="{{$user->last_name}}" required>
@@ -76,7 +76,7 @@
                                         </div>
 
                                         <div class="col-sm-4 mt-2 mt-sm-0">
-                                            <label for="middleName"  class="form-label">Middle name
+                                            <label for="middleName"  class="form-label">Sharfi
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <input type="text" name="middle_name" class="form-control" id="middleName" placeholder="Middle name..." value="{{$user->middle_name}}" required>
@@ -90,8 +90,8 @@
                                     <div class="row">
                                         
                                         <div class="col-sm-4">
-                                            <label for="email"  class="form-label">Email <span
-                                                class="text-muted">(Optional)</span>
+                                            <label for="email"  class="form-label">Elektron pochta <span
+                                                class="text-muted">(Ixtiyoriy)</span>
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <input type="email" name="email" class="form-control" id="email" placeholder="you@example.com" value="{{$user->email}}">
@@ -101,22 +101,22 @@
                                         </div>
 
                                         <div class="col-sm-4">
-                                            <label for="Phone"  class="form-label">Phone Number
+                                            <label for="Phone"  class="form-label">Telefon raqam
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <input type="text" name="phone" class="form-control" id="Phone" placeholder="Last name..." value="{{$user->phone}}" required>
+                                            <input type="text" name="phone" class="form-control" id="Phone" placeholder="+998 __ ___ __" value="{{$user->phone}}" required>
                                             <div class="invalid-feedback">
                                                 Valid last name is required.
                                             </div>
                                         </div>
 
                                         <div class="col-sm-4">
-                                            <label for="username"  class="form-label">Username
+                                            <label for="username"  class="form-label">Foydalanuvchi
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="input-group">
                                                 <span class="input-group-text">@</span>
-                                                <input type="text" name="user_name" class="form-control" id="username" placeholder="Username" required value="{{$user->user_name}}">
+                                                <input type="text" name="user_name" class="form-control" id="username" placeholder="Foydalanuvchi" required value="{{$user->user_name}}">
                                                 <div class="invalid-feedback" style="width: 100%;">
                                                     Your username is required.
                                                 </div>
@@ -129,7 +129,7 @@
                                     <div class="row">
 
                                         <div class="col-sm-4">
-                                            <label class="col-form-label col-sm-3 pt-0">Gender</label>
+                                            <label class="col-form-label col-sm-3 pt-0">Jins</label>
                                             <div class="col-sm-9">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" name="gender" @if ($user->gender == 1) checked @endif value="1">
@@ -147,7 +147,7 @@
                                         </div>
 
                                         <div class="col-sm-8">
-                                            <label class="col-form-label" for="validationCustom01">User Image
+                                            <label class="col-form-label" for="validationCustom01">Foydalanuvchining rasmi
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="form-file">
@@ -159,7 +159,7 @@
                                     </div>
 
                                     <div class="m-4">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-primary">Yuborish</button>
                                     </div>
 
                                 </form>

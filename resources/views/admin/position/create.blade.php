@@ -5,8 +5,8 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">Positions Create</h5>
-                <a href="{{route('po-index')}}"><button type="button" class="btn btn-primary">Back</button></a>
+                <h5 class="card-title">Lavozim yaratish</h5>
+                <a href="{{route('po-index')}}"><button type="button" class="btn btn-primary">Orqaga</button></a>
             </div>
 
             <div class="mb-3 mb-lg-0">
@@ -50,12 +50,12 @@
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom01">User Name
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Foydalanuvchi Nomi
                                             <span class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
                                             <select name="user_id" id="single-select" class="form-control">
-                                                <option selected>Choose your username...</option>
+                                                <option selected>O'zingizga foydalanuvchi nom tanlang...</option>
                                                 @foreach($users as $user)
                                                  <option value="{{$user->id}}">{{$user->user_name}}</option>
                                                 @endforeach
@@ -64,43 +64,43 @@
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02" >Position Name uz <span
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02" >Lavozim nomi uz <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
-                                            <input type="text" name="pos_name_uz" class="form-control" id="validationCustom02"  placeholder="Enter is Position Title uz" required value="{{old('pos_name_uz')}}">
+                                            <input type="text" name="pos_name_uz" class="form-control" id="validationCustom02"  placeholder="Iltimos, lavozim nomini uz" required value="{{old('pos_name_uz')}}">
                                             <div class="invalid-feedback">
-                                                Please enter a Position Name uz.
+                                               Iltimos, lavozim nomini uz.
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02" >Position Name ru <span
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02" >Lavozim nomi ru <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
-                                            <input type="text" name="pos_name_ru" class="form-control" id="validationCustom02"  placeholder="Enter is Position Title ru" required value="{{old('pos_name_ru')}}">
+                                            <input type="text" name="pos_name_ru" class="form-control" id="validationCustom02"  placeholder="Iltimos, lavozim nomini ru" required value="{{old('pos_name_ru')}}">
                                             <div class="invalid-feedback">
-                                                Please enter a Position Name ru.
+                                               Iltimos, lavozim nomini ru.
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02" >Position Name en <span
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02" >Lavozim nomi en <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
-                                            <input type="text" name="pos_name_en" class="form-control" id="validationCustom02"  placeholder="Enter is Position Title en" required value="{{old('pos_name_en')}}">
+                                            <input type="text" name="pos_name_en" class="form-control" id="validationCustom02"  placeholder="Iltimos, lavozim nomini en" required value="{{old('pos_name_en')}}">
                                             <div class="invalid-feedback">
-                                                Please enter a Position Name en.
+                                               Iltimos, lavozim nomini en.
                                             </div>
                                         </div>
                                     </div>
                                     
                                     <div class="col-lg-8">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-primary">Yuborish</button>
                                     </div>
                                    
                                 </div>

@@ -10,8 +10,8 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">Partner</h5>
-                <a href="{{route('p-create')}}"><button type="button" class="btn btn-primary">Add Partner</button></a>
+                <h5 class="card-title">Hamhorlar</h5>
+                <a href="{{route('p-create')}}"><button type="button" class="btn btn-primary">Hamkorlar yaratish</button></a>
             </div>
             <div class="card-body">
 
@@ -49,11 +49,11 @@
                                 <thead>
                                     <tr>
                                         <th>№</th>
-                                        <th>Image</th>
-                                        <th>Image Url</th>
-                                        <th>User Name</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
+                                        <th>Rasm</th>
+                                        <th>Rasm havolasi</th>
+                                        <th>Foydalanuvchi nomi</th>
+                                        <th>Holati</th>
+                                        <th>Harakat</th>
                                     </tr>
                                 </thead>
                                 <tbody>

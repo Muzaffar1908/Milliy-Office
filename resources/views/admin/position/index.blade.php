@@ -10,8 +10,8 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">Positions</h5>
-                <a href="{{route('po-create')}}"><button type="button" class="btn btn-primary">Add Positions</button></a>
+                <h5 class="card-title">Lavozim</h5>
+                <a href="{{route('po-create')}}"><button type="button" class="btn btn-primary">Lavozim Yaratish</button></a>
             </div>
             <div class="card-body">
 
@@ -49,10 +49,10 @@
                                 <thead>
                                     <tr>
                                         <th>№</th>
-                                        <th>Position Name</th>
-                                        <th>User Name</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
+                                        <th>Lavozim nomi</th>
+                                        <th>Foydalanuvchi nomi</th>
+                                        <th>Holati</th>
+                                        <th>Harakat</th>
                                     </tr>
                                 </thead>
                                 <tbody>

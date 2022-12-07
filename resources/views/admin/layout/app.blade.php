@@ -25,6 +25,15 @@
 	{{-- <link href="{{asset('/admin/vendor/owl-carousel/owl.carousel.css')}}" rel="stylesheet"> --}}
 	{{-- <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet"> --}}
 	{{-- <link href="{{asset('/admin/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet"> --}}
+
+	{{-- toster link --}}
+    {{-- <link rel="stylesheet" href="{{ asset('/admin/toastr/toastr.min.css') }}"> --}}
+
+	<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+
+
+
     <link href="{{asset('admin/css/style.css')}}" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -218,6 +227,38 @@
      <script src="{{ asset('admin/vendor/tinymce/tinymce.min.js')}}"></script>
 
 	 <script src="{{ asset('/tinymce/tinymce.min.js')}}"></script>
+
+
+
+	{{-- <script>
+        $(document).ready(function() {
+            let msg = "{{session('warning')}} {{session()->forget('warning')}}";
+            if (msg.length !== 1) {
+                toastr["warning"](msg, "Warning");
+            }
+            //toastr["warning"]("{{session('warning')}}", "Warning");
+            toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": true,
+            "progressBar": false,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+            }
+        });
+    </script>
+    <!-- Custom Script -->
+    <script src="{{ asset('/admin/toastr/toastr.min.js') }}" type="text/javascript"></script> --}}
+
     
 
 	<script>
@@ -291,6 +332,8 @@
 		});
     
     </script>
+
+	
 
 </body>
 </html>

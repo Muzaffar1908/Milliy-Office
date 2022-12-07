@@ -5,8 +5,8 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">Gallery Update</h5>
-                <a href="{{route('g-index')}}"><button type="button" class="btn btn-primary">Back</button></a>
+                <h5 class="card-title">Gallery o'zgartiring</h5>
+                <a href="{{route('g-index')}}"><button type="button" class="btn btn-primary">Orqaga</button></a>
             </div>
 
             <div class="mb-3 mb-lg-0">
@@ -51,12 +51,12 @@
                                 </div>
 
                                 <div class="col-sm-12">
-                                    <label class="col-form-label" for="validationCustom01">User Name
+                                    <label class="col-form-label" for="validationCustom01">Foydalanuvchi nomi
                                         <span class="text-danger">*</span>
                                     </label>
                                     <div>
                                         <select name="user_id" id="single-select" class="form-control">
-                                            <option selected>Choose your username...</option>
+                                            <option selected>O'zingizga foydalanuvchi nom tanlang...</option>
                                             @foreach($users as $user)
                                                 <option value="{{$user->id}}" @if($user->id==$gallery->user_id) selected @endif>{{$user->user_name}}</option>
                                             @endforeach
@@ -65,14 +65,14 @@
                                 </div>
 
                                 <div class="col-sm-12 p-3">
-                                    <label class="col-form-label" for="validationCustom02">Image<span
+                                    <label class="col-form-label" for="validationCustom02">Rasm<span
                                             class="text-danger">*</span>
                                     </label>
                                     <div>
                                         <img src="{{asset('/upload/gallery/' .$gallery->image.'_thumbnail_450.png')}}" class="p-2" alt="img" with="100px" height="60px">
-                                        <input type="file" name="image"  class="form-control" id="image" placeholder=" Image enter" value="{{$gallery->image}}" />
+                                        <input type="file" name="image"  class="form-control" id="image" placeholder=" Rasm " value="{{$gallery->image}}" />
                                         <div class="invalid-feedback">
-                                            Please enter a Image.
+                                            Iltimos, rasm kiriting.
                                         </div>
                                     </div>
                                 </div>
@@ -82,9 +82,9 @@
                                             class="text-danger">*</span>
                                     </label>
                                     <div>
-                                        <input type="text" name="youtobe_id"  class="form-control" id="youtobe_id" placeholder=" Youtobe ID enter" value="{{$gallery->youtobe_id}}" />
+                                        <input type="text" name="youtobe_id"  class="form-control" id="youtobe_id" placeholder=" Youtobe ID" value="{{$gallery->youtobe_id}}" />
                                         <div class="invalid-feedback">
-                                            Please enter a Youtobe ID.
+                                        Iltimos, Youtobe ID kiriting.
                                         </div>
                                     </div>
                                 </div>
@@ -92,7 +92,7 @@
                             </div>
         
                             <div class="col-lg-8">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Yuborish</button>
                             </div>
                                    
                         </form>

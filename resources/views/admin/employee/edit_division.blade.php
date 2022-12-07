@@ -5,8 +5,8 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">Division Update</h5>
-                <a href="{{route('emp-index')}}"><button type="button" class="btn btn-primary">Back</button></a>
+                <h5 class="card-title">Bo'lim boshlig`i yangilash</h5>
+                <a href="{{route('emp-index')}}"><button type="button" class="btn btn-primary">Orqaga</button></a>
             </div>
 
             <div class="mb-3 mb-lg-0">
@@ -52,12 +52,12 @@
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom01">User Name
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Foydalanuvchi nomi
                                             <span class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
                                             <select name="user_id" id="single-select" class="form-control">
-                                                <option selected>Choose your username...</option>
+                                                <option selected>O'zingizga foydalanuvchi nom tanlang...</option>
                                                 @foreach($users as $user)
                                                  <option value="{{$user->id}}" @if($user->id==$employee->user_id) selected @endif>{{$user->user_name}}</option>
                                                 @endforeach
@@ -66,12 +66,12 @@
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Division Name
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Bo'lim nomi
                                             <span class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
                                             <select name="dep_id" id="single-select" class="form-control">
-                                                <option selected>Choose your division name...</option>
+                                                <option selected>Bo'lim nomini tanlang...</option>
                                                 @foreach($department as $dep)
                                                  <option value="{{$dep->id}}" @if($dep->id==$employee->dep_id) selected @endif>{{$dep->dep_name_uz}}</option>
                                                 @endforeach
@@ -80,74 +80,74 @@
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Image <span
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Rasm <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
                                             <img src="{{asset('/upload/employee/division/' . $employee->user_image.'_thumbnail_550.png')}}" alt="img" with="100px" height="60px">
-                                            <input type="file" name="user_image" class="form-control" id="validationCustom02"  placeholder="Image" required value="{{$employee->user_image}}">
+                                            <input type="file" name="user_image" class="form-control" id="validationCustom02"  placeholder="Rasm" required value="{{$employee->user_image}}">
                                             <div class="invalid-feedback">
-                                                Please enter a Image.
+                                               Iltimos, rasm kiriting.
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Full Name uz <span
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02">To'liq ism uz <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
-                                            <input type="text" name="full_name_uz" class="form-control" id="validationCustom02"  placeholder="Enter is Full Name uz" required value="{{$employee->full_name_uz}}">
+                                            <input type="text" name="full_name_uz" class="form-control" id="validationCustom02"  placeholder="To'liq ism uz ni kiriting ..." required value="{{$employee->full_name_uz}}">
                                             <div class="invalid-feedback">
-                                                Please enter a Full Name uz.
+                                                Iltimos, to'liq ismingizni kiriting uz.
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Full Name ru <span
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02">To'liq ism ru <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
-                                            <input type="text" name="full_name_ru" class="form-control" id="validationCustom02"  placeholder="Enter is Full Name ru" required value="{{$employee->full_name_ru}}">
+                                            <input type="text" name="full_name_ru" class="form-control" id="validationCustom02"  placeholder="To'liq ism uz ni kiriting ..." required value="{{$employee->full_name_ru}}">
                                             <div class="invalid-feedback">
-                                                Please enter a Full Name ru.
+                                            Iltimos, to'liq ismingizni kiriting ru.
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Full Name en <span
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02">To'liq ism en<span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
-                                            <input type="text" name="full_name_en" class="form-control" id="validationCustom02"  placeholder="Enter is Full Name en" required value="{{$employee->full_name_en}}">
+                                            <input type="text" name="full_name_en" class="form-control" id="validationCustom02"  placeholder="To'liq ism uz ni kiriting ..." required value="{{$employee->full_name_en}}">
                                             <div class="invalid-feedback">
-                                                Please enter a Full Name en.
+                                            Iltimos, to'liq ismingizni kiriting en.
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Email <span
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Elektron pochta  <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
-                                            <input type="email" name="email" class="form-control" id="validationCustom02"  placeholder="Enter is Email" required value="{{$employee->email}}">
+                                            <input type="email" name="email" class="form-control" id="validationCustom02"  placeholder="Elktron pochtani kiriting ..." required value="{{$employee->email}}">
                                             <div class="invalid-feedback">
-                                                Please enter a Email.
+                                            Iltimos, elektron pochta manzilini kiriting.
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Phone Number <span
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Telefon raqam <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
-                                            <input type="text" name="phone" class="form-control" id="validationCustom02"  placeholder="Enter is Phone Number" required value="{{$employee->phone}}">
+                                            <input type="text" name="phone" class="form-control" id="validationCustom02"  placeholder="Telefon raqamini kiriting..." required value="{{$employee->phone}}">
                                             <div class="invalid-feedback">
-                                                Please enter a Phone Number.
+                                            Telefon raqamini kiriting.
                                             </div>
                                         </div>
                                     </div>
@@ -155,13 +155,13 @@
                                     <br>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Phone Number Code <span
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Telefon raqam kodi<span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
-                                            <input type="text" name="code" class="form-control" id="validationCustom02"  placeholder="Enter is Phone Number Code" required value="{{$employee->code}}">
+                                            <input type="text" name="code" class="form-control" id="validationCustom02"  placeholder="Telefon raqami kodini kiriting ..." required value="{{$employee->code}}">
                                             <div class="invalid-feedback">
-                                                Please enter a Phone Number Code.
+                                            Telefon raqami kodini kiriting.
                                             </div>
                                         </div>
                                     </div>
@@ -169,7 +169,7 @@
                                     <br>
 
                                     <div class="mb-3">
-                                        <label class="col-form-label" for="validationCustom02">Biography uz <span
+                                        <label class="col-form-label" for="validationCustom02">Biografiya uz <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="">
@@ -178,7 +178,7 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="col-form-label" for="validationCustom02">Biography ru <span
+                                        <label class="col-form-label" for="validationCustom02">Biografiya ru <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="">
@@ -187,7 +187,7 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="col-form-label" for="validationCustom02">Biography en <span
+                                        <label class="col-form-label" for="validationCustom02">Biografiya en <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="">
@@ -196,7 +196,7 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="col-form-label" for="validationCustom02">Responsibilities uz <span
+                                        <label class="col-form-label" for="validationCustom02">Majburiyat uz <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="">
@@ -205,7 +205,7 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="col-form-label" for="validationCustom02">Responsibilities ru <span
+                                        <label class="col-form-label" for="validationCustom02">Majburiyat ru <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="">
@@ -214,7 +214,7 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="col-form-label" for="validationCustom02">Responsibilities en <span
+                                        <label class="col-form-label" for="validationCustom02">Majburiyat en <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="">
@@ -223,7 +223,7 @@
                                     </div>
                                     
                                     <div class="col-lg-8">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-primary">Yuborish</button>
                                     </div>
                                    
                                 </div>

@@ -9,8 +9,8 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">News Category Create</h5>
-                <a href="{{route('c-index')}}"><button type="button" class="btn btn-primary">Back</button></a>
+                <h5 class="card-title">Yangiliklar kategoriyasi yaratish</h5>
+                <a href="{{route('c-index')}}"><button type="button" class="btn btn-primary">Orqaga</button></a>
             </div>
 
             <div class="mb-3 mb-lg-0">

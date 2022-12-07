@@ -64,7 +64,7 @@
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Position Name
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Lavozim nomi
                                             <span class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
@@ -168,7 +168,7 @@
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="">
-                                            <input type="text" name="title_uz" class="form-control" id="validationCustom02"  placeholder="Sarlavha uz ni kiriting ..." required value="{{old('title_uz')}}">
+                                            <input type="text" name="title_uz" class="form-control" id="validationCustom02"  placeholder="Sarlavha uz ni kiriting..." required value="{{old('title_uz')}}">
                                             <div class="invalid-feedback">
                                                 Iltimos, sarlavha uz ni kiriting.
                                             </div>

@@ -91,6 +91,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            {{$news_cat->links()}}
                         </div>
                     </div>
                 </div>

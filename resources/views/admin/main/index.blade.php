@@ -11,7 +11,7 @@
         <div class="card">
             <div class="card-header border-0 pb-0">
                 <h5 class="card-title">Bosh Saxifa</h5>
-                <a href="{{route('m-create')}}"><button type="button" class="btn btn-primary">Bosh saxifa yaratish</button></a>
+                <a href="{{route('m-create')}}"><button type="button" class="btn btn-primary">Qo'shish</button></a>
             </div>
             <div class="card-body">
 
@@ -74,10 +74,10 @@
                                                     <div class="sweetalert">
                                                         <button type="button" class=" @if ($main->is_active == 1) btn-success @endif  @if ($main->is_active == 0) btn-danger @endif btn sweet-confirm btn-sm">
                                                             @if ($main->is_active == 1)
-                                                                Active
+                                                                Faol
                                                             @endif
                                                             @if ($main->is_active == 0)
-                                                                Not Active
+                                                                Faol emas
                                                             @endif
                                                         </button>
                                                     </div>

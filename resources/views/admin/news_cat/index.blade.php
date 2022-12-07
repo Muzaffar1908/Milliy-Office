@@ -11,7 +11,7 @@
         <div class="card">
             <div class="card-header border-0 pb-0">
                 <h5 class="card-title">Yangiliklar kategoriyasi</h5>
-                <a href="{{route('c-create')}}"><button type="button" class="btn btn-primary">Yangiliklar kategoriyasi yaratish</button></a>
+                <a href="{{route('c-create')}}"><button type="button" class="btn btn-primary">Qo'shish</button></a>
             </div>
 
             <div class="mb-3 mb-lg-0">
@@ -49,7 +49,7 @@
                                 <thead>
                                     <tr>
                                         <th>№</th>
-                                        <th>Kategoriyasi nomi</th>
+                                        <th>Kategoriya nomi</th>
                                         <th>Foydalanuvchi nomi</th>
                                         <th>Holati</th>
                                         <th>Harakat</th>
@@ -68,10 +68,10 @@
                                                     <div class="sweetalert">
                                                         <button type="button" class=" @if ($cat->is_active == 1) btn-success @endif  @if ($cat->is_active == 0) btn-danger @endif btn sweet-confirm btn-sm">
                                                             @if ($cat->is_active == 1)
-                                                                Active
+                                                                Faol
                                                             @endif
                                                             @if ($cat->is_active == 0)
-                                                                Not Active
+                                                               Faol emas
                                                             @endif
                                                         </button>
                                                     </div>

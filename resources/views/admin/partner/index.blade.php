@@ -11,7 +11,7 @@
         <div class="card">
             <div class="card-header border-0 pb-0">
                 <h5 class="card-title">Hamhorlar</h5>
-                <a href="{{route('p-create')}}"><button type="button" class="btn btn-primary">Hamkorlar yaratish</button></a>
+                <a href="{{route('p-create')}}"><button type="button" class="btn btn-primary">Qo'shish</button></a>
             </div>
             <div class="card-body">
 
@@ -72,10 +72,10 @@
                                                     <div class="sweetalert">
                                                         <button type="button" class=" @if ($partner->is_active == 1) btn-success @endif  @if ($partner->is_active == 0) btn-danger @endif btn sweet-confirm btn-sm">
                                                             @if ($partner->is_active == 1)
-                                                                Active
+                                                                Faol
                                                             @endif
                                                             @if ($partner->is_active == 0)
-                                                                Not Active
+                                                                Faol emas
                                                             @endif
                                                         </button>
                                                     </div>

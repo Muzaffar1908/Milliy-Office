@@ -5,8 +5,8 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">News Create</h5>
-                <a href="{{route('n-index')}}"><button type="button" class="btn btn-primary">Back</button></a>
+                <h5 class="card-title">Yangilik yaratish</h5>
+                <a href="{{route('n-index')}}"><button type="button" class="btn btn-primary">Orqaga</button></a>
             </div>
 
             <div class="mb-3 mb-lg-0">
@@ -51,12 +51,12 @@
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom01">User Name
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Foydalanuvchi nomi
                                             <span class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
                                             <select name="user_id" id="single-select" class="form-control">
-                                                <option selected>Choose your username...</option>
+                                                <option selected>O'zingizga foydalanuvchi nom tanlang...</option>
                                                 @foreach($users as $user)
                                                  <option value="{{$user->id}}">{{$user->user_name}}</option>
                                                 @endforeach
@@ -65,12 +65,12 @@
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Category Name
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Kategoriya nomi
                                             <span class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
                                             <select name="cat_id" id="single-select" class="form-control">
-                                                <option selected>Choose your news category name...</option>
+                                                <option selected>O'zingizga kategoriya nomi tanlang...</option>
                                                 @foreach($news_cat as $cat)
                                                  <option value="{{$cat->id}}">{{$cat->category_name_uz}}</option>
                                                 @endforeach
@@ -79,49 +79,49 @@
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Title uz <span
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Sarlavha uz <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
                                             <input type="text" name="title_uz" class="form-control" id="validationCustom02"  placeholder="Enter is Title uz" required value="{{old('title_uz')}}">
                                             <div class="invalid-feedback">
-                                                Please enter a Title uz.
+                                                Iltimos sarlavha kiriting uz.
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Title ru <span
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Sarlavha ru <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
                                             <input type="text" name="title_ru" class="form-control" id="validationCustom02"  placeholder="Enter is Title ru" required value="{{old('title_ru')}}">
                                             <div class="invalid-feedback">
-                                                Please enter a Title ru.
+                                                Iltimos sarlavha kiriting ru.
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Title en <span
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Sarlavha en <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
                                             <input type="text" name="title_en" class="form-control" id="validationCustom02"  placeholder="Enter is Title en" required value="{{old('title_en')}}">
                                             <div class="invalid-feedback">
-                                                Please enter a Title en.
+                                                Iltimos sarlavha kiriting en.
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02">News Image <span
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Rasm <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
-                                            <input type="file" name="news_image" class="form-control" id="validationCustom02"  placeholder="Enter is Title en" required value="{{old('news_image')}}">
+                                            <input type="file" name="news_image" class="form-control" id="validationCustom02"  placeholder="rasm" required value="{{old('news_image')}}">
                                             <div class="invalid-feedback">
-                                                Please enter a Title en.
+                                                Iltimos rasm kiriting.
                                             </div>
                                         </div>
                                     </div>
@@ -154,7 +154,7 @@
                                     </div>
                                     
                                     <div class="col-lg-8">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-primary">Yuborish</button>
                                     </div>
                                    
                                 </div>

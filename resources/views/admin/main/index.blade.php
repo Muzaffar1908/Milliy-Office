@@ -10,8 +10,8 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">Main Page</h5>
-                <a href="{{route('m-create')}}"><button type="button" class="btn btn-primary">Add Main Page</button></a>
+                <h5 class="card-title">Bosh Saxifa</h5>
+                <a href="{{route('m-create')}}"><button type="button" class="btn btn-primary">Bosh saxifa yaratish</button></a>
             </div>
             <div class="card-body">
 
@@ -49,12 +49,12 @@
                                 <thead>
                                     <tr>
                                         <th>№</th>
-                                        <th>Title</th>
+                                        <th>Sarlavha</th>
                                         <th>Youtobe ID</th>
-                                        <th>Background Image</th>
-                                        <th>Username</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
+                                        <th>Orqa fon</th>
+                                        <th>Foydalanuvchi nomi</th>
+                                        <th>Holati</th>
+                                        <th>Harakat</th>
                                     </tr>
                                 </thead>
                                 <tbody>

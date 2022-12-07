@@ -10,8 +10,8 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">Users</h5>
-                <a href="{{route('u-create')}}"><button type="button" class="btn btn-primary">Add Users</button></a>
+                <h5 class="card-title">Foydalanuvchilar</h5>
+                <a href="{{route('u-create')}}"><button type="button" class="btn btn-primary">Foydalanuvchi yaratish</button></a>
             </div>
 
             <div class="mb-3 mb-lg-0">
@@ -49,13 +49,13 @@
                                 <thead>
                                     <tr>
                                         <th>№</th>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
-                                        <th>Middle Name</th>
-                                        <th>Email</th>
-                                        <th>User Image</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
+                                        <th>Ism</th>
+                                        <th>Familiya</th>
+                                        <th>Sharfi</th>
+                                        <th>Elektron pochta</th>
+                                        <th>Foydalanuvchining Rasmi</th>
+                                        <th>Holati</th>
+                                        <th>Harakat</th>
                                     </tr>
                                 </thead>
                                 <tbody>

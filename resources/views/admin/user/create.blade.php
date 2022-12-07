@@ -9,8 +9,8 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">Users Create</h5>
-                <a href="{{route('u-index')}}"><button type="button" class="btn btn-primary">Back</button></a>
+                <h5 class="card-title">Foydalanuvchini yaratish</h5>
+                <a href="{{route('u-index')}}"><button type="button" class="btn btn-primary">Orqaga</button></a>
             </div>
 
             <div class="mb-3 mb-lg-0">
@@ -55,17 +55,17 @@
                                     <div class="row">
 
                                         <div class="col-sm-4">
-                                            <label for="firstName" class="form-label">First name
+                                            <label for="firstName" class="form-label">Ismi
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <input type="text" name="first_name" class="form-control" id="firstName" placeholder="First name..." value="{{old('first_name')}}" required>
                                             <div class="invalid-feedback">
-                                                Valid first name is required.
+                                                i.
                                             </div>
                                         </div>
 
                                         <div class="col-sm-4 mt-2 mt-sm-0">
-                                            <label for="lastName"  class="form-label">Last name
+                                            <label for="lastName"  class="form-label">Familiyasi
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <input type="text" name="last_name" class="form-control" id="lastName" placeholder="Last name..." value="{{old('last_name')}}" required>
@@ -75,7 +75,7 @@
                                         </div>
 
                                         <div class="col-sm-4 mt-2 mt-sm-0">
-                                            <label for="middleName"  class="form-label">Middle name
+                                            <label for="middleName"  class="form-label">Sharfi
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <input type="text" name="middle_name" class="form-control" id="middleName" placeholder="Middle name..." value="{{old('middle_name')}}" required>
@@ -89,35 +89,35 @@
                                     <div class="row">
                                         
                                         <div class="col-sm-4">
-                                            <label for="email"  class="form-label">Email <span
+                                            <label for="email"  class="form-label">Elektron pochta <span
                                                 class="text-muted">(Optional)</span>
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <input type="email" name="email" class="form-control" id="email" placeholder="you@example.com" value="{{old('email')}}">
                                             <div class="invalid-feedback">
-                                                Please enter a valid email address for shipping updates.
+                                               Iltimos, elektron pochta manzilini kiriting...
                                             </div>
                                         </div>
 
                                         <div class="col-sm-4">
-                                            <label for="Phone"  class="form-label">Phone Number
+                                            <label for="Phone"  class="form-label">Telefon raqam 
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <input type="text" name="phone" class="form-control" id="Phone" placeholder="Last name..." value="{{old('phone')}}" required>
+                                            <input type="text" name="phone" class="form-control" id="Phone" placeholder="Telefon raqam kiriting" value="{{old('phone')}}" required>
                                             <div class="invalid-feedback">
-                                                Valid last name is required.
+                                                Iltimos, telefon raqam kiriting.
                                             </div>
                                         </div>
 
                                         <div class="col-sm-4">
-                                            <label for="username"  class="form-label">Username
+                                            <label for="username"  class="form-label">Foydalanuvchi
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="input-group">
                                                 <span class="input-group-text">@</span>
-                                                <input type="text" name="user_name" class="form-control" id="username" placeholder="Username" required value="{{old('user_name')}}">
+                                                <input type="text" name="user_name" class="form-control" id="username" placeholder="Foydalanuvchi" required value="{{old('user_name')}}">
                                                 <div class="invalid-feedback" style="width: 100%;">
-                                                    Your username is required.
+                                                    Iltimos, Foydalanuvchini nomi kiriting.
                                                 </div>
                                             </div>
                                         </div>
@@ -128,7 +128,7 @@
                                     <div class="row">
 
                                         <div class="col-sm-4">
-                                            <label class="col-form-label col-sm-3 pt-0">Gender</label>
+                                            <label class="col-form-label col-sm-3 pt-0">Jins</label>
                                             <div class="col-sm-9">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" name="gender" value="1" checked>
@@ -146,7 +146,7 @@
                                         </div>
 
                                         <div class="col-sm-8">
-                                            <label class="col-form-label" for="validationCustom01">User Image
+                                            <label class="col-form-label" for="validationCustom01">Foydalanuvchi rami
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="form-file">
@@ -160,29 +160,29 @@
                                     <div class="row">
 
                                         <div class="col-sm-6">
-                                            <label for="Password" class="form-label">Password
+                                            <label for="Password" class="form-label">Parol 
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <input type="password" name="password" class="form-control" id="Password" placeholder="Password..." value="{{old('password')}}" required>
                                             <div class="invalid-feedback">
-                                                Valid first name is required.
+                                                Iltimos, parol kiriting.
                                             </div>
                                         </div>
 
                                         <div class="col-sm-6">
-                                            <label for="Password" class="form-label">Password Confirm
+                                            <label for="Password" class="form-label">Parol takroriy kiriting
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <input type="password" name="password_confirmation" class="form-control" id="Password" placeholder="Password Confirm..." value="{{old('password_confirmation')}}" required>
                                             <div class="invalid-feedback">
-                                                Valid first name is required.
+                                            Iltimos, parolni takroriy kiriting.
                                             </div>
                                         </div>
                                        
                                     </div>
 
                                     <div class="m-4">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-primary">Yuborish</button>
                                     </div>
 
                                 </form>

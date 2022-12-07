@@ -11,7 +11,7 @@
         <div class="card">
             <div class="card-header border-0 pb-0">
                 <h5 class="card-title">Gallery</h5>
-                <a href="{{route('g-create')}}"><button type="button" class="btn btn-primary">Add Gallery</button></a>
+                <a href="{{route('g-create')}}"><button type="button" class="btn btn-primary">Gallery yaratish</button></a>
             </div>
             <div class="card-body">
 
@@ -49,11 +49,11 @@
                                 <thead>
                                     <tr>
                                         <th>№</th>
-                                        <th>Image</th>
+                                        <th>Rasm</th>
                                         <th>Youtobe ID</th>
-                                        <th>User Name</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
+                                        <th>Foydalanuvchi nomi</th>
+                                        <th>Holati</th>
+                                        <th>Harakat</th>
                                     </tr>
                                 </thead>
                                 <tbody>

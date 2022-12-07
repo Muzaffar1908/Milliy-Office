@@ -10,8 +10,8 @@
     <div class="container">
         <div class="card">
             <div class="card-header border-0 pb-0">
-                <h5 class="card-title">News Category</h5>
-                <a href="{{route('c-create')}}"><button type="button" class="btn btn-primary">Add News Category</button></a>
+                <h5 class="card-title">Yangiliklar kategoriyasi</h5>
+                <a href="{{route('c-create')}}"><button type="button" class="btn btn-primary">Yangiliklar kategoriyasi yaratish</button></a>
             </div>
 
             <div class="mb-3 mb-lg-0">
@@ -49,10 +49,10 @@
                                 <thead>
                                     <tr>
                                         <th>№</th>
-                                        <th>Category Name</th>
-                                        <th>Username</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
+                                        <th>Kategoriyasi nomi</th>
+                                        <th>Foydalanuvchi nomi</th>
+                                        <th>Holati</th>
+                                        <th>Harakat</th>
                                     </tr>
                                 </thead>
                                 <tbody>

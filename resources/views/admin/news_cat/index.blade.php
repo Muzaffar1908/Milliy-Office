@@ -17,8 +17,7 @@
             <div class="mb-3 mb-lg-0">
                 @if (count($errors) > 0)
                     <div class="alert alert-danger">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                                aria-hidden="true">&times;</span></button>
+                        <button type="button" class="close" onclick="" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <ul>
                             @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
@@ -33,7 +32,7 @@
                                 <i class="far fa-lightbulb"></i>
                             </div>
                             <div class="alert-body">
-                                <div class="alert-title">Added</div>
+                                <div class="alert-title">Done successfully!!!</div>
                                 {{ session('warning') }}
                             </div>
                         </div>

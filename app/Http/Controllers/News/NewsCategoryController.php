@@ -46,11 +46,15 @@ class NewsCategoryController extends Controller
          'category_name_uz' => 'required|string|max:255',
         );
 
-        $validator = Validator::make($data, $rule);
-
+        $validator = \Validator::make($data, $rule);
         if ($validator->fails()) {
-            Session::flash('warning', $validator->messages());
-            return redirect()->back();
+            session([
+                'warning' => $validator->messages(),
+            ]);
+
+            //\Session::flash('warning', $validator->messages());
+            return \Redirect::back();
+            // return redirect()->back()->withErrors($validator->messages());
         }
 
         $inputs = $request->all();
@@ -70,7 +74,7 @@ class NewsCategoryController extends Controller
             Session::flash('warning', __('ALL_CHANGES_SUCCESSFUL_SAVED'));
             return redirect('admin/news_cat');
         } else {
-            Session::flash('warning', __('ALL_SUCCESSFUL_SAVED'));
+            \Session::flash('message', __('ALL_SUCCESSFUL_SAVED'));
             return redirect('admin/news_cat');
         }
     }

@@ -230,34 +230,48 @@
 
 
 
-	{{-- <script>
-        $(document).ready(function() {
-            let msg = "{{session('warning')}} {{session()->forget('warning')}}";
-            if (msg.length !== 1) {
-                toastr["warning"](msg, "Warning");
-            }
-            //toastr["warning"]("{{session('warning')}}", "Warning");
-            toastr.options = {
-            "closeButton": true,
-            "debug": false,
-            "newestOnTop": true,
-            "progressBar": false,
-            "positionClass": "toast-top-right",
-            "preventDuplicates": false,
-            "onclick": null,
-            "showDuration": "300",
-            "hideDuration": "1000",
-            "timeOut": "5000",
-            "extendedTimeOut": "1000",
-            "showEasing": "swing",
-            "hideEasing": "linear",
-            "showMethod": "fadeIn",
-            "hideMethod": "fadeOut"
-            }
-        });
+	 <!-- Custom Script -->
+    <script src="{{ asset('/admin/toastr/toastr.min.js') }}" type="text/javascript"></script>
+
+    <script>
+      $(document).ready(function() {
+      @if(Session::has('message'))
+      toastr.options =
+      {
+      "closeButton" : true,
+      "progressBar" : true
+      }
+      toastr.success("{{ session('message') }}");
+      @endif
+      
+      @if(Session::has('error'))
+      toastr.options =
+      {
+      "closeButton" : true,
+      "progressBar" : true
+      }
+      toastr.error("{{ session('error') }}");
+      @endif
+      
+      @if(Session::has('info'))
+      toastr.options =
+      {
+      "closeButton" : true,
+      "progressBar" : true
+      }
+      toastr.info("{{ session('info') }}");
+      @endif
+      
+      @if(Session::has('warning'))
+      toastr.options =
+      {
+      "closeButton" : true,
+      "progressBar" : true
+      }
+      toastr.warning("{{ session('warning') }}");
+      @endif
+      }); 
     </script>
-    <!-- Custom Script -->
-    <script src="{{ asset('/admin/toastr/toastr.min.js') }}" type="text/javascript"></script> --}}
 
     
 

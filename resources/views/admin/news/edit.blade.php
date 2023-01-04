@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-header border-0 pb-0">
                 <h5 class="card-title">News Update</h5>
-                <a href="{{route('n-index')}}"><button type="button" class="btn btn-primary">Back</button></a>
+                <a href="{{route('n-index')}}"><button type="button" class="btn btn-primary">Orqaga</button></a>
             </div>
 
             <div class="mb-3 mb-lg-0">
@@ -116,7 +116,7 @@
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom02">News Image <span
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Rasm <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
@@ -129,7 +129,7 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="col-form-label" for="validationCustom02">Description uz <span
+                                        <label class="col-form-label" for="validationCustom02">Tavsif uz <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="">
@@ -138,7 +138,7 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="col-form-label" for="validationCustom02">Description ru <span
+                                        <label class="col-form-label" for="validationCustom02">Tavsif ru <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="">
@@ -147,7 +147,7 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="col-form-label" for="validationCustom02">Description en <span
+                                        <label class="col-form-label" for="validationCustom02">Tavsif en <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="">

@@ -17,13 +17,14 @@ class PageController extends Controller
     public function index()
     {
         $lang = \App::getLocale();
-        $mains = Main::select('id', 'title_' . $lang . ' as title', DB::raw('SUBSTRING(`description_' . $lang . '`, 1, 255) as long_text'), 'youtobe_id', 'background_image', 'is_active', 'created_at')->first();
+        $mains = Main::select('id', 'title_' . $lang . ' as title', DB::raw('SUBSTRING(`description_' . $lang . '`, 1, 255) as long_text'), 'youtobe_id', 'background_image', 'is_active', 'created_at')->take(4)->get();
         $news = News::select('id', 'title_' . $lang . ' as title', 'news_image', DB::raw('SUBSTRING(`description_' . $lang . '`, 1, 255) as long_text'), 'is_active', 'created_at')->where('cat_id', '=', 1)->orderBy('created_at', 'DESC')->first();
+        $news_post_single = News::select('id', DB::raw('SUBSTRING(`title_' . $lang . '`, 1, 50) as title'), 'news_image', 'is_active', 'created_at')->where('cat_id', '=', 1)->orderBy('created_at', 'ASC')->take(4)->get();
         $news_show = News::select('id', 'title_' . $lang . ' as title', 'news_image', 'is_active', 'created_at')->where('cat_id', '=', 1)->orderBy('created_at', 'DESC')->take(3)->get();
         $galleries = Gallery::select('id', 'image', 'youtobe_id', 'is_active', 'created_at')->where('is_active', '=', 1)->orderBy('created_at', 'DESC')->take(10)->get();
         $partners = Partner::select('id', 'image', 'image_url', 'is_active', 'created_at')->where('is_active', '=', 1)->orderBy('created_at', 'DESC')->take(10)->get();
         $contacts = Contact::select('id', 'address_' . $lang . ' as address', 'phone', 'email', 'started_at', 'stopped_at', 'created_at')->first();
 
-        return view('frontend.app', ['mains' => $mains, 'news' => $news, 'news_show' => $news_show, 'galleries' => $galleries, 'partners' => $partners, 'contacts' => $contacts, 'lang' => $lang]);
+        return view('frontend.app', ['mains' => $mains, 'news' => $news, 'news_post_single' => $news_post_single, 'news_show' => $news_show, 'galleries' => $galleries, 'partners' => $partners, 'contacts' => $contacts, 'lang' => $lang]);
     }
 }

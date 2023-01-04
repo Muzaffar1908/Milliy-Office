@@ -6,7 +6,7 @@
           <a href="#home" class="logo logo-light d-flex justify-content-center"><img
               src="{{asset('/assets/images/logo/MOOFFICIAL.png')}}" alt="Logo" width="110"></a>
           <p class="description mt-2 wow fadeInLeft animated d-flex justify-content-center" data-wow-delay="0.2s"
-            data-wow-duration="1s">Bizni ijtimoiy tarmoqlarda kuzating</p>
+            data-wow-duration="1s">{{__('words.Follow us on social networks')}}</p>
           <ul class="footer-social wow fadeInLeft animated d-flex justify-content-center" data-wow-delay="0.3s"
             data-wow-duration="1s">
             <li class="wow fadeInLeft animated" data-wow-delay="0.7s" data-wow-duration="1s">
@@ -29,8 +29,7 @@
       </div>
       <div class="col-lg-3 col-md-4 col-12 wow fadeInLeft animated" data-wow-delay="0.3s" data-wow-duration="1s">
         <div class="footer-widgets">
-          <h3 class="widget-title wow fadeInLeft animated" data-wow-delay="0.4s" data-wow-duration="1s">Foydali
-            havolalar</h3>
+          <h3 class="widget-title wow fadeInLeft animated" data-wow-delay="0.4s" data-wow-duration="1s">{{__('words.Useful links')}}</h3>
           <div class="footer-menu">
             <ul>
               <li class=" wow fadeInLeft animated" data-wow-delay="0.5s" data-wow-duration="1s">
@@ -38,19 +37,19 @@
                     xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M0 15.875L5.625 12.5938L11.25 15.875V2.28125C11.25 1.51953 10.6055 0.875 9.84375 0.875H1.40625C0.615234 0.875 0 1.51953 0 2.28125V15.875Z" />
-                  </svg>Biz haqimizda</a>
+                  </svg>{{__('words.About Us')}}</a>
               </li>
               <li class=" wow fadeInLeft animated" data-wow-delay="0.6s" data-wow-duration="1s"><a href="#"><svg
                     width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M0 15.875L5.625 12.5938L11.25 15.875V2.28125C11.25 1.51953 10.6055 0.875 9.84375 0.875H1.40625C0.615234 0.875 0 1.51953 0 2.28125V15.875Z" />
-                  </svg>Ofis haqida</a>
+                  </svg>{{__('words.About the office')}}</a>
               </li>
               <li class=" wow fadeInLeft animated" data-wow-delay="0.6s" data-wow-duration="1s"><a href="#"><svg
                     width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M0 15.875L5.625 12.5938L11.25 15.875V2.28125C11.25 1.51953 10.6055 0.875 9.84375 0.875H1.40625C0.615234 0.875 0 1.51953 0 2.28125V15.875Z" />
-                  </svg>Yangiliklar</a>
+                  </svg>{{__('words.News')}}</a>
               </li>
             </ul>
           </div>
@@ -59,7 +58,7 @@
 
       <div class="col-lg-3 col-md-4 col-12 wow fadeInLeft animated" data-wow-delay="0.3s" data-wow-duration="1s">
         <div class="footer-widgets">
-          <h3 class="widget-title wow fadeInLeft animated" data-wow-delay="0.4s" data-wow-duration="1s">Platformalar
+          <h3 class="widget-title wow fadeInLeft animated" data-wow-delay="0.4s" data-wow-duration="1s">{{__('words.Platforms')}}
           </h3>
           <div class="footer-menu">
             <ul>
@@ -82,7 +81,7 @@
       </div>
       <div class="col-lg-3 col-md-4 col-12 wow fadeInLeft animated" data-wow-delay="0.5s" data-wow-duration="1s">
         <div class="footer-widgets">
-          <h3 class="widget-title wow fadeInLeft animated" data-wow-delay="0.6s" data-wow-duration="1s">Manzilimiz
+          <h3 class="widget-title wow fadeInLeft animated" data-wow-delay="0.6s" data-wow-duration="1s">{{__('words.Address')}}
           </h3>
           <div class="footer-menu">
             <ul>
@@ -91,7 +90,7 @@
                     xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M0 15.875L5.625 12.5938L11.25 15.875V2.28125C11.25 1.51953 10.6055 0.875 9.84375 0.875H1.40625C0.615234 0.875 0 1.51953 0 2.28125V15.875Z" />
-                  </svg>Address:</a>
+                  </svg>{{__('words.Address')}}:</a>
                 <p class="description">100174, Toshkent sh., Olmazor t., Universitet ko‘ch., 7 uy.</p>
               </li>
               <li class="wow fadeInLeft animated" data-wow-delay="0.8s" data-wow-duration="1s"><a
@@ -99,7 +98,7 @@
                     xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M0 15.875L5.625 12.5938L11.25 15.875V2.28125C11.25 1.51953 10.6055 0.875 9.84375 0.875H1.40625C0.615234 0.875 0 1.51953 0 2.28125V15.875Z" />
-                  </svg>Telefon:
+                  </svg>{{__('words.Phone')}}:
                   <p class="description"><a href="tel:+998712033200">+998(71) 203-32-00</p>
                 </a>
               </li>
@@ -108,7 +107,7 @@
                     xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M0 15.875L5.625 12.5938L11.25 15.875V2.28125C11.25 1.51953 10.6055 0.875 9.84375 0.875H1.40625C0.615234 0.875 0 1.51953 0 2.28125V15.875Z" />
-                  </svg>Email:</a>
+                  </svg>{{__('words.Email')}}:</a>
                 <p class="description"> <a href="mailto:innoweekuz2021@gmail.com">info.innoweek.uz@gmail.com</a></p>
               </li>
             </ul>
@@ -125,7 +124,7 @@
       <div class="row">
           <div class="col-12 text-center">
               <div class="copyright">
-                  © 2022 <a href="#">Innovatsiyalar Milliy Ofisi</a> is Proudly Powered by <a
+                  © 2022 <a href="#">{{__('words.National Office of Innovation')}}</a> is Proudly Powered by <a
                       href="https://www.mimaxgroup.com/" class="egns-lab">Mimax Software Group</a>.
               </div>
           </div>

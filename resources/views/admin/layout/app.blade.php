@@ -29,11 +29,6 @@
 	{{-- toster link --}}
     {{-- <link rel="stylesheet" href="{{ asset('/admin/toastr/toastr.min.css') }}"> --}}
 
-	<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-
-
-
     <link href="{{asset('admin/css/style.css')}}" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 

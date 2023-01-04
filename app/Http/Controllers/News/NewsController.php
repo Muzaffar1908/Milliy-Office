@@ -76,6 +76,8 @@ class NewsController extends Controller
             $image = $imagine->open($image);
             $thumbnail = $image->thumbnail(new \Imagine\Image\Box(450, 250));
             $thumbnail->save($tmpFilePath . $hardPath . '_thumbnail_450.png');
+            $bigImg = $image->thumbnail(new \Imagine\Image\Box(1920, 500));
+            $bigImg->save($tmpFilePath . $hardPath . '_bigImage_1920.png');
             $news->news_image = $hardPath;
         }
 
@@ -225,6 +227,8 @@ class NewsController extends Controller
             $image = $imagine->open($image);
             $thumbnail = $image->thumbnail(new \Imagine\Image\Box(450, 250));
             $thumbnail->save($tmpFilePath . $hardPath . '_thumbnail_450.png');
+            $bigImg = $image->thumbnail(new \Imagine\Image\Box(1920, 500));
+            $bigImg->save($tmpFilePath . $hardPath . '_bigImage_1920.png');
             $news->news_image = $hardPath;
         }
 

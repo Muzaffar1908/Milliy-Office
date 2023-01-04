@@ -127,7 +127,7 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="col-form-label" for="validationCustom02">Description uz <span
+                                        <label class="col-form-label" for="validationCustom02">Tavsif uz <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="">
@@ -136,7 +136,7 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="col-form-label" for="validationCustom02">Description ru <span
+                                        <label class="col-form-label" for="validationCustom02">Tavsif ru <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="">
@@ -145,7 +145,7 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="col-form-label" for="validationCustom02">Description en <span
+                                        <label class="col-form-label" for="validationCustom02">Tavsif en <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="">

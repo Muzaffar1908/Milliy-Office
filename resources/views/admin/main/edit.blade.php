@@ -51,7 +51,7 @@
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom01">foydalanuvchi nomi
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Foydalanuvchi nomi
                                             <span class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
@@ -126,7 +126,7 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="col-form-label" for="validationCustom02">Majburiyat uz <span
+                                        <label class="col-form-label" for="validationCustom02">Tavsif uz <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="">
@@ -135,7 +135,7 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="col-form-label" for="validationCustom02">Majburiyat ru <span
+                                        <label class="col-form-label" for="validationCustom02">Tavsif ru <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="">
@@ -144,7 +144,7 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="col-form-label" for="validationCustom02">Majburiyat en <span
+                                        <label class="col-form-label" for="validationCustom02">Tavsif en <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="">

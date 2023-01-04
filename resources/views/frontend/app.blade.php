@@ -6,42 +6,16 @@
         <div class="container-fluid px-0">
             <div class="swiper banner-three-slider">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="banner-three-content">
-                            <h2>Innovatsiyalar Milliy Ofisi.</h2>
-                            <p>O'zbekiston Respublikasi Inovatsion Rivojlanish Vazirligi Huzuridagi Inovatsiyalarni
-                                Joriy Qilish va Texnalogiyalar Transferi Milliy Ofisi.</p>
-                            <a href="#" class="eg-btn btn--primary-two btn--lg">Batafsil</a>
+                    @foreach ($mains as $main)
+                        <div class="swiper-slide">
+                            <div class="banner-three-content">
+                                <h2>{{$main->title}}</h2>
+                                <p>{{strip_tags($main->long_text)}}</p>
+                                <a href="#" class="eg-btn btn--primary-two btn--lg">{{__('words.Read more')}}</a>
+                            </div>
+                            <img src="{{asset('/upload/main/'. $main->background_image.'_big_1920.png')}}" alt="image">
                         </div>
-                        <img src="{{asset('/assets/images/banner/background.png')}}" alt="image">
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="banner-three-content">
-                            <h2>Innovatsiyalar Milliy Ofisi.</h2>
-                            <p>O'zbekiston Respublikasi Inovatsion Rivojlanish Vazirligi Huzuridagi Inovatsiyalarni
-                                Joriy Qilish va Texnalogiyalar Transferi Milliy Ofisi.</p>
-                            <a href="#" class="eg-btn btn--primary-two btn--lg">Batafsil</a>
-                        </div>
-                        <img src="{{asset('/assets/images/banner/inn-2.jpg')}}" alt="image">
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="banner-three-content">
-                            <h2>Innovatsiyalar Milliy Ofisi.</h2>
-                            <p>O'zbekiston Respublikasi Inovatsion Rivojlanish Vazirligi Huzuridagi Inovatsiyalarni
-                                Joriy Qilish va Texnalogiyalar Transferi Milliy Ofisi.</p>
-                            <a href="#" class="eg-btn btn--primary-two btn--lg">Batafsil</a>
-                        </div>
-                        <img src="{{asset('/assets/images/banner/background.png')}}" alt="image">
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="banner-three-content">
-                            <h2>Innovatsiyalar Milliy Ofisi.</h2>
-                            <p>O'zbekiston Respublikasi Inovatsion Rivojlanish Vazirligi Huzuridagi Inovatsiyalarni
-                                Joriy Qilish va Texnalogiyalar Transferi Milliy Ofisi.</p>
-                            <a href="p#" class="eg-btn btn--primary-two btn--lg">Batafsil</a>
-                        </div>
-                        <img src="{{asset('/assets/images/banner/inn-2.jpg')}}" alt="image">
-                    </div>
+                    @endforeach
                 </div>
                 <div class="swiper-pagination swiper-pagination-num"></div>
             </div>
@@ -49,146 +23,57 @@
     </div>
 
     <!-- News section -->
+
+    <?php
+        use Carbon\Carbon;
+    ?>
+
     <div class="blog-grid-section pt-120 pb-120 ">
         <div class="container">
             <div class="row justify-content-center">
-                <h1 class="text-center mt-5 mb-5">Yangiliklar</h1>
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-10">
-                    <div class="blog-grid-single">
-                        <div class="blog-image">
-                            <a href="yangiliklar.html">
-                                <img src="{{asset('/assets/images/banner/background.png')}}" alt="image">
-                            </a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-date">January 10, 2022</div>
-                            <h4><a href="yangiliklar.html">Lorem ipsum dolor sit amet consectetur adipisicing.</a></h4>
-                            <div class="author-readmore-area">
+                <h1 class="text-center mt-5 mb-5">{{__('words.News')}}</h1>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 pe-lg-4 pe-0">
+                        <div class="blog-standard-single">
+                            <div class="blog-image">
+                              <img src="{{asset('/upload/news/'. $news->news_image.'_bigImage_1920.png')}}" alt="image">
+                            </div>
+                            <div class="blog-content">
+                                <ul class="blog-stand-meta">
+                                    <li>{{Carbon::parse($news->created_at)->format('F d, Y')}}</li>
+                                    {{-- <li>By, Admin</li>
+                                    <li>Photo</li> --}}
+                                </ul>
+                                <h3><a href="blog-details.html" data-cursor="Read Details">{{$news->title}}</a></h3>
                                 <div class="read-more-btn">
-                                    <a href="yangiliklar.html">Read More <img
-                                            src="{{asset('/assets/images/icons/button-arrow.svg')}}" alt="image"></a>
+                                  <a href="blog-details.html">{{__('words.Read more')}} <img src="assets/images/icons/button-arrow.svg" alt="image"></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-10">
-                    <div class="blog-grid-single">
-                        <div class="blog-image">
-                            <a href="yangiliklar.html">
-                                <img src="{{asset('/assets/images/banner/background.png')}}" alt="image">
-                            </a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-date">January 10, 2022</div>
-                            <h4><a href="yangiliklar.html">Lorem ipsum dolor, sit amet consectetur adipisicing.</a>
-                            </h4>
-                            <div class="author-readmore-area">
-                                <div class="read-more-btn">
-                                    <a href="yangiliklar.html">Read More <img
-                                            src="{{asset('/assets/images/icons/button-arrow.svg')}}" alt="image"></a>
-                                </div>
+                    <div class="col-lg-4">
+                        <div class="blog-sidebar">
+                            <div class="blog-widget">
+                                <h4 class="blog-widget-title">{{__('words.All news')}}</h4>
+                                <ul class="new-post-list">
+                                    @foreach($news_post_single as $post)
+                                        <li class="new-post-single">
+                                            <div class="blog-image">
+                                            <img src="{{asset('/upload/news/'. $post->news_image.'_thumbnail_450.png')}}" alt="image">
+                                            </div>
+                                            <div class="blog-content">
+                                                <div class="blog-date">{{Carbon::parse($post->created_at)->format('d.m.Y')}}</div>
+                                                <h5><a href="blog-details.html">{{$post->title}}.</a></h5>
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-10">
-                    <div class="blog-grid-single">
-                        <div class="blog-image">
-                            <a href="yangiliklar.html">
-                                <img src="{{asset('/assets/images/banner/background.png')}}" alt="image">
-                            </a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-date">January 10, 2022</div>
-                            <h4><a href="yangiliklar.html">Lorem ipsum dolor sit amet consectetur adipisicing.</a></h4>
-                            <div class="author-readmore-area">
-                                <div class="read-more-btn">
-                                    <a href="yangiliklar.html">Read More <img
-                                            src="{{asset('/assets/images/icons/button-arrow.svg')}}" alt="image"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-10">
-                    <div class="blog-grid-single">
-                        <div class="blog-image">
-                            <a href="yangiliklar.html">
-                                <img src="{{asset('/assets/images/banner/background.png')}}" alt="image">
-                            </a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-date">January 10, 2022</div>
-                            <h4><a href="yangiliklar.html">Lorem ipsum dolor sit amet consectetur adipisicing.</a></h4>
-                            <div class="author-readmore-area">
-                                <div class="read-more-btn">
-                                    <a href="yangiliklar.html">Read More <img
-                                            src="{{asset('/assets/images/icons/button-arrow.svg')}}" alt="image"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-10">
-                    <div class="blog-grid-single">
-                        <div class="blog-image">
-                            <a href="yangiliklar.html">
-                                <img src="{{asset('/assets/images/banner/background.png')}}" alt="image">
-                            </a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-date">January 10, 2022</div>
-                            <h4><a href="yangiliklar.html">Lorem ipsum dolor sit amet, consectetur adipisicing.</a>
-                            </h4>
-                            <div class="author-readmore-area">
-                                <div class="read-more-btn">
-                                    <a href="yangiliklar.html">Read More <img
-                                            src="{{asset('/assets/images/icons/button-arrow.svg')}}" alt="image"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-10">
-                    <div class="blog-grid-single">
-                        <div class="blog-image">
-                            <a href="yangiliklar.html">
-                                <img src="{{asset('/assets/images/banner/background.png')}}" alt="image">
-                            </a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-date">January 10, 2022</div>
-                            <h4><a href="yangiliklar.html">Lorem ipsum dolor sit amet consectetur adipisicing.</a></h4>
-                            <div class="author-readmore-area">
-                                <div class="read-more-btn">
-                                    <a href="yangiliklar.html">Read More <img
-                                            src="{{asset('/assets/images/icons/button-arrow.svg')}}" alt="image"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
             </div>
-            <!-- <div class="row mt-40">
-                <div class="col-12">
-                    <div class="pagination-wrap">
-                        <nav aria-label="Page navigation">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item">
-                                    <a class="page-link" href="#" tabindex="-1">Prev</a>
-                                </li>
-                                <li class="page-item"><a class="page-link active" href="#">01</a></li>
-                                <li class="page-item"><a class="page-link" href="#">02</a></li>
-                                <li class="page-item"><a class="page-link" href="#">03</a></li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="#">Next</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
 
@@ -198,12 +83,11 @@
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-8 d-flex justify-content-lg-start justify-content-center flex-column">
-                    <h2 class="bread-crumb-title text-center">Platformalar</h2>
+                    <h2 class="bread-crumb-title text-center">{{__('words.Platforms')}}</h2>
                 </div>
             </div>
         </div>
     </div>
-
 
     <div class="client-section bg-color2 pt-5 ">
         <div class="container">
@@ -263,93 +147,33 @@
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-8 d-flex justify-content-lg-start justify-content-center text-center flex-column">
-                    <h2 class="bread-crumb-title">Gallery</h2>
+                    <h2 class="bread-crumb-title">{{__('words.Gallery')}}</h2>
                 </div>
             </div>
         </div>
     </div>
 
-
     <div class="our-portfilio-area bg-color2 pt-5 pb-60">
         <div class="container">
             <div class="row grid  g-4 mb-70 justify-content-center">
-                <div class="col-lg-4 col-md-6 col-sm-10 grid-item Lifestyle Nature Wedding">
-                    <div class="portfolio-single-one style-two magnetic-item">
-                        <img class="img-fluid" src="{{asset('/assets/images/banner/background.png')}}" alt="image">
-                        <div class="overlay">
-                            <div class="content">
-                                <h3><a data-cursor="View<br>Details" href="#">Milliy Ofis
-                                        Photography.</a></h3>
-                                <span>Photographer</span>
+                @foreach($galleries as $gallery)
+                    <div class="col-lg-4 col-md-6 col-sm-10 grid-item Lifestyle Nature Wedding">
+                        <div class="portfolio-single-one style-two magnetic-item">
+                            <img class="img-fluid" src="{{asset('/upload/gallery/'. $gallery->image.'_thumbnail_450.png')}}" alt="image">
+                            <div class="overlay">
+                                <div class="content">
+                                    <h3><a data-cursor="View<br>Details" href="#">{{__('words.National Office Photography')}}.</a></h3>
+                                    <span>{{__('words.Photographer')}}</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-10 grid-item Lifestyle">
-                    <div class="portfolio-single-one style-two magnetic-item">
-                        <img class="img-fluid" src="{{asset('/assets/images/banner/background.png')}}" alt="image">
-                        <div class="overlay">
-                            <div class="content">
-                                <h3><a data-cursor="View<br>Details" href="#">Milliy Ofis
-                                        Photography.</a></h3>
-                                <span>Photographer</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-10 grid-item Wedding Nature">
-                    <div class="portfolio-single-one style-two magnetic-item">
-                        <img class="img-fluid" src="{{asset('/assets/images//banner/background.png')}}" alt="image">
-                        <div class="overlay">
-                            <div class="content">
-                                <h3><a data-cursor="View<br>Details" href="#">Milliy Ofis
-                                        Photography.</a></h3>
-                                <span>Photographer</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-10 grid-item Nature">
-                    <div class="portfolio-single-one style-two magnetic-item">
-                        <img class="img-fluid" src="{{asset('/assets/images//banner/background.png')}}" alt="image">
-                        <div class="overlay">
-                            <div class="content">
-                                <h3><a data-cursor="View<br>Details" href="#">Milliy Ofis
-                                        Photography.</a></h3>
-                                <span>Photographer</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-10 grid-item Lifestyle Nature Wedding">
-                    <div class="portfolio-single-one style-two magnetic-item">
-                        <img class="img-fluid" src="{{asset('/assets/images//banner/background.png')}}" alt="image">
-                        <div class="overlay">
-                            <div class="content">
-                                <h3><a data-cursor="View<br>Details" href="#">Milliy Ofis Photography.</a>
-                                </h3>
-                                <span>Photographer</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-10 grid-item Lifestyle Wedding Nature">
-                    <div class="portfolio-single-one style-two magnetic-item">
-                        <img class="img-fluid" src="{{asset('/assets/images//banner/background.png')}}" alt="image">
-                        <div class="overlay">
-                            <div class="content">
-                                <h3><a data-cursor="View<br>Details" href="#">Milliy Ofis
-                                        Photography.</a></h3>
-                                <span>Photographer</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <div class="row">
                 <div class="col-lg-12 d-flex justify-content-center">
                     <div class="load-more-btn">
-                        <a class="eg-btn btn--primary btn--lg" href="#">Load More</a>
+                        <a class="eg-btn btn--primary btn--lg" href="#">{{__('words.Read more')}}</a>
                     </div>
                 </div>
             </div>
@@ -359,7 +183,7 @@
     <!-- Location -->
     <section id="contact" class="location-wrap-layout1">
         <div class="section-heading style-four">
-        <h2 class="text-center pt-5 pb-5">Bog'lanish</h2>
+        <h2 class="text-center pt-5 pb-5">{{__('words.Contact')}}</h2>
         </div>
         <div class="location-box-layout1 has-animation d-flex">
         <div class="address d-flex flex-column">
@@ -367,7 +191,7 @@
             <img src="{{asset('/assets/images/icons/location.svg')}}" width="50px" alt="" class="m-3">
 
             <div class="card-body">
-                <h1 class="m-2">Manzilimiz</h1>
+                <h1 class="m-2">{{__('words.Address')}}</h1>
                 <p class="m-2">100174, Toshkent sh., Olmazor t., Universitet ko‘ch., 7 uy.</p>
             </div>
             </div>
@@ -376,7 +200,7 @@
             <img src="{{asset('/assets/images/icons/sms.svg')}}" width="50px" alt="" class="m-3">
 
             <div class="card-body">
-                <h1 class="m-2">Email</h1>
+                <h1 class="m-2">{{__('words.Email')}}</h1>
                 <a class="m-2" href="#">milliyofis@mininnovation.uz</a>
             </div>
             </div>
@@ -387,7 +211,7 @@
             <img src="{{asset('/assets/images/icons/call.svg')}}" width="50px" alt="" class="m-3">
 
             <div class="card-body">
-                <h1 class="m-2">Telefon</h1>
+                <h1 class="m-2">{{__('words.Phone')}}</h1>
                 <p class="m-2">+99871 203-32-00</p>
             </div>
             </div>
@@ -396,8 +220,8 @@
             <img src="{{asset('/assets/images/icons/clock.svg')}}" width="50px" alt="" class="m-3">
 
             <div class="card-body">
-                <h1 class="m-2">Ish vaqti</h1>
-                <p class="m-2">Dushanba - Juma 09:00 - 18:00</p>
+                <h1 class="m-2">{{__('words.Working time')}}</h1>
+                <p class="m-2">{{__('words.Monday - Friday')}} 09:00 - 18:00</p>
             </div>
             </div>
         </div>
@@ -412,7 +236,7 @@
 
     <!-- Partners -->
     <div class="container-fluid logo-slider pb-120">
-        <h1 class="text-center pt-5 pb-5">Hamkorlar</h1>
+        <h1 class="text-center pt-5 pb-5">{{__('words.Partners')}}</h1>
         <div class="logo-slide-track">
             <div class="slide">
                 <img src="{{asset('/assets/images/partners/minin.png')}}" alt="" />

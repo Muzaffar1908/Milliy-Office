@@ -27,4 +27,12 @@ class PageController extends Controller
 
         return view('frontend.app', ['mains' => $mains, 'news' => $news, 'news_post_single' => $news_post_single, 'news_show' => $news_show, 'galleries' => $galleries, 'partners' => $partners, 'contacts' => $contacts, 'lang' => $lang]);
     }
+
+    public function newsShow($id)
+    {
+        $lang = \App::getLocale();
+        $news = News::select('id', 'title_' . $lang . ' as title', 'news_image', DB::raw('SUBSTRING(`description_' . $lang . '`, 1, 2000) as long_text'), 'is_active', 'created_at')->where('cat_id', '=', 1)->orderBy('created_at', 'DESC')->findOrFail($id);
+        $news_post_single = News::select('id', DB::raw('SUBSTRING(`title_' . $lang . '`, 1, 50) as title'), 'news_image', 'is_active', 'created_at')->where('cat_id', '=', 1)->orderBy('created_at', 'ASC')->take(4)->get();
+        return view('frontend.newsShow', compact('news', 'news_post_single'));
+    }
 }

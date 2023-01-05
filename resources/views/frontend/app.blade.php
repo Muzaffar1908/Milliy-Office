@@ -36,17 +36,15 @@
                     <div class="col-lg-8 pe-lg-4 pe-0">
                         <div class="blog-standard-single">
                             <div class="blog-image">
-                              <img src="{{asset('/upload/news/'. $news->news_image.'_bigImage_1920.png')}}" alt="image">
+                              <a href="{{route('newsShowx', ['id'=>$news->id])}}"><img src="{{asset('/upload/news/'. $news->news_image.'_bigImage_1920.png')}}" alt="image"></a> 
                             </div>
                             <div class="blog-content">
                                 <ul class="blog-stand-meta">
                                     <li>{{Carbon::parse($news->created_at)->format('F d, Y')}}</li>
-                                    {{-- <li>By, Admin</li>
-                                    <li>Photo</li> --}}
                                 </ul>
-                                <h3><a href="blog-details.html" data-cursor="Read Details">{{$news->title}}</a></h3>
+                                <h3><a href="{{route('newsShowx', ['id'=>$news->id])}}" data-cursor="Read Details">{{$news->title}}</a></h3>
                                 <div class="read-more-btn">
-                                  <a href="blog-details.html">{{__('words.Read more')}} <img src="assets/images/icons/button-arrow.svg" alt="image"></a>
+                                  <a href="{{route('newsShowx', ['id'=>$news->id])}}">{{__('words.Read more')}} <img src="assets/images/icons/button-arrow.svg" alt="image"></a>
                                 </div>
                             </div>
                         </div>
@@ -59,11 +57,11 @@
                                     @foreach($news_post_single as $post)
                                         <li class="new-post-single">
                                             <div class="blog-image">
-                                            <img src="{{asset('/upload/news/'. $post->news_image.'_thumbnail_450.png')}}" alt="image">
+                                              <a href="{{route('newsShowx', ['id'=>$post->id])}}"><img src="{{asset('/upload/news/'. $post->news_image.'_thumbnail_450.png')}}" alt="image"></a>  
                                             </div>
                                             <div class="blog-content">
                                                 <div class="blog-date">{{Carbon::parse($post->created_at)->format('d.m.Y')}}</div>
-                                                <h5><a href="blog-details.html">{{$post->title}}.</a></h5>
+                                                <h5><a href="{{route('newsShowx', ['id'=>$post->id])}}">{{$post->title}}.</a></h5>
                                             </div>
                                         </li>
                                     @endforeach
@@ -173,7 +171,7 @@
             <div class="row">
                 <div class="col-lg-12 d-flex justify-content-center">
                     <div class="load-more-btn">
-                        <a class="eg-btn btn--primary btn--lg" href="#">{{__('words.Read more')}}</a>
+                        {{-- <a class="eg-btn btn--primary btn--lg" href="#">{{__('words.Read more')}}</a> --}}
                     </div>
                 </div>
             </div>
@@ -238,27 +236,11 @@
     <div class="container-fluid logo-slider pb-120">
         <h1 class="text-center pt-5 pb-5">{{__('words.Partners')}}</h1>
         <div class="logo-slide-track">
-            <div class="slide">
-                <img src="{{asset('/assets/images/partners/minin.png')}}" alt="" />
-            </div>
-            <div class="slide">
-                <img src="{{asset('/assets/images/partners/tnet.png')}}" alt="" />
-            </div>
-            <div class="slide">
-                <img src="{{asset('/assets/images/partners/ubtech.png')}}" alt="" />
-            </div>
-            <div class="slide">
-                <img src="{{asset('/assets/images/partners/eec.png')}}" alt="" />
-            </div>
-            <div class="slide">
-                <img src="{{asset('/assets/images/partners/tuya.png')}}" alt="" />
-            </div>
-            <div class="slide">
-                <img src="{{asset('/assets/images/partners/minin.png')}}" alt="" />
-            </div>
-            <div class="slide">
-                <img src="{{asset('/assets/images/partners/tnet.png')}}" alt="" />
-            </div>
+            @foreach($partners as $partner)
+                <div class="slide">
+                    <a href="{{$partner->image_url}}"><img src="{{asset('/upload/partner/'. $partner->image.'_thumbnail_550.png')}}" alt="" /></a>
+                </div>
+            @endforeach
         </div>
     </div>
 

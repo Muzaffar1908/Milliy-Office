@@ -2,9 +2,9 @@
   <div class="container-fluid d-flex justify-content-between align-items-center">
       <div class="header-logo">
           <div class="d-flex">
-              <a href="index.html" class="pt-2 mx-2" data-wow-delay="0.20s"><img
+              <a href="{{route('page-index')}}" class="pt-2 mx-2" data-wow-delay="0.20s"><img
                       src="{{asset('/assets/images/logo/MOOFFICIAL.png')}}" width="85"></a>
-              <a href="index.html">
+              <a href="{{route('page-index')}}">
                   <h1 class="pt-3">{{__('words.National Office of')}} <br> {{__('words.Innovation and')}} <br>
                     {{__('words.Technology Transfer')}}</h1>
               </a>

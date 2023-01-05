@@ -5,6 +5,7 @@ use App\Http\Controllers\Administration\AdministrationController;
 use App\Http\Controllers\Contact\ContactController;
 use App\Http\Controllers\Departament\DepartamentController;
 use App\Http\Controllers\Employee\EmployeeController;
+use App\Http\Controllers\Frontend\NewsPageController;
 use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\Gallery\GalleryController;
 use App\Http\Controllers\News\NewsCategoryController;
@@ -45,7 +46,10 @@ Route::get('locale/{locale}', function ($locale) {
 
 Route::controller(PageController::class)->group(function () {
     Route::get('/', 'index')->name('page-index');
+    Route::get('/newsShow/{id}', 'newsShow')->name('newsShowx');
+
 });
+
 
 
 // Frontend end !!!
